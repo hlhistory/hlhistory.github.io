@@ -1,0 +1,1031 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB HL History Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f0;
+    --warm-white: #fffef9;
+    --ink: #1c1207;
+    --ink-light: #4a3f2e;
+    --ink-muted: #7a6f5e;
+    --red: #8b2635;
+    --red-light: #f5e6e9;
+    --navy: #1a3a5c;
+    --navy-light: #e4edf7;
+    --green: #2d5a3d;
+    --green-light: #e4f0e9;
+    --amber: #8a5a00;
+    --amber-light: #fdf0d5;
+    --border: #ddd5c0;
+    --card-bg: #fffdf7;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  /* Header */
+  header {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 2.5rem 0 2rem;
+    text-align: center;
+    border-bottom: 4px solid var(--red);
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--warm-white);
+  }
+  header p {
+    color: #b0a890;
+    font-size: 0.9rem;
+    margin-top: 0.4rem;
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  /* Nav */
+  nav {
+    background: var(--ink);
+    display: flex;
+    justify-content: center;
+    gap: 0;
+    border-bottom: 1px solid #3a3020;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  nav button {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    color: #888070;
+    background: none;
+    border: none;
+    padding: 0.9rem 1.6rem;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.2s;
+  }
+  nav button.active {
+    color: var(--warm-white);
+    border-bottom-color: var(--red);
+  }
+  nav button:hover { color: #ccc0a8; }
+
+  /* Content */
+  .page { display: none; max-width: 900px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+  .page.active { display: block; }
+
+  /* Section Headers */
+  .paper-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--border);
+  }
+  .paper-badge {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .badge-red { background: var(--red); color: #fff; }
+  .badge-navy { background: var(--navy); color: #fff; }
+  .badge-green { background: var(--green); color: #fff; }
+  .badge-amber { background: var(--amber-light); color: var(--amber); border: 1px solid #e8c87a; }
+
+  .paper-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--ink);
+  }
+
+  /* Country Card */
+  .country-section {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    overflow: hidden;
+  }
+  .country-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 1.4rem;
+    border-bottom: 1px solid var(--border);
+    background: var(--warm-white);
+  }
+  .country-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--ink);
+  }
+  .country-dates {
+    font-size: 0.78rem;
+    color: var(--ink-muted);
+    font-weight: 400;
+    font-style: italic;
+  }
+  .country-body { padding: 1.4rem; }
+
+  /* Context Box */
+  .context-box {
+    background: var(--amber-light);
+    border-left: 3px solid var(--amber);
+    padding: 0.8rem 1rem;
+    border-radius: 0 6px 6px 0;
+    margin-bottom: 1.2rem;
+    font-size: 0.88rem;
+    color: var(--ink-light);
+  }
+  .context-box strong { color: var(--amber); font-weight: 600; }
+
+  /* Timeline */
+  .timeline { margin: 0 0 1.4rem; }
+  .timeline-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    margin-bottom: 0.7rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .timeline-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+  .tl-item {
+    display: flex;
+    gap: 0.8rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.88rem;
+    line-height: 1.5;
+  }
+  .tl-year {
+    font-weight: 600;
+    color: var(--red);
+    min-width: 54px;
+    font-size: 0.82rem;
+    padding-top: 0.05rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .tl-event { color: var(--ink-light); flex: 1; }
+  .tl-event em { color: var(--ink); font-style: normal; font-weight: 500; }
+
+  /* People grid */
+  .people-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.6rem;
+    margin-bottom: 1.4rem;
+  }
+  .person-card {
+    background: var(--navy-light);
+    border: 1px solid #c5d8ee;
+    border-radius: 6px;
+    padding: 0.6rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  .person-name { font-weight: 600; color: var(--navy); font-size: 0.87rem; }
+  .person-role { color: var(--ink-muted); font-size: 0.8rem; margin-top: 0.1rem; }
+
+  /* Key Facts */
+  .key-facts {
+    background: var(--green-light);
+    border: 1px solid #b8d9c2;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .key-facts-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--green);
+    margin-bottom: 0.5rem;
+  }
+  .key-facts ul { padding-left: 1.1rem; }
+  .key-facts li { font-size: 0.87rem; color: var(--ink-light); margin-bottom: 0.3rem; line-height: 1.5; }
+  .key-facts li strong { color: var(--green); font-weight: 600; }
+
+  /* Methods */
+  .methods-box {
+    background: var(--red-light);
+    border: 1px solid #e8bfc5;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1.2rem;
+  }
+  .methods-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--red);
+    margin-bottom: 0.5rem;
+  }
+  .methods-box ul { padding-left: 1.1rem; }
+  .methods-box li { font-size: 0.87rem; color: var(--ink-light); margin-bottom: 0.3rem; line-height: 1.5; }
+  .methods-box li strong { color: var(--red); font-weight: 600; }
+
+  /* Historiography */
+  .histo-box {
+    background: #f3f0fa;
+    border: 1px solid #d0c8f0;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+  }
+  .histo-title {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #5b4db0;
+    margin-bottom: 0.6rem;
+  }
+  .histo-item { margin-bottom: 0.6rem; font-size: 0.87rem; line-height: 1.5; }
+  .histo-name { font-weight: 600; color: #4a3da0; }
+  .histo-def { color: var(--ink-light); }
+
+  /* Period tags */
+  .period-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+  .period-tag {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    color: var(--ink-muted);
+    background: var(--warm-white);
+  }
+
+  /* Divider within country */
+  .section-divider {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-muted);
+    padding: 0.6rem 0 0.3rem;
+    border-top: 1px dashed var(--border);
+    margin: 1rem 0 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  /* Shared perspectives page */
+  .perspective-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 1.2rem;
+  }
+  .perspective-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 0.4rem;
+  }
+  .perspective-desc { font-size: 0.9rem; color: var(--ink-light); margin-bottom: 0.8rem; }
+  .applicable-tags { display: flex; gap: 0.4rem; flex-wrap: wrap; }
+  .app-tag {
+    font-size: 0.75rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 500;
+  }
+  .app-tag-red { background: var(--red-light); color: var(--red); }
+  .app-tag-navy { background: var(--navy-light); color: var(--navy); }
+  .app-tag-green { background: var(--green-light); color: var(--green); }
+  .app-tag-amber { background: var(--amber-light); color: var(--amber); }
+
+  /* Exam tips */
+  .exam-tip {
+    background: var(--ink);
+    color: var(--cream);
+    border-radius: 8px;
+    padding: 1rem 1.2rem;
+    margin-bottom: 1rem;
+    font-size: 0.88rem;
+    line-height: 1.6;
+  }
+  .exam-tip strong { color: #f5d87a; }
+
+  /* Laws table */
+  .laws-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 0;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    overflow: hidden;
+    margin-bottom: 1.2rem;
+    font-size: 0.85rem;
+  }
+  .law-year {
+    background: var(--ink);
+    color: var(--cream);
+    padding: 0.5rem 0.8rem;
+    font-weight: 600;
+    font-size: 0.82rem;
+    border-bottom: 1px solid #3a3020;
+  }
+  .law-name {
+    background: var(--warm-white);
+    padding: 0.5rem 0.8rem;
+    color: var(--ink-light);
+    border-bottom: 1px solid var(--border);
+  }
+  .law-year:last-of-type, .law-name:last-of-type { border-bottom: none; }
+
+  /* Two column layout */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.2rem; }
+  @media (max-width: 600px) { .two-col { grid-template-columns: 1fr; } .people-grid { grid-template-columns: 1fr 1fr; } }
+
+  /* Quote */
+  .quote-block {
+    border-left: 3px solid var(--red);
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 0;
+    font-style: italic;
+    color: var(--ink-muted);
+    font-size: 0.9rem;
+  }
+  .quote-source { font-style: normal; font-size: 0.8rem; color: var(--ink-muted); margin-top: 0.3rem; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>IB HL History Study Guide</h1>
+  <p>Paper 1 &amp; Paper 2 &nbsp;·&nbsp; Rights, Protest, Independence &amp; Authoritarian States</p>
+</header>
+
+<nav>
+  <button class="active" onclick="showPage('p1')">Paper 1</button>
+  <button onclick="showPage('p2a')">P2 — Independence</button>
+  <button onclick="showPage('p2b')">P2 — Authoritarian</button>
+  <button onclick="showPage('histo')">Historiography</button>
+  <button onclick="showPage('tips')">Exam Tips</button>
+</nav>
+
+<!-- PAPER 1 -->
+<div class="page active" id="p1">
+
+  <div class="paper-header">
+    <span class="paper-badge badge-red">Paper 1</span>
+    <h2>Rights and Protest</h2>
+  </div>
+
+  <!-- US CIVIL RIGHTS -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">US Civil Rights Movement</div>
+        <div class="country-dates">1954 – 1965</div>
+      </div>
+      <span class="paper-badge badge-navy">United States</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> Black Americans faced legal segregation under Jim Crow laws in the South. The 1896 Plessy v. Ferguson ruling had established "separate but equal." Post-WWII, Black veterans who fought for democracy abroad returned home to inequality — creating powerful moral pressure for change.
+      </div>
+
+      <div class="period-tags">
+        <span class="period-tag">▶ Starting</span>
+        <span class="period-tag">▶ Maintaining momentum</span>
+        <span class="period-tag">▶ Legislative victory</span>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How it started — legal challenges &amp; early protests</div>
+        <div class="tl-item"><span class="tl-year">1954</span><span class="tl-event"><em>Brown v. Board of Education:</em> Supreme Court unanimously ruled racial segregation in schools unconstitutional — overturned Plessy v. Ferguson. NAACP lawyer <em>Thurgood Marshall</em> argued the case.</span></div>
+        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-event"><em>Murder of Emmett Till:</em> 14-year-old Black boy tortured and murdered in Mississippi; his open casket funeral galvanized the nation. Killers acquitted by all-white jury.</span></div>
+        <div class="tl-item"><span class="tl-year">1955–56</span><span class="tl-event"><em>Montgomery Bus Boycott:</em> Rosa Parks arrested for refusing to give up her seat. MLK leads 381-day boycott. Supreme Court rules bus segregation unconstitutional. Launches MLK as national figure.</span></div>
+        <div class="tl-item"><span class="tl-year">1957</span><span class="tl-event"><em>Little Rock Crisis:</em> Arkansas Governor Faubus uses National Guard to block Black students at Central High School. Eisenhower sends federal troops. Tests federal will to enforce desegregation.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Escalation — direct action &amp; media strategy</div>
+        <div class="tl-item"><span class="tl-year">1960</span><span class="tl-event"><em>Greensboro Sit-ins:</em> Four Black college students sit at a segregated Woolworth's lunch counter; refused service but stay. Spreads to 55 cities in weeks. SNCC founded.</span></div>
+        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-event"><em>Freedom Rides:</em> CORE and SNCC members test desegregation on interstate buses across the South. Met with mob violence in Anniston and Birmingham. Attorney General Robert Kennedy forced to act.</span></div>
+        <div class="tl-item"><span class="tl-year">1963</span><span class="tl-event"><em>Birmingham Campaign:</em> MLK deliberately provokes Police Commissioner <em>Bull Connor</em>, who uses fire hoses and police dogs on peaceful protesters. Global media coverage forces JFK to act.</span></div>
+        <div class="tl-item"><span class="tl-year">Aug 1963</span><span class="tl-event"><em>March on Washington:</em> 250,000 marchers gather at Lincoln Memorial. MLK delivers "I Have a Dream" speech — the largest demonstration in US history at that point.</span></div>
+        <div class="tl-item"><span class="tl-year">Sep 1963</span><span class="tl-event"><em>16th Street Baptist Church bombing:</em> KKK kills four Black girls (Addie Mae Collins, Cynthia Wesley, Carole Robertson, Carol Denise McNair). Shocks the nation.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Legislative victories</div>
+        <div class="tl-item"><span class="tl-year">1964</span><span class="tl-event"><em>Civil Rights Act:</em> Banned discrimination in public spaces and employment on basis of race, colour, religion, sex, national origin. Signed by LBJ after JFK's assassination.</span></div>
+        <div class="tl-item"><span class="tl-year">Mar 1965</span><span class="tl-event"><em>"Bloody Sunday" / Selma:</em> State troopers beat marchers on the Edmund Pettus Bridge. Televised footage of brutality prompts LBJ to address Congress. John Lewis suffered fractured skull.</span></div>
+        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-event"><em>Voting Rights Act:</em> Outlawed discriminatory voting practices (literacy tests, poll taxes). Within 2 years, Black voter registration in Mississippi rose from 6.7% to 59.8%.</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">Martin Luther King Jr.</div><div class="person-role">SCLC leader; nonviolent direct action strategy</div></div>
+        <div class="person-card"><div class="person-name">Rosa Parks</div><div class="person-role">Montgomery Bus Boycott; symbol of resistance</div></div>
+        <div class="person-card"><div class="person-name">Malcolm X</div><div class="person-role">Black nationalism; "by any means necessary"</div></div>
+        <div class="person-card"><div class="person-name">Thurgood Marshall</div><div class="person-role">NAACP lawyer; argued Brown v. Board</div></div>
+        <div class="person-card"><div class="person-name">John Lewis</div><div class="person-role">SNCC chairman; Freedom Rider; Selma</div></div>
+        <div class="person-card"><div class="person-name">Lyndon B. Johnson</div><div class="person-role">Signed Civil Rights Act &amp; Voting Rights Act</div></div>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Top-down / Liberal:</span> <span class="histo-def">Focuses on MLK, Supreme Court decisions, LBJ legislation — civil rights as achieved through elite leadership and legal reform.</span></div>
+        <div class="histo-item"><span class="histo-name">Grassroots / Subaltern:</span> <span class="histo-def">Emphasises local organizers, women (Ella Baker, Jo Ann Robinson), NAACP chapters — argues the movement was won from below, not by charismatic leaders alone.</span></div>
+        <div class="histo-item"><span class="histo-name">Revisionist:</span> <span class="histo-def">Questions the limits of the 1964–65 legislation; highlights systemic economic inequality that laws didn't address; elevates Malcolm X and Black Power as responses to nonviolence's limits.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- APARTHEID SOUTH AFRICA -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">Apartheid South Africa</div>
+        <div class="country-dates">1948 – 1994</div>
+      </div>
+      <span class="paper-badge badge-green">South Africa</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> Dutch (Boer) settlers arrived 1652; British colonized 1806. The 1910 Union of South Africa had long enforced racial discrimination (pass laws, land acts). In 1948, the Afrikaner National Party won elections on an explicit apartheid ("separateness") platform.
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How it was built — apartheid legislation</div>
+        <div class="tl-item"><span class="tl-year">1948</span><span class="tl-event"><em>National Party wins election:</em> Afrikaner nationalists implement apartheid system. D.F. Malan becomes PM.</span></div>
+        <div class="tl-item"><span class="tl-year">1950</span><span class="tl-event"><em>Population Registration Act:</em> Every person classified by race (White, Coloured, Indian, Bantu/Black). Race determined all aspects of life.</span></div>
+        <div class="tl-item"><span class="tl-year">1950</span><span class="tl-event"><em>Group Areas Act:</em> Forced racial segregation of residential and business areas. Black communities bulldozed (e.g., Sophiatown, 1955).</span></div>
+        <div class="tl-item"><span class="tl-year">1950</span><span class="tl-event"><em>Suppression of Communism Act:</em> Broadly defined "communism" to ban any opposition to apartheid.</span></div>
+        <div class="tl-item"><span class="tl-year">1953</span><span class="tl-event"><em>Bantu Education Act:</em> Minister Verwoerd designed deliberately inferior education for Black Africans — "to train them for manual labour only." Removed Black schools from churches to state control.</span></div>
+        <div class="tl-item"><span class="tl-year">1953</span><span class="tl-event"><em>Pass Laws enforced:</em> Black South Africans required to carry "passbooks" at all times; restricted movement into white areas.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Resistance — from protest to armed struggle</div>
+        <div class="tl-item"><span class="tl-year">1952</span><span class="tl-event"><em>Defiance Campaign:</em> ANC and SAIC organise nonviolent resistance against unjust laws. 8,500 volunteers deliberately break apartheid laws; arrested. ANC membership surges from 7,000 to 100,000.</span></div>
+        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-event"><em>Freedom Charter:</em> Congress Alliance declares "South Africa belongs to all who live in it." Blueprint for post-apartheid society.</span></div>
+        <div class="tl-item"><span class="tl-year">1956</span><span class="tl-event"><em>Women's March on Pretoria:</em> 20,000 women of all races protest pass laws. "You have struck a woman, you have struck a rock."</span></div>
+        <div class="tl-item"><span class="tl-year">Mar 1960</span><span class="tl-event"><em>Sharpeville Massacre:</em> PAC anti-pass protest; police open fire on crowd, killing 69 (most shot in the back). International outrage. ANC and PAC banned. Turning point — Mandela concludes nonviolence was insufficient.</span></div>
+        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-event"><em>ANC forms MK (Umkhonto we Sizwe):</em> Armed wing — "Spear of the Nation." Mandela as commander. Targeted infrastructure sabotage (not people).</span></div>
+        <div class="tl-item"><span class="tl-year">1964</span><span class="tl-event"><em>Rivonia Trial:</em> Mandela and 7 others sentenced to life imprisonment. Mandela's speech: "An ideal for which I am prepared to die." Imprisoned on Robben Island for 27 years.</span></div>
+        <div class="tl-item"><span class="tl-year">1976</span><span class="tl-event"><em>Soweto Uprising:</em> Students protest mandatory teaching in Afrikaans. Police kill <em>Hector Pieterson</em> (13 years old). Over 600 die. Galvanises global anti-apartheid movement.</span></div>
+        <div class="tl-item"><span class="tl-year">1977</span><span class="tl-event"><em>Steve Biko killed:</em> Black Consciousness Movement leader dies in police custody. Leads to international condemnation and UN arms embargo.</span></div>
+        <div class="tl-item"><span class="tl-year">1985–86</span><span class="tl-event"><em>State of Emergency:</em> P.W. Botha declares emergency. Intensifying sanctions from US (Comprehensive Anti-Apartheid Act, 1986), UK, and globally.</span></div>
+        <div class="tl-item"><span class="tl-year">1990</span><span class="tl-event"><em>Mandela released</em> (Feb 11) by F.W. de Klerk. ANC/PAC unbanned. Negotiations for democratic transition begin.</span></div>
+        <div class="tl-item"><span class="tl-year">1994</span><span class="tl-event"><em>First democratic election</em> (April 27). ANC wins 62%. Mandela inaugurated as South Africa's first Black president. Apartheid ends.</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">Nelson Mandela</div><div class="person-role">ANC leader; 27 years imprisoned; first Black president</div></div>
+        <div class="person-card"><div class="person-name">Steve Biko</div><div class="person-role">Black Consciousness Movement; killed in custody 1977</div></div>
+        <div class="person-card"><div class="person-name">Oliver Tambo</div><div class="person-role">ANC president in exile; international campaigns</div></div>
+        <div class="person-card"><div class="person-name">Desmond Tutu</div><div class="person-role">Archbishop; moral voice; led TRC later</div></div>
+        <div class="person-card"><div class="person-name">Walter Sisulu</div><div class="person-role">ANC; Rivonia Trial; life imprisonment</div></div>
+        <div class="person-card"><div class="person-name">F.W. de Klerk</div><div class="person-role">Last apartheid PM; negotiated transition</div></div>
+      </div>
+
+      <div class="key-facts">
+        <div class="key-facts-title">Key Laws to Know</div>
+        <ul>
+          <li><strong>Population Registration Act (1950):</strong> Racial classification of all people</li>
+          <li><strong>Group Areas Act (1950):</strong> Forced residential racial segregation</li>
+          <li><strong>Bantu Education Act (1953):</strong> Deliberately inferior Black education ("train for servitude")</li>
+          <li><strong>Pass Laws:</strong> Required passbooks; controlled Black movement; arrests without cause</li>
+          <li><strong>Suppression of Communism Act (1950):</strong> Banned any anti-apartheid dissent broadly</li>
+        </ul>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Liberal:</span> <span class="histo-def">Emphasises individual rights and the moral campaign — role of international pressure, Mandela as symbol of universal rights.</span></div>
+        <div class="histo-item"><span class="histo-name">Radical / Marxist:</span> <span class="histo-def">Apartheid as "racial capitalism" — the system existed to exploit cheap Black labour for white mining and agricultural interests.</span></div>
+        <div class="histo-item"><span class="histo-name">Subaltern / Grassroots:</span> <span class="histo-def">Focus on township resistance, women's activism (Federation of South African Women), trade unions (COSATU, 1985) — ordinary people as agents of change.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAPER 2: INDEPENDENCE MOVEMENTS -->
+<div class="page" id="p2a">
+
+  <div class="paper-header">
+    <span class="paper-badge badge-navy">Paper 2</span>
+    <h2>Independence Movements</h2>
+  </div>
+
+  <!-- INDIA -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">India — Independence Movement</div>
+        <div class="country-dates">1885 – 1947</div>
+      </div>
+      <span class="paper-badge badge-amber">India</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> British rule (Raj) from 1858 (after 1857 Sepoy Mutiny). Economic exploitation: India forced to buy British manufactured goods while raw materials were extracted — "drain of wealth" theory. 300 million people governed by ~1,000 ICS officers. Indian National Congress founded 1885 by educated elite.
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How it started — early nationalism (1885–1919)</div>
+        <div class="tl-item"><span class="tl-year">1885</span><span class="tl-event"><em>Indian National Congress (INC) founded:</em> Initially moderate; petitioned British for reforms. Dominated by English-educated elite.</span></div>
+        <div class="tl-item"><span class="tl-year">1905</span><span class="tl-event"><em>Partition of Bengal:</em> Viceroy Curzon splits Bengal on religious lines. Sparks mass Swadeshi movement — boycott of British goods; promotion of Indian-made products.</span></div>
+        <div class="tl-item"><span class="tl-year">1915</span><span class="tl-event"><em>Gandhi returns from South Africa:</em> Brings satyagraha (nonviolent resistance, "truth-force") philosophy. Transforms the independence movement into a mass campaign.</span></div>
+        <div class="tl-item"><span class="tl-year">1919</span><span class="tl-event"><em>Rowlatt Act:</em> Allowed 2-year imprisonment without trial for anyone suspected of terrorism. Deeply unpopular; united Indian opinion against British rule.</span></div>
+        <div class="tl-item"><span class="tl-year">Apr 1919</span><span class="tl-event"><em>Amritsar Massacre (Jallianwala Bagh):</em> General Dyer orders troops to fire on unarmed civilians in an enclosed garden. At least 379 killed (Indian estimates much higher). No evacuation permitted. Radicalises Indian politics permanently — Nehru wrote it shook his faith in the British.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Mass mobilisation — Gandhi's campaigns (1920–1942)</div>
+        <div class="tl-item"><span class="tl-year">1920–22</span><span class="tl-event"><em>Non-Cooperation Movement:</em> Gandhi calls for boycott of British goods, courts, and schools. First mass movement — crosses class, region, religion. Called off after Chauri Chaura violence (1922).</span></div>
+        <div class="tl-item"><span class="tl-year">1930</span><span class="tl-event"><em>Salt March (Dandi March):</em> Gandhi walks 240 miles (26 days) to the sea to make salt illegally, defying British salt monopoly. 60,000 people arrested nationwide. First global media event for Indian independence.</span></div>
+        <div class="tl-item"><span class="tl-year">1930–31</span><span class="tl-event"><em>Civil Disobedience Movement:</em> Mass refusal to obey unjust laws. Gandhi–Irwin Pact (1931) — Gandhi calls off campaign; invited to Round Table Conference in London.</span></div>
+        <div class="tl-item"><span class="tl-year">1935</span><span class="tl-event"><em>Government of India Act:</em> Provided provincial self-governance. INC wins elections in 8 of 11 provinces, demonstrating democratic legitimacy.</span></div>
+        <div class="tl-item"><span class="tl-year">1942</span><span class="tl-event"><em>Quit India Movement:</em> Gandhi's "Do or Die" speech. British immediately arrest Gandhi, Nehru, and all INC leadership. 100,000+ arrested. Shows Britain's weakening grip — requires 57 battalions to suppress.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Independence &amp; aftermath (1945–1947+)</div>
+        <div class="tl-item"><span class="tl-year">1945–46</span><span class="tl-event"><em>Post-WWII:</em> Britain exhausted. INA trials (Bose's Indian National Army) — prosecutions backfire; INA soldiers seen as heroes. Royal Indian Navy mutiny 1946.</span></div>
+        <div class="tl-item"><span class="tl-year">Aug 1947</span><span class="tl-event"><em>Independence and Partition:</em> India and Pakistan created. Up to 2 million killed in communal violence; 14 million displaced. Gandhi assassinated January 1948.</span></div>
+        <div class="tl-item"><span class="tl-year">1947–64</span><span class="tl-event"><em>Nehru's India:</em> Five-Year Plans for industrialisation; mixed economy; Non-Aligned Movement (NAM) in Cold War; secularism in constitution; founding of IITs.</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">Mahatma Gandhi</div><div class="person-role">Satyagraha; mass mobilisation; "Father of the Nation"</div></div>
+        <div class="person-card"><div class="person-name">Jawaharlal Nehru</div><div class="person-role">First PM; Five-Year Plans; Non-Aligned Movement</div></div>
+        <div class="person-card"><div class="person-name">Muhammad Ali Jinnah</div><div class="person-role">Muslim League; demanded and achieved Pakistan</div></div>
+        <div class="person-card"><div class="person-name">B.R. Ambedkar</div><div class="person-role">Dalit rights activist; wrote Indian Constitution</div></div>
+        <div class="person-card"><div class="person-name">Subhas Chandra Bose</div><div class="person-role">Radical nationalist; Indian National Army (INA); Axis-aligned</div></div>
+        <div class="person-card"><div class="person-name">General Dyer</div><div class="person-role">Ordered Amritsar Massacre; symbol of British brutality</div></div>
+      </div>
+
+      <div class="methods-box">
+        <div class="methods-title">Key Methods</div>
+        <ul>
+          <li><strong>Satyagraha:</strong> Nonviolent resistance / "truth-force" — moral pressure over violence</li>
+          <li><strong>Civil disobedience:</strong> Deliberately breaking unjust laws; accepting arrest</li>
+          <li><strong>Economic boycotts:</strong> Swadeshi — home-spun khadi cloth symbolises resistance</li>
+          <li><strong>Mass mobilisation:</strong> Cross-caste, cross-class, cross-religion coalitions</li>
+          <li><strong>Legal challenges:</strong> INC used British constitutional structures</li>
+        </ul>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Nationalist:</span> <span class="histo-def">Congress-led; Gandhi and Nehru as heroes; independence as moral victory of nonviolence.</span></div>
+        <div class="histo-item"><span class="histo-name">Subaltern (Ranajit Guha, Partha Chatterjee):</span> <span class="histo-def">Peasant revolts, women, lower castes had their own autonomous resistance — not simply followers of elite Congress leadership. Guha's "Subaltern Studies" project.</span></div>
+        <div class="histo-item"><span class="histo-name">Revisionist:</span> <span class="histo-def">Partition as catastrophic failure of Congress/Gandhi leadership; Ambedkar's critique: Gandhi's campaigns didn't address caste oppression; Bose shows limits of nonviolence.</span></div>
+        <div class="histo-item"><span class="histo-name">Imperial / British:</span> <span class="histo-def">"Winds of change" — independence inevitable after WWII; Britain's "orderly transfer of power." Critics: ignores decades of brutal suppression.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUBA INDEPENDENCE -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">Cuba — Independence from Spain / US Domination</div>
+        <div class="country-dates">1868 – 1902 (and beyond)</div>
+      </div>
+      <span class="paper-badge badge-red">Cuba</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> Cuba was Spain's richest remaining colony — a sugar monoculture economy worked initially by enslaved Africans. Spain imposed heavy trade restrictions, high taxes, and excluded Cuban-born Creoles from political power. The 1791 Haitian Revolution demonstrated that freedom was possible, inspiring Afro-Cuban and Creole nationalists alike. Deep social inequality between peninsulares, Creoles, freed Blacks, and slaves.
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How it started — independence wars (1868–1898)</div>
+        <div class="tl-item"><span class="tl-year">1868</span><span class="tl-event"><em>Ten Years War begins:</em> Carlos Manuel de Céspedes frees his slaves and declares independence — "Grito de Yara." Long guerrilla war; 200,000 dead. Ends in compromise (Zanjón Pact, 1878) — no independence; but slavery abolished 1886.</span></div>
+        <div class="tl-item"><span class="tl-year">1892</span><span class="tl-event"><em>José Martí founds the Cuban Revolutionary Party (PRC)</em> in exile in New York. Builds a broad coalition uniting Cubans across race and class. His writings ("Our America") define Cuban national identity.</span></div>
+        <div class="tl-item"><span class="tl-year">Feb 1895</span><span class="tl-event"><em>War of Independence begins.</em> Martí returns to Cuba from exile and is killed at Dos Ríos (May 19, 1895). Becomes a martyr and the most powerful symbol of Cuban independence — "The Apostle."</span></div>
+        <div class="tl-item"><span class="tl-year">1895–98</span><span class="tl-event"><em>Spanish reconcentration camps:</em> General Weyler herds 400,000 civilians into camps to deny guerrillas support. Up to 100,000 die of disease and starvation. Creates international outrage.</span></div>
+        <div class="tl-item"><span class="tl-year">1898</span><span class="tl-event"><em>USS Maine explosion</em> in Havana harbour (Feb 15). US declares war on Spain ("Remember the Maine!"). Spanish-American War — Spain defeated in months. Cuba "liberated" but now occupied by the US.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">Neo-colonialism — US domination (1898–1952)</div>
+        <div class="tl-item"><span class="tl-year">1901</span><span class="tl-event"><em>Platt Amendment:</em> Written into Cuban constitution by the US. Gave the US the right to intervene militarily in Cuban affairs, veto treaties, and permanently lease Guantánamo Bay. Cuba "independent" in name only.</span></div>
+        <div class="tl-item"><span class="tl-year">1902</span><span class="tl-event"><em>Formal independence:</em> But US companies own most of the sugar industry, railroads, and utilities. Martí's vision of "Cuba for Cubans" unfulfilled.</span></div>
+        <div class="tl-item"><span class="tl-year">1933</span><span class="tl-event"><em>Sergeant Batista's revolt:</em> Fulgencio Batista rises during political chaos; becomes the key power broker in Cuba. Platt Amendment repealed (1934) but US economic dominance continues.</span></div>
+        <div class="tl-item"><span class="tl-year">1952</span><span class="tl-event"><em>Batista's coup:</em> Cancels elections when polls show he will lose. Establishes brutal, corrupt dictatorship backed by the US and organised crime. Cuba ripe for revolution.</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">José Martí</div><div class="person-role">Poet, writer, "The Apostle"; ideological father of independence; died 1895</div></div>
+        <div class="person-card"><div class="person-name">Antonio Maceo</div><div class="person-role">Afro-Cuban military leader; "Bronze Titan"; killed 1896</div></div>
+        <div class="person-card"><div class="person-name">Máximo Gómez</div><div class="person-role">Military commander of independence forces</div></div>
+        <div class="person-card"><div class="person-name">Fulgencio Batista</div><div class="person-role">Dictator 1952–59; US-backed; corrupt; corrupt</div></div>
+      </div>
+
+      <div class="key-facts">
+        <div class="key-facts-title">Key Themes for Essays</div>
+        <ul>
+          <li><strong>Sugar monoculture:</strong> Cuba's economy made it dependent on a single crop — vulnerability to price changes, foreign control</li>
+          <li><strong>US neo-colonialism:</strong> Platt Amendment = formal control; economic domination = informal control</li>
+          <li><strong>Martí's legacy:</strong> His ideas about race, class, and national unity became the ideological foundation Castro later claimed</li>
+          <li><strong>Haitian Revolution influence:</strong> Showed enslaved people could win freedom; inspired Cuban Afro-descendants</li>
+          <li><strong>Social inequality:</strong> Extreme gap between landowning elite and landless workers made the island explosive</li>
+        </ul>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Cuban Nationalist:</span> <span class="histo-def">Independence as heroic struggle; Martí as visionary; US intervention as betrayal of Cuban sovereignty.</span></div>
+        <div class="histo-item"><span class="histo-name">US / Imperial:</span> <span class="histo-def">US "liberated" Cuba from Spain; Monroe Doctrine justified protection of hemisphere. Critics: economic exploitation replaced colonial rule.</span></div>
+        <div class="histo-item"><span class="histo-name">Marxist / Dependency theory:</span> <span class="histo-def">Cuba moved from Spanish colonialism to US neo-colonialism without true independence; Platt Amendment proof that formal independence meant nothing without economic sovereignty.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PAPER 2: AUTHORITARIAN STATES -->
+<div class="page" id="p2b">
+
+  <div class="paper-header">
+    <span class="paper-badge badge-red">Paper 2</span>
+    <h2>Authoritarian States</h2>
+  </div>
+
+  <!-- NAZI GERMANY -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">Nazi Germany — Hitler</div>
+        <div class="country-dates">1919 – 1945</div>
+      </div>
+      <span class="paper-badge badge-navy">Germany</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> Germany humiliated by the Treaty of Versailles (1919): £6,600 million in reparations, "war guilt" clause (Article 231), loss of 13% territory, 6 million Germans placed under foreign rule. Weimar Republic: democratic but fragile — Article 48 allowed emergency decrees. Hyperinflation 1923 wiped out savings. Great Depression 1929 caused 6 million unemployed by 1932.
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How Hitler rose to power (1919–1934)</div>
+        <div class="tl-item"><span class="tl-year">1919</span><span class="tl-event"><em>Hitler joins DAP</em> (German Workers' Party). Within months becomes its propaganda chief. Renamed NSDAP (Nazis) 1920 with 25-point programme.</span></div>
+        <div class="tl-item"><span class="tl-year">Nov 1923</span><span class="tl-event"><em>Beer Hall Putsch:</em> Hitler's failed coup in Munich. Arrested and sentenced to 5 years (served 9 months). In Landsberg Prison, dictates <em>Mein Kampf</em> — outlines racial ideology and plans for expansion.</span></div>
+        <div class="tl-item"><span class="tl-year">1929–32</span><span class="tl-event"><em>Great Depression:</em> Nazi vote surges from 2.6% (1928) to 37.4% (July 1932). Scapegoated Jews and communists for Germany's problems. Mass unemployment made radical solutions appealing.</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 30, 1933</span><span class="tl-event"><em>Hitler appointed Chancellor</em> by President Hindenburg. Hindenburg thought he could control Hitler — miscalculation that changed history.</span></div>
+        <div class="tl-item"><span class="tl-year">Feb 27, 1933</span><span class="tl-event"><em>Reichstag Fire:</em> Parliament building burns. Blamed on communist Marinus van der Lubbe. Emergency Decree (Feb 28) suspends civil liberties, allows mass arrest of communists.</span></div>
+        <div class="tl-item"><span class="tl-year">Mar 23, 1933</span><span class="tl-event"><em>Enabling Act:</em> Gave Hitler power to rule by decree for 4 years, bypassing Reichstag. Passed 444–84 (only SPD voted against). Key constitutional step — Hitler used legal framework to destroy democracy.</span></div>
+        <div class="tl-item"><span class="tl-year">Jun 1934</span><span class="tl-event"><em>Night of the Long Knives:</em> Hitler orders the murder of SA leader Ernst Röhm and ~85 political rivals. Secures army's loyalty (army had feared SA rivals). Consolidates absolute power.</span></div>
+        <div class="tl-item"><span class="tl-year">Aug 1934</span><span class="tl-event"><em>Hindenburg dies.</em> Hitler merges roles of Chancellor and President — becomes Führer. Army swears personal oath to Hitler (not Germany). Total power achieved.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How the regime was maintained (1934–1939)</div>
+        <div class="tl-item"><span class="tl-year">1933–34</span><span class="tl-event"><em>Coordination (Gleichschaltung):</em> All institutions — trade unions, political parties, press, education — brought under Nazi control or abolished.</span></div>
+        <div class="tl-item"><span class="tl-year">1933</span><span class="tl-event"><em>Goebbels' Propaganda Ministry:</em> Controls all media — radio (70% of German homes had radios by 1939), cinema (Riefenstahl's <em>Triumph of the Will</em>, 1935), posters, rallies (Nuremberg). Created the Volksempfänger — cheap "People's Receiver" radio.</span></div>
+        <div class="tl-item"><span class="tl-year">1935</span><span class="tl-event"><em>Nuremberg Laws:</em> Jews stripped of German citizenship. Marriage and sexual relations between Jews and Germans banned. Jews cannot employ German women under 45. Legal foundation for persecution.</span></div>
+        <div class="tl-item"><span class="tl-year">1936</span><span class="tl-event"><em>Hitler Youth made compulsory</em> (8 million members by 1939). Indoctrination from childhood. Separate organisations for boys (combat training) and girls (motherhood preparation).</span></div>
+        <div class="tl-item"><span class="tl-year">1936</span><span class="tl-event"><em>Remilitarisation of Rhineland:</em> Violates Versailles; Britain and France do nothing. Proves Hitler's "calculated risk" strategy works. Builds popular support inside Germany.</span></div>
+        <div class="tl-item"><span class="tl-year">Nov 1938</span><span class="tl-event"><em>Kristallnacht</em> ("Night of Broken Glass"): 7,500 Jewish businesses destroyed, 1,400 synagogues burned, 91 Jews killed, 30,000 sent to concentration camps. State-organised pogrom.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">War, Holocaust, and end (1939–1945)</div>
+        <div class="tl-item"><span class="tl-year">Sep 1939</span><span class="tl-event"><em>Invasion of Poland:</em> WWII begins. Rapid conquests (France 1940, Balkans 1941) boost Hitler's prestige inside Germany.</span></div>
+        <div class="tl-item"><span class="tl-year">1941</span><span class="tl-event"><em>Operation Barbarossa:</em> Invasion of USSR. Einsatzgruppen (mobile killing units) murder ~1.5 million Jews and others in mass shootings. Holocaust escalates.</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 1942</span><span class="tl-event"><em>Wannsee Conference:</em> Senior Nazis coordinate the "Final Solution" — systematic extermination of European Jews. Death camps (Auschwitz, Treblinka, etc.) operational by 1942. 6 million Jews murdered.</span></div>
+        <div class="tl-item"><span class="tl-year">Apr 30, 1945</span><span class="tl-event"><em>Hitler dies by suicide</em> in Berlin bunker as Soviet forces close in. Germany surrenders May 8, 1945.</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">Adolf Hitler</div><div class="person-role">Führer; charismatic demagogue; racial ideology</div></div>
+        <div class="person-card"><div class="person-name">Joseph Goebbels</div><div class="person-role">Reich Propaganda Minister; master of mass media</div></div>
+        <div class="person-card"><div class="person-name">Heinrich Himmler</div><div class="person-role">SS chief; Gestapo; architect of Holocaust</div></div>
+        <div class="person-card"><div class="person-name">Hermann Göring</div><div class="person-role">Luftwaffe chief; 4-Year Plan economic czar</div></div>
+        <div class="person-card"><div class="person-name">Ernst Röhm</div><div class="person-role">SA leader; killed in Night of the Long Knives</div></div>
+        <div class="person-card"><div class="person-name">Paul von Hindenburg</div><div class="person-role">President who appointed Hitler; died 1934</div></div>
+      </div>
+
+      <div class="methods-box">
+        <div class="methods-title">Methods of Control — the Five Pillars</div>
+        <ul>
+          <li><strong>Terror:</strong> SS, Gestapo (secret police), concentration camps — fear kept dissent silent</li>
+          <li><strong>Propaganda:</strong> Goebbels controlled all media; radio, film, rallies, posters — manufactured consent</li>
+          <li><strong>Youth indoctrination:</strong> Hitler Youth and League of German Girls from age 10 — created loyal generation</li>
+          <li><strong>Economic recovery:</strong> Autobahns, rearmament cut unemployment from 6M to near-zero (1933–36) — bought popular support</li>
+          <li><strong>Legal façade:</strong> Used Weimar constitution (Article 48, Enabling Act) to destroy democracy legally — gave legitimacy</li>
+        </ul>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Intentionalism (Dawidowicz, Trevor-Roper):</span> <span class="histo-def">Hitler had a clear master plan — Mein Kampf spelled out his goals. The Holocaust was always his intention. Leader's will drove everything.</span></div>
+        <div class="histo-item"><span class="histo-name">Functionalism / Structuralism (Broszat, Mommsen):</span> <span class="histo-def">The Nazi state was chaotic and polycratic — competing agencies without clear command. The Holocaust evolved gradually from radicalization of policy, not a single Führer-order.</span></div>
+        <div class="histo-item"><span class="histo-name">Synthesis (Ian Kershaw):</span> <span class="histo-def">"Working towards the Führer" — officials anticipated Hitler's wishes and competed to please him, without direct orders. Combines structure and intent. Most influential current view.</span></div>
+        <div class="histo-item"><span class="histo-name">Goldhagen ("Hitler's Willing Executioners"):</span> <span class="histo-def">Ordinary Germans were "eliminationist antisemites" who supported the Holocaust. Highly controversial — critics say it essentialises all Germans.</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CUBA AUTHORITARIAN -->
+  <div class="country-section">
+    <div class="country-header">
+      <div>
+        <div class="country-title">Cuba — Castro's Authoritarian State</div>
+        <div class="country-dates">1959 – present</div>
+      </div>
+      <span class="paper-badge badge-red">Cuba</span>
+    </div>
+    <div class="country-body">
+      <div class="context-box">
+        <strong>Context:</strong> By 1952, US companies owned 40% of Cuban sugar, most utilities, and telecommunications. Batista's regime was marked by gambling, corruption, and brutal political repression — while 1 in 3 Cubans lived in extreme poverty. 10,000+ political opponents were tortured or killed under Batista. The conditions made revolution inevitable.
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How Castro came to power (1952–1959)</div>
+        <div class="tl-item"><span class="tl-year">1952</span><span class="tl-event"><em>Batista's coup:</em> Cancels elections. Castro (then a lawyer) challenges it legally — fails. Concludes that Batista can only be removed by force.</span></div>
+        <div class="tl-item"><span class="tl-year">Jul 26, 1953</span><span class="tl-event"><em>Moncada Barracks attack</em> (Santiago de Cuba): Castro leads 135 rebels in attack on military barracks — fails; 60+ rebels killed or captured. At trial, Castro delivers <em>"History Will Absolve Me"</em> speech — becomes the manifesto of the revolution.</span></div>
+        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-event"><em>Amnesty and exile:</em> Castro released in amnesty; goes to Mexico. Meets <em>Che Guevara</em> — Argentine doctor and committed Marxist. Forms M-26-7 (July 26 Movement).</span></div>
+        <div class="tl-item"><span class="tl-year">Dec 1956</span><span class="tl-event"><em>Granma landing:</em> 82 men land in eastern Cuba. Batista's forces attack immediately; only 12 survive (including Fidel, Raúl Castro, Che Guevara). Retreat to Sierra Maestra mountains.</span></div>
+        <div class="tl-item"><span class="tl-year">1957–58</span><span class="tl-event"><em>Sierra Maestra guerrilla war:</em> Rebels win hearts of rural peasants; gain recruits. Urban underground (M-26-7) sabotages Batista in cities. Batista's forces brutal but demoralised. Frank País organises urban networks until his assassination (1957).</span></div>
+        <div class="tl-item"><span class="tl-year">Dec 31, 1958</span><span class="tl-event"><em>Batista flees:</em> After Che captures Santa Clara (key city). Batista escapes to Dominican Republic on New Year's Eve.</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 8, 1959</span><span class="tl-event"><em>Castro enters Havana</em> in triumph. Revolution succeeds after just 3 years of guerrilla warfare.</span></div>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-title">How the regime was consolidated (1959–1970s)</div>
+        <div class="tl-item"><span class="tl-year">1959</span><span class="tl-event"><em>Agrarian Reform Law:</em> Nationalised all landholdings over 400 hectares. Distributed land to peasants. Directly hit US sugar interests.</span></div>
+        <div class="tl-item"><span class="tl-year">1960</span><span class="tl-event"><em>Nationalisation wave:</em> US-owned refineries, utilities, and companies nationalised. US imposes trade embargo (still in force today). Cuba turns to USSR for support.</span></div>
+        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-event"><em>Literacy Campaign:</em> 100,000 student "brigadistas" sent to rural areas to teach reading. Illiteracy reduced from ~23% to ~3.9% in one year. Powerful tool for mobilisation and loyalty-building.</span></div>
+        <div class="tl-item"><span class="tl-year">Apr 1961</span><span class="tl-event"><em>Bay of Pigs:</em> 1,400 CIA-backed Cuban exiles attempt invasion — defeated in 72 hours. Catastrophic failure. Dramatically strengthens Castro's domestic and international standing.</span></div>
+        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-event"><em>Cuba declared socialist.</em> Castro announces Marxist-Leninist course. Single-party state — dissent is suppressed. Political opponents imprisoned; UMAP labour camps for "undesirables."</span></div>
+        <div class="tl-item"><span class="tl-year">Oct 1962</span><span class="tl-event"><em>Cuban Missile Crisis:</em> USSR places nuclear missiles in Cuba. 13-day standoff between Kennedy and Khrushchev — closest the world came to nuclear war. Resolved: USSR removes missiles; US pledges not to invade Cuba.</span></div>
+        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-event"><em>Communist Party of Cuba (PCC)</em> becomes the sole legal party. Total political monopoly formalised.</span></div>
+        <div class="tl-item"><span class="tl-year">1976</span><span class="tl-event"><em>New Constitution:</em> "Institutionalisation" of the revolution — Soviet-style structure. Cuba joins COMECON (Soviet economic bloc).</span></div>
+      </div>
+
+      <div class="people-grid">
+        <div class="person-card"><div class="person-name">Fidel Castro</div><div class="person-role">"El Comandante"; charismatic leader; ruled 1959–2008</div></div>
+        <div class="person-card"><div class="person-name">Che Guevara</div><div class="person-role">Guerrilla strategist; Marxist theorist; global revolutionary icon</div></div>
+        <div class="person-card"><div class="person-name">Raúl Castro</div><div class="person-role">Military chief; succeeded Fidel 2008–2018</div></div>
+        <div class="person-card"><div class="person-name">Camilo Cienfuegos</div><div class="person-role">Beloved commander; died in plane crash Oct 1959</div></div>
+        <div class="person-card"><div class="person-name">Frank País</div><div class="person-role">Urban underground leader; assassinated 1957</div></div>
+        <div class="person-card"><div class="person-name">José Martí</div><div class="person-role">Claimed as ideological ancestor by Castro</div></div>
+      </div>
+
+      <div class="methods-box">
+        <div class="methods-title">Methods of Control — Castro's Cuba</div>
+        <ul>
+          <li><strong>CDRs (Committees for Defence of the Revolution, 1960):</strong> Neighbourhood surveillance committees — every block had one; reported dissent</li>
+          <li><strong>Cult of personality:</strong> Castro's marathon speeches (often 4+ hours), propaganda, image as revolutionary hero</li>
+          <li><strong>Education and healthcare:</strong> Free universal healthcare and education — bought genuine loyalty from poor and rural Cubans</li>
+          <li><strong>Economic control:</strong> State owns all major enterprises; ration book (libreta) system ensures dependence on state</li>
+          <li><strong>Repression:</strong> Political prisoners; UMAP labour camps; exile of dissidents (1 million Cubans fled to US)</li>
+          <li><strong>Cold War alignment:</strong> Soviet economic subsidies (~$4–6 billion/year at peak) kept Cuba afloat</li>
+        </ul>
+      </div>
+
+      <div class="key-facts">
+        <div class="key-facts-title">Social Achievements (argue for Castro)</div>
+        <ul>
+          <li><strong>Literacy:</strong> Cuba went from ~23% illiteracy to one of the highest literacy rates in Latin America (99%+)</li>
+          <li><strong>Healthcare:</strong> Infant mortality rate dropped from 60 per 1,000 to 10 per 1,000 by 1985; life expectancy rivalled developed nations</li>
+          <li><strong>Land reform:</strong> Redistributed land to 100,000+ families who had been landless labourers</li>
+          <li><strong>Education:</strong> University access massively expanded; free at all levels</li>
+        </ul>
+      </div>
+
+      <div class="histo-box">
+        <div class="histo-title">Historiographical Perspectives</div>
+        <div class="histo-item"><span class="histo-name">Revolutionary / Pro-Castro:</span> <span class="histo-def">Castro liberated Cubans from US neo-colonialism and domestic inequality. Social achievements in health and education represent real gains for the poor.</span></div>
+        <div class="histo-item"><span class="histo-name">Liberal / Western:</span> <span class="histo-def">One-party state; suppression of free speech, press, religion; political prisoners. Social gains do not justify authoritarian control.</span></div>
+        <div class="histo-item"><span class="histo-name">Cold War lens:</span> <span class="histo-def">Cuba as Soviet satellite (critics) vs. Cuba as genuinely non-aligned experiment (defenders). US hostility forced Cuba toward USSR.</span></div>
+        <div class="histo-item"><span class="histo-name">Dependency theory:</span> <span class="histo-def">Castro broke the cycle of US economic exploitation. Cuban revolution as the only complete break from neo-colonialism in Latin America.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HISTORIOGRAPHY PAGE -->
+<div class="page" id="histo">
+
+  <div class="paper-header">
+    <span class="paper-badge badge-navy">Both Papers</span>
+    <h2>Historiographical Perspectives</h2>
+  </div>
+
+  <p style="color: var(--ink-muted); margin-bottom: 1.5rem; font-size: 0.9rem;">Naming and explaining a historiographical perspective in your IB essay significantly strengthens your argument. Below are the key schools — with specific uses for each topic.</p>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Intentionalism</div>
+    <div class="perspective-desc">The belief that a leader had a clear, pre-formed plan or ideology that drove their actions from the beginning. Their personal will and intentions are the primary explanation for events.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-navy">Hitler (Dawidowicz, Trevor-Roper)</span>
+      <span class="app-tag app-tag-red">Castro: "History Will Absolve Me" as plan</span>
+    </div>
+    <div style="margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-light);">
+      <strong>Key example:</strong> Intentionalists argue Hitler's antisemitism was explicit in Mein Kampf (1925) — the Holocaust was always the destination, not an improvised outcome.
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Functionalism / Structuralism</div>
+    <div class="perspective-desc">Argues that outcomes were shaped by the structures, institutions, and circumstances of the regime rather than a leader's master plan. Policy evolved through improvisation, competing bureaucracies, and situational pressures.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-navy">Hitler (Broszat, Mommsen — polycratic state)</span>
+      <span class="app-tag app-tag-red">Castro's revolution as responding to circumstances</span>
+    </div>
+    <div style="margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-light);">
+      <strong>Key example:</strong> Functionalists argue the Holocaust emerged through a "cumulative radicalization" — no single Hitler order; competing Nazi agencies escalated persecution step by step.
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Synthesis (Ian Kershaw)</div>
+    <div class="perspective-desc">"Working towards the Führer" — officials anticipated Hitler's ideological wishes and competed to implement them without explicit orders. Combines intent (Hitler's worldview) and structure (how it was actually executed).</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-navy">Hitler — most accepted current view</span>
+    </div>
+    <div style="margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-light);">
+      <strong>Key quote to paraphrase:</strong> Kershaw describes a regime that was "cumulative radicalisation" driven by Hitler's ideological vision but executed through polycratic structures.
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Subaltern / Grassroots Perspective</div>
+    <div class="perspective-desc">Developed by Ranajit Guha and the Subaltern Studies collective. Focuses on the experiences and agency of ordinary, marginalised people — peasants, women, workers — rather than elite leaders. Argues that "history from below" reveals a different story than official nationalist narratives.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-amber">India (Guha, Chatterjee)</span>
+      <span class="app-tag app-tag-green">South Africa (townships, trade unions)</span>
+      <span class="app-tag app-tag-red">US Civil Rights (local organisers)</span>
+      <span class="app-tag app-tag-red">Cuba (rural peasants, M-26-7 base)</span>
+    </div>
+    <div style="margin-top: 0.6rem; font-size: 0.85rem; color: var(--ink-light);">
+      <strong>Key example (India):</strong> Guha argues Gandhi's Non-Cooperation Movement obscures the autonomous peasant revolts (e.g., Mappila Rebellion 1921) that weren't led by Congress elites at all.
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Liberal / Top-Down Perspective</div>
+    <div class="perspective-desc">Focuses on great individuals, legal-constitutional change, and gradual reform within existing structures. Rights are won through legal challenges, legislation, and charismatic leadership.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-red">US Civil Rights (MLK, Supreme Court, LBJ)</span>
+      <span class="app-tag app-tag-green">South Africa (Mandela, de Klerk negotiations)</span>
+      <span class="app-tag app-tag-amber">India (Gandhi, Nehru, Congress leadership)</span>
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Marxist / Radical / Dependency Theory</div>
+    <div class="perspective-desc">Emphasises class conflict, economic exploitation, and systemic inequality. Apartheid, colonialism, and US domination of Cuba are explained as forms of economic exploitation, not just racial or political systems.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-green">Apartheid as racial capitalism (Harold Wolpe)</span>
+      <span class="app-tag app-tag-red">Cuba: US neo-colonialism; Castro as liberator</span>
+      <span class="app-tag app-tag-amber">India: drain of wealth theory (Dadabhai Naoroji)</span>
+    </div>
+  </div>
+
+  <div class="perspective-card">
+    <div class="perspective-name">Revisionist Perspectives</div>
+    <div class="perspective-desc">Challenges the dominant narrative — often questions whether the "official story" of a movement or regime is accurate, complete, or fair.</div>
+    <div class="applicable-tags">
+      <span class="app-tag app-tag-red">Goldhagen on Holocaust (ordinary Germans)</span>
+      <span class="app-tag app-tag-amber">India: Partition as failure; Ambedkar on Gandhi</span>
+      <span class="app-tag app-tag-red">Cuba: Castro as authoritarian despite social gains</span>
+    </div>
+  </div>
+</div>
+
+<!-- EXAM TIPS -->
+<div class="page" id="tips">
+
+  <div class="paper-header">
+    <span class="paper-badge badge-amber">Exam Strategy</span>
+    <h2>Tips for IB HL History</h2>
+  </div>
+
+  <div class="exam-tip">
+    <strong>The three IB questions: Start, Maintain, End</strong><br>
+    Most Paper 2 questions ask one of three things: How did X rise to power / How did X maintain control / Why did X end (or fail). Structure every essay around ONE of these timeframes — don't try to cover all three.
+  </div>
+
+  <div class="exam-tip">
+    <strong>Use historiography as a tool, not a name-drop.</strong><br>
+    Don't just name Intentionalism — explain what it means and apply it: "Intentionalist historians like Dawidowicz argue Hitler's racial ideology, outlined in Mein Kampf, made the Holocaust an inevitable outcome rather than a product of circumstance — this is supported by the deliberate escalation from Nuremberg Laws (1935) to extermination (1941–42)."
+  </div>
+
+  <div class="exam-tip">
+    <strong>Cross-topic perspectives save time.</strong><br>
+    The subaltern perspective works for India (Guha), South Africa (township resistance), and US Civil Rights (grassroots organisers). Learn one perspective deeply and deploy it across multiple questions.
+  </div>
+
+  <div class="exam-tip">
+    <strong>Cuba works for BOTH Paper 2 topics.</strong><br>
+    Castro's Cuba is both an independence movement (from Spain/US domination — Martí's legacy) AND an authoritarian state. In independence essays, emphasise Martí, sugar dependency, Platt Amendment. In authoritarian essays, emphasise Moncada, Sierra Maestra, CDRs, Bay of Pigs.
+  </div>
+
+  <div class="exam-tip">
+    <strong>Specific facts beat generalisations every time.</strong><br>
+    "The British were repressive" = weak. "The Rowlatt Act (1919) allowed imprisonment without trial for 2 years on suspicion of terrorism alone, applied retroactively — this united Indians across class and religion against British rule" = strong. Always anchor claims in a specific event, date, law, or statistic.
+  </div>
+
+  <div class="exam-tip">
+    <strong>Causation language for essays.</strong><br>
+    "This contributed to..." / "A more important factor was..." / "This alone cannot explain...because..." / "Intentionalist historians would argue X, however the functionalist counter-argument suggests..." These phrases signal historical thinking to examiners.
+  </div>
+
+  <div style="margin-top: 2rem;">
+    <div class="paper-header">
+      <span class="paper-badge badge-red">Quick Reference</span>
+      <h2>Key Dates at a Glance</h2>
+    </div>
+
+    <div class="two-col">
+      <div>
+        <div class="timeline-title" style="margin-bottom: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted);">Nazi Germany</div>
+        <div class="tl-item"><span class="tl-year">1923</span><span class="tl-event">Beer Hall Putsch / Mein Kampf</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 1933</span><span class="tl-event">Hitler appointed Chancellor</span></div>
+        <div class="tl-item"><span class="tl-year">Mar 1933</span><span class="tl-event">Enabling Act</span></div>
+        <div class="tl-item"><span class="tl-year">Jun 1934</span><span class="tl-event">Night of Long Knives</span></div>
+        <div class="tl-item"><span class="tl-year">1935</span><span class="tl-event">Nuremberg Laws</span></div>
+        <div class="tl-item"><span class="tl-year">1938</span><span class="tl-event">Kristallnacht</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 1942</span><span class="tl-event">Wannsee Conference</span></div>
+        <div class="tl-item"><span class="tl-year">Apr 1945</span><span class="tl-event">Hitler's death / Germany surrenders</span></div>
+      </div>
+      <div>
+        <div class="timeline-title" style="margin-bottom: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted);">Castro's Cuba</div>
+        <div class="tl-item"><span class="tl-year">1952</span><span class="tl-event">Batista's coup</span></div>
+        <div class="tl-item"><span class="tl-year">Jul 1953</span><span class="tl-event">Moncada attack / "History Will Absolve Me"</span></div>
+        <div class="tl-item"><span class="tl-year">Dec 1956</span><span class="tl-event">Granma landing (12 survivors)</span></div>
+        <div class="tl-item"><span class="tl-year">Jan 1959</span><span class="tl-event">Revolution succeeds</span></div>
+        <div class="tl-item"><span class="tl-year">Apr 1961</span><span class="tl-event">Bay of Pigs — CIA fails</span></div>
+        <div class="tl-item"><span class="tl-year">Oct 1962</span><span class="tl-event">Cuban Missile Crisis</span></div>
+        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-event">One-party state (PCC)</span></div>
+        <div class="tl-item"><span class="tl-year">1976</span><span class="tl-event">New constitution / Institutionalisation</span></div>
+      </div>
+    </div>
+
+    <div class="two-col" style="margin-top: 1.5rem;">
+      <div>
+        <div class="timeline-title" style="margin-bottom: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted);">Indian Independence</div>
+        <div class="tl-item"><span class="tl-year">1919</span><span class="tl-event">Rowlatt Act + Amritsar Massacre</span></div>
+        <div class="tl-item"><span class="tl-year">1920</span><span class="tl-event">Non-Cooperation Movement</span></div>
+        <div class="tl-item"><span class="tl-year">1930</span><span class="tl-event">Salt March (Dandi)</span></div>
+        <div class="tl-item"><span class="tl-year">1942</span><span class="tl-event">Quit India Movement</span></div>
+        <div class="tl-item"><span class="tl-year">Aug 1947</span><span class="tl-event">Independence + Partition</span></div>
+      </div>
+      <div>
+        <div class="timeline-title" style="margin-bottom: 0.6rem; font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--ink-muted);">US Civil Rights &amp; Apartheid</div>
+        <div class="tl-item"><span class="tl-year">1954</span><span class="tl-event">Brown v. Board of Education</span></div>
+        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-event">Montgomery Bus Boycott</span></div>
+        <div class="tl-item"><span class="tl-year">1960</span><span class="tl-event">Sharpeville Massacre / Greensboro Sit-ins</span></div>
+        <div class="tl-item"><span class="tl-year">1963</span><span class="tl-event">Birmingham + March on Washington</span></div>
+        <div class="tl-item"><span class="tl-year">1964–65</span><span class="tl-event">Civil Rights Act + Voting Rights Act</span></div>
+        <div class="tl-item"><span class="tl-year">1976</span><span class="tl-event">Soweto Uprising</span></div>
+        <div class="tl-item"><span class="tl-year">1990</span><span class="tl-event">Mandela freed / ANC unbanned</span></div>
+        <div class="tl-item"><span class="tl-year">1994</span><span class="tl-event">First democratic election — apartheid ends</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+function showPage(id) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  const idx = ['p1','p2a','p2b','histo','tips'].indexOf(id);
+  document.querySelectorAll('nav button')[idx].classList.add('active');
+  window.scrollTo(0, 0);
+}
+</script>
+</body>
+</html>
