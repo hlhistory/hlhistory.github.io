@@ -2,1199 +2,1266 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>IB HL History — Paper 3</title>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>IB SL Psychology — Paper 1 Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #0c0e1a;
-  --surface: #131627;
-  --surface2: #1a1e32;
-  --border: rgba(255,255,255,0.07);
-  --border2: rgba(255,255,255,0.13);
-  --text: #e8eaf0;
-  --muted: #8a90a8;
-  --faint: #4a5070;
+  :root {
+    --ink: #1a1410;
+    --paper: #f5f0e8;
+    --cream: #faf7f2;
+    --gold: #c9953a;
+    --gold-light: #e8b85a;
+    --navy: #1d2d44;
+    --bio: #2d6a4f;
+    --bio-light: #d8f3dc;
+    --bio-mid: #52b788;
+    --cog: #1a3a5c;
+    --cog-light: #dce8f5;
+    --cog-mid: #4a90c4;
+    --soc: #6b2d5e;
+    --soc-light: #f0d9ec;
+    --soc-mid: #b5579b;
+    --multi: #7a3b00;
+    --multi-light: #fff0d8;
+    --muted: #6b6358;
+    --border: #d4c9b5;
+    --shadow: 0 4px 24px rgba(26,20,16,0.10);
+  }
 
-  --tips:   #f5c842;
-  --civil:  #ff7043;
-  --libth:  #a855f7;
-  --cuba:   #ef4444;
-  --cw:     #38bdf8;
-  --sa:     #34d399;
-  --histo:  #94a3b8;
-}
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-body {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  font-size: 15px;
-  line-height: 1.7;
-  min-height: 100vh;
-}
+  body {
+    font-family: 'Source Serif 4', Georgia, serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.7;
+  }
 
-/* ── HEADER ──────────────────────────────── */
-.site-header {
-  padding: 1.6rem 1.2rem 1rem;
-  text-align: center;
-  border-bottom: 1px solid var(--border);
-  background: linear-gradient(180deg, #10132299 0%, transparent 100%);
-}
-.site-header h1 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.3rem, 5vw, 1.9rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
-  color: #fff;
-}
-.site-header p {
-  color: var(--muted);
-  font-size: 0.78rem;
-  font-weight: 300;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin-top: 0.3rem;
-}
+  /* ── HEADER ── */
+  header {
+    background: var(--navy);
+    color: var(--paper);
+    padding: 3.5rem 2rem 2.5rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 30px,
+      rgba(255,255,255,0.015) 30px,
+      rgba(255,255,255,0.015) 31px
+    );
+  }
+  .header-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+  header h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 0.6rem;
+  }
+  header h1 span { color: var(--gold-light); font-style: italic; }
+  header p {
+    font-size: 1rem;
+    color: rgba(245,240,232,0.7);
+    max-width: 540px;
+    margin: 0 auto 1.8rem;
+  }
+  .pill-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+  .pill {
+    padding: 0.3rem 0.9rem;
+    border-radius: 999px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    border: 1px solid;
+  }
+  .pill-bio  { color: var(--bio-mid);  border-color: var(--bio-mid);  background: rgba(45,106,79,0.15); }
+  .pill-cog  { color: var(--cog-mid);  border-color: var(--cog-mid);  background: rgba(26,58,92,0.25); }
+  .pill-soc  { color: var(--soc-mid);  border-color: var(--soc-mid);  background: rgba(107,45,94,0.2); }
+  .pill-multi{ color: var(--gold-light);border-color:var(--gold-light);background:rgba(201,149,58,0.2);}
 
-/* ── NAV ─────────────────────────────────── */
-.nav-wrap {
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  background: var(--surface);
-  border-bottom: 1px solid var(--border);
-  overflow-x: auto;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-.nav-wrap::-webkit-scrollbar { display: none; }
-.nav-inner {
-  display: flex;
-  min-width: max-content;
-  padding: 0 0.3rem;
-}
-.tab-btn {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--muted);
-  background: none;
-  border: none;
-  border-bottom: 2.5px solid transparent;
-  padding: 0.85rem 1rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: color 0.15s, border-color 0.15s;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-.tab-btn .dot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: currentColor;
-  opacity: 0.5;
-  flex-shrink: 0;
-}
-.tab-btn.active { color: var(--text); }
-.tab-btn.active .dot { opacity: 1; }
-.tab-btn[data-topic="tips"].active   { color: var(--tips); border-bottom-color: var(--tips); }
-.tab-btn[data-topic="civil"].active  { color: var(--civil); border-bottom-color: var(--civil); }
-.tab-btn[data-topic="libth"].active  { color: var(--libth); border-bottom-color: var(--libth); }
-.tab-btn[data-topic="cuba"].active   { color: var(--cuba); border-bottom-color: var(--cuba); }
-.tab-btn[data-topic="cw"].active     { color: var(--cw); border-bottom-color: var(--cw); }
-.tab-btn[data-topic="sa"].active     { color: var(--sa); border-bottom-color: var(--sa); }
-.tab-btn[data-topic="histo"].active  { color: var(--histo); border-bottom-color: var(--histo); }
+  /* ── NAV ── */
+  nav {
+    background: var(--cream);
+    border-bottom: 2px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(26,20,16,0.07);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-btn {
+    padding: 1rem 1.4rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: var(--muted);
+    border-bottom: 3px solid transparent;
+    margin-bottom: -2px;
+    white-space: nowrap;
+    transition: color 0.2s, border-color 0.2s;
+  }
+  .nav-btn:hover { color: var(--ink); }
+  .nav-btn.active-bio  { color: var(--bio);  border-color: var(--bio); }
+  .nav-btn.active-cog  { color: var(--cog);  border-color: var(--cog); }
+  .nav-btn.active-soc  { color: var(--soc);  border-color: var(--soc); }
+  .nav-btn.active-gold { color: var(--gold); border-color: var(--gold); }
+  .nav-btn.active-def  { color: var(--navy); border-color: var(--navy); }
 
-/* ── PAGES ───────────────────────────────── */
-.page { display: none; max-width: 820px; margin: 0 auto; padding: 1.4rem 1rem 4rem; }
-.page.active { display: block; }
+  /* ── LAYOUT ── */
+  main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
 
-/* ── TOPIC BANNER ────────────────────────── */
-.topic-banner {
-  display: flex;
-  align-items: flex-end;
-  gap: 0.8rem;
-  margin-bottom: 1.4rem;
-  padding-bottom: 0.8rem;
-  border-bottom: 1px solid var(--border);
-}
-.topic-banner h2 {
-  font-family: 'Syne', sans-serif;
-  font-size: clamp(1.2rem, 4vw, 1.6rem);
-  font-weight: 700;
-  color: #fff;
-  line-height: 1.15;
-}
-.topic-banner .span-label {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.65rem;
-  border-radius: 20px;
-  white-space: nowrap;
-  margin-bottom: 0.2rem;
-}
+  section { display: none; }
+  section.visible { display: block; }
 
-/* ── CARD ────────────────────────────────── */
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  overflow: hidden;
-}
-.card-header {
-  padding: 0.7rem 1rem;
-  border-bottom: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  cursor: pointer;
-  user-select: none;
-  gap: 0.5rem;
-}
-.card-header h3 {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  flex: 1;
-}
-.card-toggle {
-  font-size: 0.9rem;
-  color: var(--faint);
-  transition: transform 0.2s;
-  flex-shrink: 0;
-}
-.card.collapsed .card-toggle { transform: rotate(-90deg); }
-.card.collapsed .card-body { display: none; }
-.card-body { padding: 0.9rem 1rem; }
+  /* ── SECTION HEADER ── */
+  .section-header {
+    margin-bottom: 2.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-end;
+    gap: 1.2rem;
+    flex-wrap: wrap;
+  }
+  .approach-badge {
+    width: 54px; height: 54px;
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .badge-bio  { background: var(--bio-light);  }
+  .badge-cog  { background: var(--cog-light);  }
+  .badge-soc  { background: var(--soc-light);  }
+  .badge-gold { background: var(--multi-light); }
+  .badge-def  { background: #e8e2d8; }
+  .section-title-wrap h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  .section-title-wrap p {
+    color: var(--muted);
+    font-size: 0.92rem;
+    margin-top: 0.15rem;
+  }
 
-/* ── CONTEXT BOX ─────────────────────────── */
-.context {
-  font-size: 0.88rem;
-  color: #b0b8d0;
-  line-height: 1.65;
-  padding: 0.8rem;
-  background: var(--surface2);
-  border-radius: 6px;
-  border-left: 2.5px solid var(--faint);
-  margin-bottom: 1rem;
-}
-.context strong { color: var(--text); font-weight: 600; }
+  /* ── ESSAY BOX ── */
+  .essay-box {
+    background: var(--navy);
+    color: var(--paper);
+    border-radius: 14px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+  }
+  .essay-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--gold-light);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .essay-parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
+  .essay-part {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 1rem 1.1rem;
+  }
+  .essay-part-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.4rem;
+  }
+  .essay-part p { font-size: 0.88rem; color: rgba(245,240,232,0.85); line-height: 1.55; }
 
-/* ── TIMELINE ────────────────────────────── */
-.tl { margin-bottom: 0.4rem; }
-.tl-item {
-  display: grid;
-  grid-template-columns: 58px 1fr;
-  gap: 0.6rem;
-  margin-bottom: 0.55rem;
-  font-size: 0.86rem;
-  line-height: 1.55;
-  align-items: start;
-}
-.tl-year {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.78rem;
-  font-weight: 700;
-  padding-top: 0.15rem;
-  text-align: right;
-  color: var(--faint);
-}
-.tl-text { color: #b8c0d8; }
-.tl-text em { color: var(--text); font-style: normal; font-weight: 600; }
-.tl-text small { color: var(--muted); font-size: 0.82em; display: block; margin-top: 0.1rem; }
+  /* ── STUDY CARDS ── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.4rem;
+    margin-bottom: 2.5rem;
+  }
+  .study-card {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .study-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(26,20,16,0.14);
+  }
+  .card-header {
+    padding: 1rem 1.2rem 0.8rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 0.8rem;
+  }
+  .card-title-block { flex: 1; }
+  .card-study-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.25;
+  }
+  .card-year {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+  }
+  .card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+  .tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.63rem;
+    letter-spacing: 0.07em;
+    padding: 0.18rem 0.6rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+  .tag-bio  { background: var(--bio-light);  color: var(--bio); }
+  .tag-cog  { background: var(--cog-light);  color: var(--cog); }
+  .tag-soc  { background: var(--soc-light);  color: var(--soc); }
+  .tag-multi{ background: var(--multi-light); color: var(--multi); }
+  .star-badge {
+    background: var(--gold);
+    color: white;
+    border-radius: 8px;
+    width: 28px; height: 28px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 8px rgba(201,149,58,0.4);
+  }
+  .card-body { padding: 1rem 1.2rem; }
+  .card-row {
+    display: grid;
+    grid-template-columns: 90px 1fr;
+    gap: 0.3rem 0.6rem;
+    font-size: 0.86rem;
+    margin-bottom: 0.5rem;
+  }
+  .card-row-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--muted);
+    padding-top: 0.15rem;
+  }
+  .card-row-val { color: var(--ink); }
+  .card-remember {
+    margin-top: 0.8rem;
+    padding: 0.7rem 0.9rem;
+    background: #fffbf3;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    font-size: 0.83rem;
+    font-style: italic;
+    color: var(--ink);
+  }
+  .card-remember strong { font-style: normal; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.2rem; }
+  .card-sw { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.8rem; }
+  .sw-box { padding: 0.5rem 0.7rem; border-radius: 6px; font-size: 0.8rem; }
+  .sw-box strong { display: block; font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
+  .sw-strength { background: #edf7f0; color: #2d6a4f; }
+  .sw-strength strong { color: #2d6a4f; }
+  .sw-weakness { background: #fef1f0; color: #8b2e20; }
+  .sw-weakness strong { color: #8b2e20; }
 
-/* Topic-colored years */
-.page[data-topic="civil"]  .tl-year { color: var(--civil); }
-.page[data-topic="libth"]  .tl-year { color: var(--libth); }
-.page[data-topic="cuba"]   .tl-year { color: var(--cuba); }
-.page[data-topic="cw"]     .tl-year { color: var(--cw); }
-.page[data-topic="sa"]     .tl-year { color: var(--sa); }
+  /* ── SUBSECTION TITLE ── */
+  .sub-heading {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin: 2rem 0 1.2rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px dashed var(--border);
+  }
 
-/* ── PEOPLE ──────────────────────────────── */
-.people {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(155px, 1fr));
-  gap: 0.5rem;
-}
-.person {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.55rem 0.7rem;
-  font-size: 0.83rem;
-}
-.person-name {
-  font-weight: 600;
-  color: var(--text);
-  font-size: 0.85rem;
-  margin-bottom: 0.1rem;
-}
-.person-role { color: var(--muted); font-size: 0.78rem; line-height: 1.4; }
+  /* ── MULTI-USE HIGHLIGHT BOX ── */
+  .multi-box {
+    background: var(--multi-light);
+    border: 1.5px solid #e8c07a;
+    border-radius: 14px;
+    padding: 1.5rem 1.8rem;
+    margin-bottom: 2.5rem;
+  }
+  .multi-box h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    color: var(--multi);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .multi-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+  .multi-table th {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--multi);
+    text-align: left;
+    padding: 0.5rem 0.8rem;
+    background: rgba(122,59,0,0.06);
+    border-bottom: 1px solid #e8c07a;
+  }
+  .multi-table td {
+    padding: 0.6rem 0.8rem;
+    border-bottom: 1px solid rgba(232,192,122,0.4);
+    vertical-align: top;
+  }
+  .multi-table tr:last-child td { border-bottom: none; }
+  .multi-table tr:hover td { background: rgba(232,192,122,0.15); }
 
-/* ── TAGS ────────────────────────────────── */
-.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 0.7rem; }
-.tag {
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 0.2rem 0.6rem;
-  border-radius: 20px;
-  border: 1px solid var(--border2);
-  color: var(--muted);
-  background: var(--surface2);
-}
+  /* ── DEFINITIONS ── */
+  .def-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+  }
+  .def-card {
+    background: var(--cream);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    padding: 1rem 1.2rem;
+  }
+  .def-term {
+    font-family: 'Playfair Display', serif;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--navy);
+    margin-bottom: 0.35rem;
+  }
+  .def-text { font-size: 0.85rem; color: var(--ink); line-height: 1.55; }
+  .def-section-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin: 2rem 0 0.8rem;
+    padding-left: 0.2rem;
+  }
 
-/* ── KEY FACTS ───────────────────────────── */
-.kf-list { list-style: none; }
-.kf-list li {
-  display: flex;
-  gap: 0.5rem;
-  font-size: 0.87rem;
-  color: #b0b8d0;
-  padding: 0.35rem 0;
-  border-bottom: 1px solid var(--border);
-  line-height: 1.5;
-}
-.kf-list li:last-child { border-bottom: none; }
-.kf-list li::before {
-  content: '—';
-  color: var(--faint);
-  flex-shrink: 0;
-  font-weight: 600;
-}
-.kf-list li strong { color: var(--text); font-weight: 600; }
+  /* ── QUESTION HINTS ── */
+  .qhint-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 0.7rem;
+    margin-bottom: 2rem;
+  }
+  .qhint {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.7rem 1rem;
+    font-size: 0.84rem;
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+  }
+  .qhint-icon { font-size: 0.9rem; margin-top: 0.1rem; flex-shrink: 0; }
+  .qhint-text { line-height: 1.45; }
+  .qhint-study {
+    display: block;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.68rem;
+    color: var(--muted);
+    margin-top: 0.2rem;
+  }
 
-/* ── ESSAY ANGLE BOX ─────────────────────── */
-.essay-box {
-  border-radius: 6px;
-  padding: 0.75rem 0.9rem;
-  margin-bottom: 0.6rem;
-  font-size: 0.86rem;
-  line-height: 1.6;
-}
-.essay-box .essay-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 0.35rem;
-}
-.essay-box p { color: #b8c0d8; }
-.essay-box p strong { color: var(--text); }
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+    border-top: 1px solid var(--border);
+  }
 
-/* Topic-colored essay boxes */
-.page[data-topic="civil"]  .essay-box { background: rgba(255,112,67,0.08);  border: 1px solid rgba(255,112,67,0.2);  }
-.page[data-topic="civil"]  .essay-box .essay-label { color: var(--civil); }
-.page[data-topic="libth"]  .essay-box { background: rgba(168,85,247,0.08);  border: 1px solid rgba(168,85,247,0.2);  }
-.page[data-topic="libth"]  .essay-box .essay-label { color: var(--libth); }
-.page[data-topic="cuba"]   .essay-box { background: rgba(239,68,68,0.08);   border: 1px solid rgba(239,68,68,0.2);   }
-.page[data-topic="cuba"]   .essay-box .essay-label { color: var(--cuba); }
-.page[data-topic="cw"]     .essay-box { background: rgba(56,189,248,0.08);  border: 1px solid rgba(56,189,248,0.2);  }
-.page[data-topic="cw"]     .essay-box .essay-label { color: var(--cw); }
-.page[data-topic="sa"]     .essay-box { background: rgba(52,211,153,0.08);  border: 1px solid rgba(52,211,153,0.2);  }
-.page[data-topic="sa"]     .essay-box .essay-label { color: var(--sa); }
-
-/* ── HISTO PERSPECTIVE ───────────────────── */
-.histo-card {
-  border-radius: 8px;
-  padding: 0.85rem 1rem;
-  margin-bottom: 0.8rem;
-  border: 1px solid var(--border);
-  background: var(--surface2);
-}
-.histo-name {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.88rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.3rem;
-}
-.histo-def {
-  font-size: 0.86rem;
-  color: var(--muted);
-  line-height: 1.6;
-}
-.histo-def strong { color: var(--text); font-weight: 600; }
-.histo-applies {
-  margin-top: 0.5rem;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.3rem;
-}
-.histo-tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  padding: 0.15rem 0.5rem;
-  border-radius: 4px;
-}
-
-/* ── WRITING TIPS ────────────────────────── */
-.tips-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
-  gap: 0.8rem;
-  margin-bottom: 1rem;
-}
-.tip-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 9px;
-  padding: 0.85rem 1rem;
-}
-.tip-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--tips);
-  margin-bottom: 0.4rem;
-}
-.tip-card h4 {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.9rem;
-  font-weight: 700;
-  color: var(--text);
-  margin-bottom: 0.35rem;
-}
-.tip-card p, .tip-card li {
-  font-size: 0.85rem;
-  color: #9aa0ba;
-  line-height: 1.6;
-}
-.tip-card ul { padding-left: 1rem; }
-.tip-card li { margin-bottom: 0.2rem; }
-.tip-card li strong { color: var(--text); font-weight: 600; }
-.tip-card li em { color: var(--tips); font-style: normal; font-weight: 600; }
-
-.do-dont {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.7rem;
-  margin-bottom: 1rem;
-}
-@media (max-width: 480px) { .do-dont { grid-template-columns: 1fr; } }
-.do-box, .dont-box {
-  border-radius: 8px;
-  padding: 0.75rem 0.9rem;
-  font-size: 0.84rem;
-}
-.do-box {
-  background: rgba(52,211,153,0.07);
-  border: 1px solid rgba(52,211,153,0.2);
-}
-.dont-box {
-  background: rgba(239,68,68,0.07);
-  border: 1px solid rgba(239,68,68,0.2);
-}
-.do-box .box-label { color: var(--sa); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
-.dont-box .box-label { color: var(--cuba); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.4rem; }
-.do-box ul, .dont-box ul { padding-left: 1rem; }
-.do-box li, .dont-box li { color: #9aa0ba; margin-bottom: 0.25rem; }
-.do-box li strong { color: var(--sa); font-weight: 600; }
-.dont-box li strong { color: var(--cuba); font-weight: 600; }
-
-.command-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 0.5rem;
-  margin-bottom: 1rem;
-}
-.command-card {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: 7px;
-  padding: 0.6rem 0.8rem;
-}
-.command-term {
-  font-family: 'Syne', sans-serif;
-  font-size: 0.83rem;
-  font-weight: 700;
-  color: var(--tips);
-  margin-bottom: 0.2rem;
-}
-.command-def { font-size: 0.82rem; color: var(--muted); line-height: 1.5; }
-
-/* ── QUOTE ───────────────────────────────── */
-.quote {
-  border-left: 2.5px solid var(--faint);
-  padding: 0.4rem 0.8rem;
-  margin: 0.5rem 0;
-  font-size: 0.84rem;
-  color: var(--muted);
-  font-style: italic;
-}
-.quote cite { font-style: normal; font-size: 0.78rem; display: block; margin-top: 0.2rem; color: var(--faint); }
-
-/* ── TOPIC SPAN LABEL COLORS ─────────────── */
-.span-tips   { background: rgba(245,200,66,0.12);  color: var(--tips);  border: 1px solid rgba(245,200,66,0.25);  }
-.span-civil  { background: rgba(255,112,67,0.12);  color: var(--civil); border: 1px solid rgba(255,112,67,0.25); }
-.span-libth  { background: rgba(168,85,247,0.12);  color: var(--libth); border: 1px solid rgba(168,85,247,0.25); }
-.span-cuba   { background: rgba(239,68,68,0.12);   color: var(--cuba);  border: 1px solid rgba(239,68,68,0.25);  }
-.span-cw     { background: rgba(56,189,248,0.12);  color: var(--cw);    border: 1px solid rgba(56,189,248,0.25); }
-.span-sa     { background: rgba(52,211,153,0.12);  color: var(--sa);    border: 1px solid rgba(52,211,153,0.25); }
-.span-histo  { background: rgba(148,163,184,0.12); color: var(--histo); border: 1px solid rgba(148,163,184,0.2);}
-
-/* Histo tags */
-.ht-civil  { background: rgba(255,112,67,0.12);  color: var(--civil); }
-.ht-libth  { background: rgba(168,85,247,0.12);  color: var(--libth); }
-.ht-cuba   { background: rgba(239,68,68,0.12);   color: var(--cuba); }
-.ht-cw     { background: rgba(56,189,248,0.12);  color: var(--cw); }
-.ht-sa     { background: rgba(52,211,153,0.12);  color: var(--sa); }
-
-/* ── MISC ────────────────────────────────── */
-.section-label {
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--faint);
-  margin: 1.2rem 0 0.6rem;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-.section-label::after { content: ''; flex: 1; height: 1px; background: var(--border); }
-
-.sub-section { margin-bottom: 1.2rem; }
-
-@media (max-width: 520px) {
-  .people { grid-template-columns: 1fr 1fr; }
-  .tips-grid { grid-template-columns: 1fr; }
-  .command-grid { grid-template-columns: 1fr 1fr; }
-}
-@media (max-width: 360px) {
-  .people { grid-template-columns: 1fr; }
-  .command-grid { grid-template-columns: 1fr; }
-}
+  @media (max-width: 600px) {
+    header { padding: 2.5rem 1rem 2rem; }
+    .cards-grid { grid-template-columns: 1fr; }
+    .def-grid { grid-template-columns: 1fr; }
+  }
 </style>
 </head>
 <body>
 
-<div class="site-header">
-  <h1>IB HL History — Paper 3</h1>
-  <p>The Americas &nbsp;·&nbsp; Revision Guide</p>
-</div>
+<header>
+  <div class="header-label">IB SL Psychology · Paper 1</div>
+  <h1>The <span>Complete</span> Study Guide</h1>
+  <p>Biological · Cognitive · Sociocultural approaches — with key studies, definitions, and essay structure.</p>
+  <div class="pill-row">
+    <span class="pill pill-bio">🧬 Biological</span>
+    <span class="pill pill-cog">🧠 Cognitive</span>
+    <span class="pill pill-soc">🌍 Sociocultural</span>
+    <span class="pill pill-multi">⭐ Multi-Use</span>
+  </div>
+</header>
 
-<div class="nav-wrap">
+<nav>
   <div class="nav-inner">
-    <button class="tab-btn active" data-topic="tips" onclick="show('tips',this)"><span class="dot"></span>Writing Tips</button>
-    <button class="tab-btn" data-topic="civil" onclick="show('civil',this)"><span class="dot"></span>Civil Rights</button>
-    <button class="tab-btn" data-topic="libth" onclick="show('libth',this)"><span class="dot"></span>Liberation Theology</button>
-    <button class="tab-btn" data-topic="cuba" onclick="show('cuba',this)"><span class="dot"></span>Cuba</button>
-    <button class="tab-btn" data-topic="cw" onclick="show('cw',this)"><span class="dot"></span>Cold War (US)</button>
-    <button class="tab-btn" data-topic="sa" onclick="show('sa',this)"><span class="dot"></span>Chile &amp; Argentina</button>
-    <button class="tab-btn" data-topic="histo" onclick="show('histo',this)"><span class="dot"></span>Historiography</button>
+    <button class="nav-btn active-gold" onclick="show('essay')">📋 Essay Structure</button>
+    <button class="nav-btn" onclick="show('multi')">⭐ Multi-Use Studies</button>
+    <button class="nav-btn" onclick="show('bio')">🧬 Biological</button>
+    <button class="nav-btn" onclick="show('cog')">🧠 Cognitive</button>
+    <button class="nav-btn" onclick="show('soc')">🌍 Sociocultural</button>
+    <button class="nav-btn" onclick="show('defs')">📖 Definitions</button>
   </div>
-</div>
+</nav>
 
-<!-- ══════════════════════════════════════════
-     WRITING TIPS
-══════════════════════════════════════════ -->
-<div class="page active" id="tips">
-  <div class="topic-banner">
-    <div>
-      <h2>Writing Tips</h2>
-    </div>
-    <span class="span-label span-tips">Paper 3 — 3 essays, 2.5 hrs</span>
-  </div>
+<main>
 
-  <div class="section-label">IB command terms</div>
-  <div class="command-grid">
-    <div class="command-card"><div class="command-term">To What Extent</div><div class="command-def">Give a direct answer, weigh evidence on both sides, qualify your conclusion</div></div>
-    <div class="command-card"><div class="command-term">Examine</div><div class="command-def">Describe AND explain causes/consequences — don't just list events</div></div>
-    <div class="command-card"><div class="command-term">Discuss</div><div class="command-def">Present multiple perspectives, weigh their merits, reach a judgement</div></div>
-    <div class="command-card"><div class="command-term">Compare &amp; Contrast</div><div class="command-def">Similarities AND differences — interweave, don't split into two halves</div></div>
-    <div class="command-card"><div class="command-term">Evaluate</div><div class="command-def">Judge significance, success, or validity — requires evidence for your judgement</div></div>
-    <div class="command-card"><div class="command-term">Assess</div><div class="command-def">Weigh importance of factors — show awareness of competing views</div></div>
-  </div>
-
-  <div class="section-label">Essay structure (PEEL per paragraph)</div>
-  <div class="tips-grid">
-    <div class="tip-card">
-      <div class="tip-label">Intro</div>
-      <h4>Direct Thesis First</h4>
-      <ul>
-        <li>Answer the question in <strong>sentence 1</strong> — don't build up to it</li>
-        <li>Name your <em>2–3 key arguments</em></li>
-        <li>Drop one historiographical school to signal critical thinking</li>
-        <li>Avoid "Since the dawn of time..." or "This essay will explore..."</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Body Paragraphs — PEEL</div>
-      <h4>Point → Evidence → Explain → Link</h4>
-      <ul>
-        <li><strong>Point:</strong> One clear argument that answers the question</li>
-        <li><strong>Evidence:</strong> Specific date, name, event, statistic</li>
-        <li><strong>Explain:</strong> Why does this evidence support your point?</li>
-        <li><strong>Link:</strong> Connect back to the thesis</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Historiography</div>
-      <h4>Name → Define → Apply → Qualify</h4>
-      <ul>
-        <li>Name the <em>school</em>, not just "historians say"</li>
-        <li>Explain what the school argues in one sentence</li>
-        <li>Apply it to the specific question with evidence</li>
-        <li>Push back — "However, this overlooks..."</li>
-      </ul>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Conclusion</div>
-      <h4>Qualify, Don't Just Repeat</h4>
-      <ul>
-        <li>Restate thesis with nuance — "While X was crucial, Y ultimately..."</li>
-        <li>Note the historical debate — "Revisionist historians challenge..."</li>
-        <li>Avoid "In conclusion, I have shown..." — just conclude</li>
-        <li>End on a historical judgement, not a summary</li>
-      </ul>
+<!-- ══════════════════════════════════════════════ ESSAY STRUCTURE -->
+<section id="essay" class="visible">
+  <div class="section-header">
+    <div class="approach-badge badge-gold">📋</div>
+    <div class="section-title-wrap">
+      <h2>Essay Structure</h2>
+      <p>The blueprint for every Paper 1 answer</p>
     </div>
   </div>
 
-  <div class="section-label">Dos and don'ts</div>
-  <div class="do-dont">
-    <div class="do-box">
-      <div class="box-label">Do</div>
-      <ul>
-        <li>Open with a <strong>direct answer</strong> to the question</li>
-        <li>Use <strong>specific dates</strong> — not "the 1960s"</li>
-        <li>Acknowledge <strong>counterarguments</strong> before dismissing them</li>
-        <li>Deploy at least <strong>2 historiographical perspectives</strong></li>
-        <li>Quote or paraphrase a <strong>named historian</strong></li>
-        <li>Show <strong>causation</strong> — "This resulted in... because..."</li>
-      </ul>
-    </div>
-    <div class="dont-box">
-      <div class="box-label">Don't</div>
-      <ul>
-        <li><strong>Narrate events</strong> — analyse them</li>
-        <li>Use <strong>vague language</strong> — "many people," "various reasons"</li>
-        <li>Write a <strong>one-sided essay</strong> with no counterargument</li>
-        <li>Spend time on <strong>pre-question context</strong> that isn't asked</li>
-        <li>Use <strong>bullet points</strong> in the essay itself</li>
-        <li>Confuse <strong>description</strong> for analysis</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="section-label">IB mark criteria (Paper 3)</div>
-  <div class="tips-grid">
-    <div class="tip-card">
-      <div class="tip-label">Criterion A — 6 marks</div>
-      <h4>Knowledge &amp; Understanding</h4>
-      <p>Specific dates, names, events, places. Accurate and relevant. Avoid errors — one factual mistake costs marks.</p>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Criterion B — 6 marks</div>
-      <h4>Critical Thinking</h4>
-      <p>Analysis, synthesis, evaluation. Historiographical debate. Multiple perspectives. Comparing causes, effects, significance.</p>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Criterion C — 6 marks</div>
-      <h4>Structure</h4>
-      <p>Clear thesis, logical progression, coherent argument throughout, strong conclusion that returns to the thesis.</p>
-    </div>
-    <div class="tip-card">
-      <div class="tip-label">Criterion D — 2 marks</div>
-      <h4>Style of Communication</h4>
-      <p>Clear, academic prose. Correct terminology. Appropriate essay format — no lists, no bullet points.</p>
-    </div>
-  </div>
-
-  <div class="section-label">Useful analytical phrases</div>
-  <div class="card">
-    <div class="card-body">
-      <ul class="kf-list">
-        <li><strong>"To a significant extent..."</strong> — opens a nuanced "to what extent" answer</li>
-        <li><strong>"However, the [x] interpretation overlooks..."</strong> — signals critical thinking</li>
-        <li><strong>"This was a necessary but not sufficient cause because..."</strong> — sophisticated causation</li>
-        <li><strong>"While orthodox historians argue X, the revisionist view holds Y..."</strong> — deploys historiography</li>
-        <li><strong>"The evidence suggests a more complex picture..."</strong> — avoids oversimplification</li>
-        <li><strong>"This must be contextualised within..."</strong> — shows awareness of broader forces</li>
-        <li><strong>"A subaltern reading of this event reveals..."</strong> — deploys perspective directly</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     CIVIL RIGHTS (AMERICAS)
-══════════════════════════════════════════ -->
-<div class="page" id="civil" data-topic="civil">
-  <div class="topic-banner">
-    <div>
-      <h2>Civil Rights — The Americas</h2>
-    </div>
-    <span class="span-label span-civil">1950s – 1970s</span>
-  </div>
-
-  <div class="context">
-    <strong>Context:</strong> Black Americans lived under Jim Crow — legally enforced segregation in the South since Reconstruction. The 1896 Plessy v. Ferguson ruling declared "separate but equal" constitutional. After WWII, Black veterans returned from fighting fascism abroad to face segregation at home — creating powerful moral contradictions that drove the movement. The Cold War also mattered: US government was embarrassed by visible racism undermining its claim to represent freedom globally.
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Legal Foundations &amp; Early Challenges (1909–1955)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1909</span><span class="tl-text"><em>NAACP founded</em> — Legal strategy: fight segregation through the courts. Thurgood Marshall becomes lead litigator.</span></div>
-        <div class="tl-item"><span class="tl-year">1941</span><span class="tl-text"><em>A. Philip Randolph threatens March on Washington</em> — forces FDR to issue Executive Order 8802 banning racial discrimination in defence industries. Shows political leverage.</span></div>
-        <div class="tl-item"><span class="tl-year">1948</span><span class="tl-text"><em>Truman desegregates the US military</em> (Executive Order 9981) — under pressure from Randolph; first major federal step.</span></div>
-        <div class="tl-item"><span class="tl-year">1954</span><span class="tl-text"><em>Brown v. Board of Education</em> — Supreme Court unanimously overturns Plessy. Thurgood Marshall argues the case. "Separate is inherently unequal." <small>The NAACP's biggest legal victory — but implementation required mass protest.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-text"><em>Emmett Till murdered</em> — 14-year-old tortured and killed in Mississippi. Killers acquitted by all-white jury. Open casket funeral galvanises the nation.</span></div>
-        <div class="tl-item"><span class="tl-year">1955–56</span><span class="tl-text"><em>Montgomery Bus Boycott</em> — Rosa Parks arrested. MLK emerges as national leader. 381-day boycott. Supreme Court rules bus segregation unconstitutional. <small>Key: economic pressure + nonviolent discipline + legal challenge working together.</small></span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Direct Action — The Movement's Peak (1960–1963)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1960</span><span class="tl-text"><em>Greensboro Sit-ins</em> — 4 Black students at Woolworth's; spreads to 55 cities in weeks. SNCC founded. Shows the power of disciplined youth-led protest.</span></div>
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Freedom Rides</em> — CORE and SNCC test desegregation on interstate buses. Mob violence in Anniston, Birmingham. Attorney General Robert Kennedy forced to act. <small>The strategy: provoke violence → force federal response → expose Southern racism to the world.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1963</span><span class="tl-text"><em>Birmingham Campaign</em> — MLK deliberately provokes Police Commissioner "Bull" Connor. Fire hoses and police dogs on peaceful protesters. Global TV coverage forces JFK to propose civil rights legislation.</span></div>
-        <div class="tl-item"><span class="tl-year">Aug 1963</span><span class="tl-text"><em>March on Washington</em> — 250,000 marchers. MLK: "I Have a Dream." Largest US demonstration to date. John Lewis (SNCC) gives fiery speech. <small>Demonstrates the movement's breadth — but also tensions between moderate and radical wings.</small></span></div>
-        <div class="tl-item"><span class="tl-year">Sep 1963</span><span class="tl-text"><em>16th Street Baptist Church bombing</em> — KKK kills four girls: Addie Mae Collins, Cynthia Wesley, Carole Robertson, Carol Denise McNair. Shocks even moderate white opinion.</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Legislation &amp; Selma (1964–1965)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1964</span><span class="tl-text"><em>Civil Rights Act</em> — Banned discrimination in public spaces and employment. Signed by LBJ. Three-week Senate filibuster (60+ days) — longest in US history. <small>Significant, but didn't address voting rights or structural poverty.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1964</span><span class="tl-text"><em>Freedom Summer</em> — 1,000 student volunteers register Black voters in Mississippi. James Chaney, Andrew Goodman, Michael Schwerner murdered by KKK-police. FBI knew beforehand.</span></div>
-        <div class="tl-item"><span class="tl-year">Mar 1965</span><span class="tl-text"><em>"Bloody Sunday" — Selma</em> — State troopers beat marchers on Edmund Pettus Bridge. John Lewis suffered fractured skull. Televised nationally; LBJ addresses Congress: "We Shall Overcome." <small>Arguably the most effective single image of the movement — forced the Voting Rights Act through.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-text"><em>Voting Rights Act</em> — Outlawed discriminatory voting practices (literacy tests, poll taxes). Within 2 years: Black voter registration in Mississippi rose from 6.7% to 59.8%.</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Black Power, Radicalism &amp; Limits (1965–1975)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="context">
-        <strong>Key tension:</strong> The Civil Rights Act and Voting Rights Act addressed legal segregation — but did nothing for structural economic inequality, police brutality, and Northern de facto segregation. This gap produced the Black Power movement.
-      </div>
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-text"><em>Watts Riots (Los Angeles)</em> — 6 days of unrest; 34 dead; $40M damage. Exposed the limits of legislative victories — the urban North was untouched by the Civil Rights Acts.</span></div>
-        <div class="tl-item"><span class="tl-year">1966</span><span class="tl-text"><em>Stokely Carmichael coins "Black Power"</em> — shifts from integration to Black pride, community control, and self-defence. SNCC expels white members. <small>This is the moment "the movement" fractured ideologically.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1966</span><span class="tl-text"><em>Black Panther Party founded</em> — Huey Newton and Bobby Seale in Oakland. Armed self-defence, free breakfast programs, community clinics. FBI's COINTELPRO targeted it aggressively.</span></div>
-        <div class="tl-item"><span class="tl-year">Apr 1968</span><span class="tl-text"><em>MLK assassinated</em> in Memphis while supporting sanitation workers' strike — shows his shift toward economic justice beyond civil rights. 100+ cities erupt in riots.</span></div>
-        <div class="tl-item"><span class="tl-year">1968–72</span><span class="tl-text"><em>American Indian Movement (AIM) founded</em> — Native American civil rights; Alcatraz occupation (1969); Bureau of Indian Affairs occupation (1972); Wounded Knee standoff (1973).</span></div>
-        <div class="tl-item"><span class="tl-year">1968–70</span><span class="tl-text"><em>Chicano Movement</em> — César Chávez and UFW; student walkouts ("Blowouts"); National Chicano Moratorium 1970. Connects civil rights to labour rights in California and Southwest.</span></div>
-      </div>
-    </div>
-  </div>
-
-  <div class="section-label">Key figures</div>
-  <div class="people">
-    <div class="person"><div class="person-name">Martin Luther King Jr.</div><div class="person-role">SCLC; nonviolent direct action; Nobel Peace Prize 1964</div></div>
-    <div class="person"><div class="person-name">Malcolm X</div><div class="person-role">Nation of Islam; Black nationalism; "by any means necessary"; assassinated 1965</div></div>
-    <div class="person"><div class="person-name">Thurgood Marshall</div><div class="person-role">NAACP lawyer; argued Brown v. Board; first Black Supreme Court Justice</div></div>
-    <div class="person"><div class="person-name">John Lewis</div><div class="person-role">SNCC chairman; Freedom Rider; fractured skull at Selma</div></div>
-    <div class="person"><div class="person-name">Ella Baker</div><div class="person-role">NAACP, SCLC, SNCC organiser; grassroots model of leadership</div></div>
-    <div class="person"><div class="person-name">Stokely Carmichael</div><div class="person-role">SNCC; coined "Black Power" 1966; later Black Panther</div></div>
-    <div class="person"><div class="person-name">César Chávez</div><div class="person-role">UFW; Chicano farm workers' movement; nonviolent fasts</div></div>
-    <div class="person"><div class="person-name">Lyndon B. Johnson</div><div class="person-role">Signed Civil Rights Act (1964) and Voting Rights Act (1965)</div></div>
-  </div>
-
-  <div class="section-label">Essay angles</div>
   <div class="essay-box">
-    <div class="essay-label">Why did the movement succeed in passing legislation?</div>
-    <p>Three intersecting factors: <strong>media strategy</strong> (Birmingham's televised violence forced federal action), <strong>political timing</strong> (LBJ needed civil rights as part of Great Society and to contrast with segregationist Democrats), and <strong>mass mobilisation</strong> (the movement's discipline made it impossible to dismiss as lawless). Argue: it was the combination, not any single factor.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">Was the Civil Rights Movement a success?</div>
-    <p>Two-part argument: <strong>Yes</strong> — legally dismantled Jim Crow; voting rights restored; Black representation increased. <strong>But</strong> — structural economic inequality unchanged; Black poverty rates barely shifted; Kerner Commission (1968) found two Americas. Black Power advocates saw legal equality as insufficient without economic justice.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">Role of women in the movement</div>
-    <p>Grassroots/subaltern angle: <strong>Ella Baker</strong> built the NAACP and SCLC from below, mentored SNCC, argued against charismatic leadership. <strong>Jo Ann Robinson</strong> organized the Montgomery boycott before Parks's arrest. <strong>Fannie Lou Hamer</strong> fought for Mississippi Freedom Democratic Party credentials. Argument: women did the organizing work that male leaders got credit for.</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     LIBERATION THEOLOGY
-══════════════════════════════════════════ -->
-<div class="page" id="libth" data-topic="libth">
-  <div class="topic-banner">
-    <div>
-      <h2>Liberation Theology</h2>
-    </div>
-    <span class="span-label span-libth">Latin America · 1960s–1990s</span>
-  </div>
-
-  <div class="context">
-    <strong>Context:</strong> In 1960s Latin America, the Catholic Church controlled vast wealth while the majority of its parishioners lived in extreme poverty. Military dictatorships, US-backed regimes, and land inequality defined the continent. Vatican II (1962–65) opened the door to a new social role for the Church — Latin American theologians walked through it and built a theology rooted in the experience of the poor. The result was liberation theology: a fusion of Christian faith, social analysis (influenced by Marxism), and grassroots community organization.
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Origins — Vatican II to Medellín (1962–1968)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1962–65</span><span class="tl-text"><em>Vatican II (Second Vatican Council)</em> — Pope John XXIII modernizes the Church. Document <em>Gaudium et Spes</em> ("Joy and Hope") declares the Church must engage with the world, especially the poor. Opens the door for social theology.</span></div>
-        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-text"><em>Dependency Theory emerges</em> — economists like André Gunder Frank argue Latin America is kept poor by its economic relationship with the North. Provides liberation theologians with their structural analysis of poverty.</span></div>
-        <div class="tl-item"><span class="tl-year">1968</span><span class="tl-text"><em>CELAM Medellín Conference</em> — Latin American Bishops' Conference applies Vatican II to Latin America. Key concepts coined: <strong>"preferential option for the poor"</strong> and <strong>"structural sin"</strong> (the idea that economic and political systems — not just individuals — can be sinful). <small>This is the founding document of liberation theology as a movement.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1968</span><span class="tl-text"><em>Paulo Freire — "Pedagogy of the Oppressed"</em> — not a theologian, but hugely influential. "Conscientização" (consciousness-raising): educating the poor to understand the structures of their oppression. Informs the CEBs method.</span></div>
-        <div class="tl-item"><span class="tl-year">1971</span><span class="tl-text"><em>Gustavo Gutiérrez — "Teología de la Liberación"</em> — the foundational text. Peruvian priest and theologian. Argues: liberation has three inseparable dimensions — <strong>liberation from sin</strong>, <strong>liberation from socioeconomic oppression</strong>, and <strong>liberation as communion with God</strong>. Christian salvation is inseparable from social liberation.</span></div>
+    <h3>📐 Standard Essay Template</h3>
+    <div class="essay-parts">
+      <div class="essay-part">
+        <div class="essay-part-label">Introduction</div>
+        <p><strong>Define</strong> the key term(s) in the question. <strong>Link</strong> your definition to the prompt. Mention the study/studies you will use.</p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">Body 1 (always)</div>
+        <p>State the study's <strong>Aim → Type → Procedure → Participants</strong> (ATPP). Connect it to the question.</p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">Body 2 ("one or more")</div>
+        <p>Second study using the same ATPP structure. Used only when the question says <em>"one or more"</em> or <em>"discuss."</em></p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">Conclusion</div>
+        <p><strong>Results</strong> of study/studies → <strong>Strength</strong> → <strong>Weakness</strong> → <strong>Validity / Generalizability</strong> → link back to prompt.</p>
       </div>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Key Concepts to Know</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <ul class="kf-list">
-        <li><strong>"Preferential option for the poor"</strong> — God takes the side of the marginalized; the Church must too. Not exclusive of others, but the poor are the primary concern.</li>
-        <li><strong>"Structural sin"</strong> — Poverty is not just the result of individual failings; economic and political systems themselves can be unjust and sinful.</li>
-        <li><strong>CEBs (Base Ecclesiastical Communities)</strong> — Small grassroots groups of 10–30 people who read the Bible in light of their daily oppression and organize for change. The institutional engine of liberation theology.</li>
-        <li><strong>"Orthopraxis over orthodoxy"</strong> — Right action is as important as right belief. Faith must be lived, not just professed. Challenged the Church's traditional emphasis on doctrine.</li>
-        <li><strong>"See, Judge, Act"</strong> — The method: see social reality (observe poverty/injustice), judge it through scripture (theological analysis), then act to change it (community organizing/resistance).</li>
-        <li><strong>Marxist class analysis</strong> — Liberation theologians borrowed Marxist tools to diagnose structural inequality, without necessarily endorsing communist revolution. This was what alarmed the Vatican.</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Key Figures &amp; Events (1966–1992)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1966</span><span class="tl-text"><em>Camilo Torres (Colombia)</em> — Catholic priest who concluded nonviolent means were insufficient; joined ELN guerrillas; killed in his first combat engagement. Radical fringe of liberation theology; debated as a symbol or a warning.</span></div>
-        <div class="tl-item"><span class="tl-year">1970s</span><span class="tl-text"><em>CEBs multiply in Brazil</em> — By 1980s, an estimated 80,000–100,000 Base Communities in Brazil alone. Cardinal Arns of São Paulo shelters dissidents. Trade unions, landless workers' movements grow out of CEBs.</span></div>
-        <div class="tl-item"><span class="tl-year">1979</span><span class="tl-text"><em>Sandinista Revolution (Nicaragua)</em> — Sandinistas overthrow Somoza dictatorship. Several liberation theologians (Ernesto Cardenal, Fernando Cardenal, Miguel D'Escoto) join the government as ministers. Became the flashpoint of Vatican-liberation theology conflict.</span></div>
-        <div class="tl-item"><span class="tl-year">1979</span><span class="tl-text"><em>CELAM Puebla Conference</em> — Pope John Paul II opens by warning against politicizing the Church and "re-reading the Gospel as ideology." But the final document reaffirms the preferential option for the poor — partially a victory for liberation theologians.</span></div>
-        <div class="tl-item"><span class="tl-year">Mar 1980</span><span class="tl-text"><em>Oscar Romero assassinated</em> — Archbishop of El Salvador killed by a death squad while saying Mass, one day after calling on soldiers to disobey orders to kill civilians. Had evolved from conservative to liberation theologian. Becomes the movement's most powerful martyr. <small>"In the name of God, I beg you, I implore you — stop the repression."</small></span></div>
-        <div class="tl-item"><span class="tl-year">Dec 1980</span><span class="tl-text"><em>Four US churchwomen murdered</em> — Ita Ford, Maura Clarke, Dorothy Kazel, Jean Donovan raped and killed by Salvadoran National Guard. US government attempted to blame the victims. Internationalises El Salvador's conflict.</span></div>
-        <div class="tl-item"><span class="tl-year">Mar 1983</span><span class="tl-text"><em>JPII publicly rebukes Ernesto Cardenal</em> — At Managua airport, the Pope wags his finger at the kneeling poet-priest. Iconic photograph. Symbolises Rome's opposition to liberation theologians holding political office.</span></div>
-        <div class="tl-item"><span class="tl-year">1984</span><span class="tl-text"><em>Cardinal Ratzinger's "Instruction on Liberation Theology"</em> — Congregation for the Doctrine of the Faith criticises the use of Marxist class analysis as incompatible with Christianity. Labels some liberation theology "a fundamental threat." <small>Ratzinger becomes Pope Benedict XVI in 2005.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1985</span><span class="tl-text"><em>Leonardo Boff silenced</em> — Brazilian Franciscan and leading liberation theologian ordered to stop teaching and publishing for one year. Leaves the priesthood in 1992. Symbolises Vatican suppression.</span></div>
-        <div class="tl-item"><span class="tl-year">Nov 1989</span><span class="tl-text"><em>Jesuit Massacre (El Salvador)</em> — Salvadoran military kills 6 Jesuit priests, their housekeeper and her daughter at UCA. Deepens international pressure for peace negotiations. Civil war ends 1992.</span></div>
+  <div class="essay-box" style="background:#1a2e1a;">
+    <h3>💡 ATPP Study Breakdown</h3>
+    <div class="essay-parts">
+      <div class="essay-part">
+        <div class="essay-part-label">A — Aim</div>
+        <p>"The aim of the study was to investigate whether…" — state the purpose.</p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">T — Type</div>
+        <p>Lab experiment / Field study / Case study / Quasi-experiment / Survey / Correlation…</p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">P — Procedure</div>
+        <p>What the researchers actually did. Keep it concise — 2-3 sentences max.</p>
+      </div>
+      <div class="essay-part">
+        <div class="essay-part-label">P — Participants</div>
+        <p>Who / How many / Any notable characteristics (age, gender, occupation, etc.)</p>
       </div>
     </div>
   </div>
 
-  <div class="section-label">Key figures</div>
-  <div class="people">
-    <div class="person"><div class="person-name">Gustavo Gutiérrez</div><div class="person-role">Peruvian founder; "A Theology of Liberation" (1971)</div></div>
-    <div class="person"><div class="person-name">Oscar Romero</div><div class="person-role">Archbishop of El Salvador; martyred March 24, 1980</div></div>
-    <div class="person"><div class="person-name">Leonardo Boff</div><div class="person-role">Brazilian; silenced by Vatican 1985; left priesthood 1992</div></div>
-    <div class="person"><div class="person-name">Ernesto Cardenal</div><div class="person-role">Nicaraguan poet-priest; Sandinista Culture Minister</div></div>
-    <div class="person"><div class="person-name">Camilo Torres</div><div class="person-role">Colombian priest who joined guerrillas; killed 1966</div></div>
-    <div class="person"><div class="person-name">Paulo Freire</div><div class="person-role">"Pedagogy of the Oppressed"; conscientização theory</div></div>
-    <div class="person"><div class="person-name">Cardinal Ratzinger</div><div class="person-role">1984 Instruction against liberation theology; later Pope Benedict XVI</div></div>
-    <div class="person"><div class="person-name">Pope John Paul II</div><div class="person-role">Opposed liberation theology politically; complex legacy</div></div>
-  </div>
-
-  <div class="section-label">Essay angles</div>
-  <div class="essay-box">
-    <div class="essay-label">Was liberation theology primarily a religious or political movement?</div>
-    <p><strong>Both</strong> — and that was the point. Gutiérrez argued the separation of spiritual and material liberation was theologically false. However, in practice it had clear political effects: CEBs became spaces for organising resistance; liberation theologians in Nicaragua governed. Argue that framing it as "political" was itself a political act by its opponents (Vatican, Reagan administration) to delegitimize it.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">How significant was Vatican opposition?</div>
-    <p><strong>Limited</strong> in practice, significant symbolically. The Ratzinger Instruction and Boff's silencing slowed the movement's institutional growth. But CEBs continued to multiply; the Medellín documents were never formally revoked; the "preferential option for the poor" remains Catholic doctrine today. Francis (elected 2013) rehabilitated liberation theology — <strong>he is Latin American</strong>, was shaped by this tradition.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">Romero as a case study in essay intros</div>
-    <p>Open with: "When Archbishop Oscar Romero was assassinated in March 1980 — shot through the heart while saying Mass — his killer was backed by forces that included US-trained officers and a government the US continued to fund. This moment encapsulates the collision of liberation theology, US Cold War policy, and Latin American repression that defined the region in the 1970s–80s."</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     CUBA
-══════════════════════════════════════════ -->
-<div class="page" id="cuba" data-topic="cuba">
-  <div class="topic-banner">
-    <div>
-      <h2>Cuba — Revolution &amp; Cold War</h2>
+  <div style="margin-top:2rem;">
+    <div class="sub-heading">📌 Exam Tips</div>
+    <div class="qhint-list">
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>"Explain" = 1 study minimum</strong> — but always name your study in the intro to signal you know it.<span class="qhint-study">8–10 marks</span></div></div>
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>"Discuss" or "one or more"</strong> — use two studies; evaluate both in the conclusion.<span class="qhint-study">22 marks</span></div></div>
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Always link back</strong> to the exact wording of the question at least twice — in body and conclusion.</div></div>
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Ethics in conclusion</strong> — mention if the study was deceptive, if debriefing occurred, or if animals were used.</div></div>
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Multi-use studies</strong> — learn Maguire 2000, Loftus & Palmer 1974, and Tajfel 1971 cold — they appear everywhere.</div></div>
+      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Generalizability</strong> — consider sample size, WEIRD bias (Western, Educated, Industrial, Rich, Democratic).</div></div>
     </div>
-    <span class="span-label span-cuba">1952 – 1991</span>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ MULTI-USE STUDIES -->
+<section id="multi">
+  <div class="section-header">
+    <div class="approach-badge badge-gold">⭐</div>
+    <div class="section-title-wrap">
+      <h2>Multi-Use Studies</h2>
+      <p>Learn these first — they answer the most questions across all three approaches</p>
+    </div>
   </div>
 
-  <div class="context">
-    <strong>Context:</strong> By 1952, the US owned 40% of Cuba's sugar, most utilities, and telecommunications. Batista's dictatorship combined brutal repression (10,000+ tortured/killed) with casino culture for American tourists. 1 in 3 Cubans lived in extreme poverty. Cuba was the perfect storm: extreme inequality, US neo-colonialism, a corrupt ruler, and a charismatic opposition leader with a guerrilla strategy — and a 90-mile proximity to the US that made it a Cold War flashpoint.
+  <div class="multi-box">
+    <h3>⭐ Cross-Category Study Map</h3>
+    <table class="multi-table">
+      <thead>
+        <tr>
+          <th>Study</th>
+          <th>Approaches</th>
+          <th>Topics Covered</th>
+          <th>Why Prioritize?</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>Maguire et al (2000)</strong></td>
+          <td><span class="tag tag-bio">Bio</span></td>
+          <td>Neuroplasticity, Localization, Brain Techniques (MRI)</td>
+          <td>One study answers 3+ Bio questions. Classic, examiner-loved.</td>
+        </tr>
+        <tr>
+          <td><strong>Sharot et al (2007)</strong></td>
+          <td><span class="tag tag-bio">Bio</span> <span class="tag tag-cog">Cog</span></td>
+          <td>Brain imaging technique (fMRI) + Emotion &amp; Memory</td>
+          <td>Bridges Biological AND Cognitive sections.</td>
+        </tr>
+        <tr>
+          <td><strong>Loftus &amp; Palmer (1974)</strong></td>
+          <td><span class="tag tag-cog">Cog</span></td>
+          <td>Schema theory, Reconstructive memory, Research methods</td>
+          <td>Most versatile Cognitive study. Lab experiment = easy to evaluate.</td>
+        </tr>
+        <tr>
+          <td><strong>Brewer &amp; Treyens (1981)</strong></td>
+          <td><span class="tag tag-cog">Cog</span></td>
+          <td>Schema theory, Reconstructive memory</td>
+          <td>Pairs perfectly with Loftus for "one or more" schema questions.</td>
+        </tr>
+        <tr>
+          <td><strong>Tversky &amp; Kahneman (1974)</strong></td>
+          <td><span class="tag tag-cog">Cog</span></td>
+          <td>Cognitive bias, Intuitive thinking, Models of thinking</td>
+          <td>Covers rational + intuitive thinking in one paper.</td>
+        </tr>
+        <tr>
+          <td><strong>Tajfel et al (1971)</strong></td>
+          <td><span class="tag tag-soc">Soc</span></td>
+          <td>Social Identity Theory, Stereotypes, Enculturation</td>
+          <td>Foundation of SIT — essential for sociocultural section.</td>
+        </tr>
+        <tr>
+          <td><strong>Caspi et al (2003)</strong></td>
+          <td><span class="tag tag-bio">Bio</span></td>
+          <td>Genetics &amp; behaviour, Gene-environment interaction</td>
+          <td>Key genetics study — also links to Abnormal (etiology).</td>
+        </tr>
+        <tr>
+          <td><strong>Kendler et al (2006)</strong></td>
+          <td><span class="tag tag-bio">Bio</span></td>
+          <td>Genetic similarity, Twin studies, Genetics</td>
+          <td>Explains how twin/kinship studies work — covers multiple Bio Qs.</td>
+        </tr>
+        <tr>
+          <td><strong>Newcomer et al (1999)</strong></td>
+          <td><span class="tag tag-bio">Bio</span></td>
+          <td>Hormones (cortisol) &amp; behaviour, Memory</td>
+          <td>Hormone question + links to cognitive processes.</td>
+        </tr>
+        <tr>
+          <td><strong>Hilliard &amp; Liben (2010)</strong></td>
+          <td><span class="tag tag-soc">Soc</span></td>
+          <td>Social Identity Theory, Stereotype formation, Enculturation</td>
+          <td>Covers 3 sociocultural topics with one study.</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Road to Revolution (1952–1959)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1952</span><span class="tl-text"><em>Batista's coup</em> — Cancels elections when polls show he will lose. Castro (a lawyer) challenges it in court — fails. Concludes force is necessary.</span></div>
-        <div class="tl-item"><span class="tl-year">Jul 26, 1953</span><span class="tl-text"><em>Moncada Barracks attack</em> — Castro leads 135 rebels; fails; 60+ killed or captured. Castro's trial speech: <em>"History Will Absolve Me"</em> — becomes the revolution's manifesto. Sentenced to 15 years.</span></div>
-        <div class="tl-item"><span class="tl-year">1955</span><span class="tl-text"><em>Amnesty + Mexico exile</em> — Castro released; goes to Mexico; meets <em>Che Guevara</em> (Argentine doctor, committed Marxist). Founds M-26-7 (July 26 Movement).</span></div>
-        <div class="tl-item"><span class="tl-year">Dec 1956</span><span class="tl-text"><em>Granma landing</em> — 82 men land in eastern Cuba; Batista's forces immediately attack; <strong>only 12 survive</strong> (including Fidel, Raúl, Che). Retreat to Sierra Maestra mountains.</span></div>
-        <div class="tl-item"><span class="tl-year">1957–58</span><span class="tl-text"><em>Sierra Maestra campaign</em> — Rebels earn peasant support; build a guerrilla army. Urban underground (M-26-7) sabotages Batista. Frank País organizes cities until his assassination (1957). Batista's army demoralised — only 300 rebels defeat 10,000 troops.</span></div>
-        <div class="tl-item"><span class="tl-year">Dec 31, 1958</span><span class="tl-text"><em>Batista flees</em> — after Che's forces capture Santa Clara (key rail hub). Batista escapes to Dominican Republic. <em>Jan 8, 1959:</em> Castro enters Havana in triumph.</span></div>
+  <div style="margin-bottom:2rem">
+    <div class="sub-heading">🔁 Pair These Together for "One or More" Questions</div>
+    <div class="qhint-list">
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Schema + Reconstructive Memory</strong><span class="qhint-study">Loftus &amp; Palmer (1974) + Brewer &amp; Treyens (1981)</span></div></div>
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Neuroplasticity + Brain Techniques</strong><span class="qhint-study">Maguire (2000) + Draganski (2004)</span></div></div>
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Social Identity Theory</strong><span class="qhint-study">Tajfel (1971) + Hilliard &amp; Liben (2010)</span></div></div>
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Genetics &amp; Behaviour</strong><span class="qhint-study">Caspi (2003) + Kendler (2006)</span></div></div>
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Emotion + Cognitive Process</strong><span class="qhint-study">Sharot (2007) + Brown &amp; Kulik (1977)</span></div></div>
+      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Stereotype Formation + Effects</strong><span class="qhint-study">Hilliard &amp; Liben (2010) + Steele &amp; Aronson (1995)</span></div></div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ BIOLOGICAL -->
+<section id="bio">
+  <div class="section-header">
+    <div class="approach-badge badge-bio">🧬</div>
+    <div class="section-title-wrap">
+      <h2>Biological Approach</h2>
+      <p>Brain, genes, hormones, neurotransmitters, pheromones, evolution, neuroplasticity</p>
+    </div>
+  </div>
+
+  <div class="sub-heading">🌟 Priority Studies</div>
+  <div class="cards-grid">
+
+    <!-- MAGUIRE -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Maguire et al</div>
+          <div class="card-year">2000 · London Taxi Drivers · MRI Study</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Neuroplasticity</span>
+            <span class="tag tag-bio">Localization</span>
+            <span class="tag tag-bio">Technique</span>
+          </div>
+        </div>
+        <div class="star-badge" title="Multi-use priority study">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To see if navigational experience changes hippocampal structure</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Quasi-experiment / MRI brain imaging</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">16 male London taxi drivers (2+ yrs exp.) vs. 50 controls</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">MRI scans compared hippocampal volume of taxi drivers vs. non-taxi drivers</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Taxi drivers had significantly larger posterior hippocampus; size correlated with years of experience</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"More miles = bigger memory area." Taxi drivers grow their GPS brain region.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Objective MRI data; real-world sample with genuine expertise</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>All-male sample; causation unclear (did taxi work cause it, or did larger hippocampi attract taxi drivers?)</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Consolidating the Revolution (1959–1965)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1959</span><span class="tl-text"><em>Agrarian Reform Law</em> — Nationalised all landholdings over 400 hectares. 100,000 families received land. Directly targeted US sugar companies (United Fruit, Texaco).</span></div>
-        <div class="tl-item"><span class="tl-year">1959–60</span><span class="tl-text"><em>Nationalisation wave</em> — US refineries, utilities, banks nationalised. US imposes trade embargo (still in force). Cuba turns to USSR for oil, economic support.</span></div>
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Literacy Campaign</em> — 100,000 "brigadistas" sent to rural Cuba to teach reading. Illiteracy fell from ~23% to ~3.9% in one year. Massive propaganda success; built genuine loyalty among rural poor.</span></div>
-        <div class="tl-item"><span class="tl-year">Apr 1961</span><span class="tl-text"><em>Bay of Pigs</em> — 1,400 CIA-trained Cuban exiles land at Playa Girón. Defeated in 72 hours. <strong>Catastrophic failure for Kennedy</strong>; dramatically strengthens Castro's domestic standing. CIA had assumed the Cuban people would rise up — they didn't.</span></div>
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Cuba declared socialist</em> — Castro announces Marxist-Leninist course. <em>CDRs (Committees for the Defence of the Revolution)</em> established — neighbourhood surveillance, one per block. Single-party state takes form.</span></div>
-        <div class="tl-item"><span class="tl-year">Oct 1962</span><span class="tl-text"><em>Cuban Missile Crisis</em> — 13-day standoff. USSR places nuclear missiles in Cuba; Kennedy orders naval quarantine. Resolution: USSR removes missiles; US pledges not to invade Cuba; secretly removes Jupiter missiles from Turkey. <small>Cuba was not consulted in the resolution — Khrushchev and Kennedy negotiated over Cuba's head. This angered Castro.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1965</span><span class="tl-text"><em>Communist Party of Cuba (PCC)</em> becomes the sole legal party. Total political monopoly formalized. CDRs, UMAP labour camps for political enemies and "undesirables" (gay men, religious people).</span></div>
+    <!-- DRAGANSKI -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Draganski et al</div>
+          <div class="card-year">2004 · Juggling Study · MRI</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Neuroplasticity</span>
+            <span class="tag tag-bio">Technique</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To investigate whether learning a new skill changes grey matter in the brain</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">True experiment with repeated measures; MRI used</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">24 adults — 12 trained to juggle, 12 controls (no juggling)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Brain scanned before training, after 3 months (when juggling mastered), and after another 3 months of no juggling</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Grey matter increased in mid-temporal area when juggling was learned; decreased again when they stopped</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Use it or lose it." Brain physically grows with new skills, then shrinks without practice.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>True experiment — controls for individual differences; uses objective MRI measures</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Small sample (24); lab setting may not reflect real-world learning</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Cuba in the Cold War (1965–1991)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1967</span><span class="tl-text"><em>Che Guevara killed in Bolivia</em> — Attempting to spread revolution to Latin America. CIA-trained Bolivian soldiers capture and execute him. Becomes the world's most recognizable revolutionary icon in death.</span></div>
-        <div class="tl-item"><span class="tl-year">1975–88</span><span class="tl-text"><em>Cuba in Angola</em> — 36,000 Cuban troops fight alongside MPLA government against US/South Africa-backed UNITA. Che's internationalism in practice. Nelson Mandela credited Cuba for tipping the balance against apartheid South Africa in southern Africa.</span></div>
-        <div class="tl-item"><span class="tl-year">1976</span><span class="tl-text"><em>New Constitution</em> — "Institutionalisation" of the revolution. Soviet-style structure. Cuba joins COMECON. Dependence on USSR sugar subsidies (~$4–6 billion/year at peak) deepens.</span></div>
-        <div class="tl-item"><span class="tl-year">1980</span><span class="tl-text"><em>Mariel Boatlift</em> — 125,000 Cubans leave in 5 months after Castro briefly allows emigration. Mix of political dissidents, economic migrants, and criminals Castro released from prisons. Embarrassment and relief simultaneously.</span></div>
-        <div class="tl-item"><span class="tl-year">1991</span><span class="tl-text"><em>USSR dissolves</em> — Cuba loses ~$5 billion annually in subsidies overnight. <em>Special Period in Time of Peace</em> (Período Especial): food rationing, blackouts, economic collapse. GDP contracted ~35% in 3 years.</span></div>
+    <!-- SHAROT -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Sharot et al</div>
+          <div class="card-year">2007 · 9/11 Flashbulb Memory · fMRI</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Technique (fMRI)</span>
+            <span class="tag tag-cog">Emotion & Memory</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore the neural basis of flashbulb memories vs. ordinary memories</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Quasi-experiment using fMRI brain scanning</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">24 adults who were in NYC on 9/11; vs. those who were far away</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants recalled 9/11 and other summer events while in fMRI scanner; brain activation compared</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">9/11 memories showed greater amygdala activation in those close to the event — amygdala links to emotional memory</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Amygdala = emotional alarm bell." High emotion → stronger, more vivid memory encoding.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>fMRI provides direct evidence of brain activity; links biology to cognitive process</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Quasi-experiment — no random assignment; small sample; NYC context may limit generalizability</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section-label">Key figures</div>
-  <div class="people">
-    <div class="person"><div class="person-name">Fidel Castro</div><div class="person-role">"El Comandante"; ruled 1959–2008; charisma + authoritarian control</div></div>
-    <div class="person"><div class="person-name">Che Guevara</div><div class="person-role">Guerrilla strategist; "foco" theory; executed Bolivia 1967</div></div>
-    <div class="person"><div class="person-name">Raúl Castro</div><div class="person-role">Military commander; succeeded Fidel 2008–2018</div></div>
-    <div class="person"><div class="person-name">Frank País</div><div class="person-role">Urban underground leader; assassinated 1957</div></div>
-    <div class="person"><div class="person-name">Fulgencio Batista</div><div class="person-role">US-backed dictator; fled Dec 31, 1958</div></div>
-    <div class="person"><div class="person-name">José Martí</div><div class="person-role">19th-century poet/independence leader; claimed as ancestor by Castro</div></div>
-  </div>
-
-  <div class="section-label">Essay angles</div>
-  <div class="essay-box">
-    <div class="essay-label">Why did Castro succeed where so many Latin American revolutionaries failed?</div>
-    <p>Four factors: <strong>geography</strong> (Sierra Maestra mountains gave the guerrillas a base), <strong>Batista's brittleness</strong> (demoralised army, corrupt government), <strong>peasant support</strong> (land promises + treating rural people well), and <strong>media</strong> (Herbert Matthews NYT interview 1957 — legitimised the movement internationally). The 12-survivor story is especially powerful: argue Castro turned catastrophic failure into myth.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">How did the Cold War shape Cuba's revolution?</div>
-    <p>US hostility drove Cuba toward the USSR — but was this inevitable? Argue: <strong>US embargo and Bay of Pigs forced the alignment</strong> (Castro was not initially committed to Marxism — his 1953 Moncada speech is Martí-nationalist, not Marxist). OR argue: <strong>Castro used Cold War cynically</strong> — Soviet subsidies funded the regime while allowing him to blame US imperialism for Cuba's problems. Both are defensible.</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     US COLD WAR
-══════════════════════════════════════════ -->
-<div class="page" id="cw" data-topic="cw">
-  <div class="topic-banner">
-    <div>
-      <h2>United States in the Cold War</h2>
-    </div>
-    <span class="span-label span-cw">1945 – 1991</span>
-  </div>
-
-  <div class="context">
-    <strong>Context:</strong> After WWII, the US emerged as a superpower — the world's largest economy, sole possessor of nuclear weapons, and global guarantor of a new liberal international order. The Soviet challenge threatened this vision. US Cold War strategy rested on one word: <strong>containment</strong> (George Kennan, 1946) — prevent Soviet expansion, don't attempt rollback. This simple doctrine was interpreted and reinterpreted by every president from Truman to Bush.
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Truman &amp; Eisenhower — Building Containment (1945–1961)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1946</span><span class="tl-text"><em>Kennan's "Long Telegram" + "X Article"</em> — Soviet expansion is inevitable; the US must "contain" it at every pressure point. Becomes the intellectual foundation of US Cold War strategy.</span></div>
-        <div class="tl-item"><span class="tl-year">1947</span><span class="tl-text"><em>Truman Doctrine</em> — "Support free peoples resisting subjugation." Greece and Turkey as first recipients. Transforms containment from a strategic idea into a global commitment: <strong>communist threat anywhere is a US concern everywhere.</strong></span></div>
-        <div class="tl-item"><span class="tl-year">1947</span><span class="tl-text"><em>Marshall Plan</em> — $13 billion to rebuild Western Europe. Strategic logic: prosperous countries don't go communist. Western Europe's recovery attributed partly to this.</span></div>
-        <div class="tl-item"><span class="tl-year">1948–49</span><span class="tl-text"><em>Berlin Blockade &amp; Airlift</em> — Soviets blockade West Berlin; Truman responds with 324-day airlift (2.3 million tons delivered). First direct US-Soviet confrontation. Sets the tone for Berlin as the Cold War's symbolic heart.</span></div>
-        <div class="tl-item"><span class="tl-year">1949</span><span class="tl-text"><em>NATO founded + USSR tests atomic bomb + China falls to communists</em> — 1949 is the year the Cold War truly begins to feel existential to American policymakers.</span></div>
-        <div class="tl-item"><span class="tl-year">1950</span><span class="tl-text"><em>NSC-68</em> — Secret document: quadruple defence spending; militarise containment. Truman initially resisted — Korean War enabled it.</span></div>
-        <div class="tl-item"><span class="tl-year">1950–53</span><span class="tl-text"><em>Korean War</em> — First "hot" Cold War. UN forces (80% US) push North Korea back; China intervenes Nov 1950. War ends in stalemate at 38th parallel. 36,000 US dead. The "forgotten war" but crucial: established that containment required military force.</span></div>
-        <div class="tl-item"><span class="tl-year">1950–54</span><span class="tl-text"><em>McCarthyism / Red Scare</em> — Senator Joseph McCarthy claims 205 communists in State Department. No proof. "Are you now or have you ever been..." HUAC investigations. Hollywood blacklist. Shows domestic dimension of Cold War fear.</span></div>
-        <div class="tl-item"><span class="tl-year">1953</span><span class="tl-text"><em>CIA overthrows Mossadegh (Iran)</em> — Operation Ajax; restores Shah. First major covert intervention. Sets a template for US Cold War in the Global South: destabilise unfriendly governments, install pro-US leaders.</span></div>
-        <div class="tl-item"><span class="tl-year">1954</span><span class="tl-text"><em>CIA overthrows Árbenz (Guatemala)</em> — Operation PBSUCCESS. Árbenz redistributed land owned by United Fruit Company (UFC) — Eisenhower acted. Key case: was containment about communism or US economic interests? Both, inseparably.</span></div>
-        <div class="tl-item"><span class="tl-year">1956</span><span class="tl-text"><em>Hungarian Revolution</em> — Hungarians rise against Soviet control. US "liberation" rhetoric had implied support — but Eisenhower does nothing. 30,000 die. Exposes gap between "rollback" rhetoric and actual US policy.</span></div>
-        <div class="tl-item"><span class="tl-year">1957</span><span class="tl-text"><em>Sputnik</em> — USSR launches first satellite. Shock to US confidence. Leads to NASA, NSF, defense-oriented education spending. "Missile gap" emerges as political issue.</span></div>
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Eisenhower's Farewell Address</em> — Warns against the "military-industrial complex." Notes that defence spending creates its own political constituency for continued Cold War. One of the most important speeches of the era.</span></div>
+    <!-- ROGERS & KESNER -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Rogers & Kesner</div>
+          <div class="card-year">2003 · Acetylcholine in Rats · Animal Study</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Neurotransmitters</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To investigate the role of acetylcholine on spatial memory in rats</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">True lab experiment (animal research)</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Rats injected with either scopolamine (ACh blocker) or saline (control)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Rats navigated a maze; errors and timing were recorded</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Rats with blocked ACh made significantly more errors — showing ACh is vital for spatial memory</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Block ACh → bad at mazes." Acetylcholine = the memory chemical.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>High control over variables; causal relationship established</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Animal research — ethical concerns; cannot fully generalize to humans</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Kennedy to Nixon — Crisis &amp; Vietnam (1961–1974)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Bay of Pigs + Berlin Wall</em> — Cuban disaster (April); Berlin Wall built (August). Kennedy's first year: two humiliations. Wall actually stabilises Berlin — stops East German brain drain. Kennedy privately relieved but publicly had to condemn it.</span></div>
-        <div class="tl-item"><span class="tl-year">1961</span><span class="tl-text"><em>Alliance for Progress</em> — $20 billion for Latin American development over 10 years. Direct response to Cuba's appeal: offer an alternative to revolution. Mixed results — economic aid often went to elites; military juntas received most support.</span></div>
-        <div class="tl-item"><span class="tl-year">Oct 1962</span><span class="tl-text"><em>Cuban Missile Crisis</em> — 13 days. ExComm deliberations: military wanted airstrikes (Gen. Curtis LeMay); Kennedy chose blockade. Khrushchev backs down; missiles removed. Kennedy seen as winner. <small>Classified documents later revealed: the US also removed Jupiter missiles from Turkey secretly. Both sides compromised.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1964</span><span class="tl-text"><em>Gulf of Tonkin incident + Resolution</em> — Alleged North Vietnamese attack on USS Maddox (one was real, the second likely fabricated). Resolution gives LBJ blank check to use force in Vietnam without declaring war. <strong>Pivotal: escalates a limited conflict into a full war.</strong></span></div>
-        <div class="tl-item"><span class="tl-year">1965–68</span><span class="tl-text"><em>Vietnam escalation</em> — Troops rise from 16,000 (1963) to 543,000 (1969). LBJ's "guns and butter" policy: Vietnam + Great Society = impossible to fund both. "We were wrong, terribly wrong" — Robert McNamara, decades later.</span></div>
-        <div class="tl-item"><span class="tl-year">Jan 1968</span><span class="tl-text"><em>Tet Offensive</em> — NVA/Viet Cong attack 100+ South Vietnamese cities simultaneously. Military failure for North Vietnam — but psychological disaster for LBJ. Showed US public had been misled about progress. LBJ declines to run for re-election.</span></div>
-        <div class="tl-item"><span class="tl-year">1969–73</span><span class="tl-text"><em>Vietnamisation + Nixon Doctrine</em> — Nixon: train South Vietnamese to fight their own war; US troops withdraw. But also: secretly bombs Cambodia (1969–70), invades Cambodia (1970) sparking domestic protests (Kent State — 4 students killed by National Guard).</span></div>
-        <div class="tl-item"><span class="tl-year">1971</span><span class="tl-text"><em>Pentagon Papers leaked</em> — Daniel Ellsberg leaks classified history of Vietnam decision-making. Shows presidents lied to Congress and the public for decades. Nixon's "plumbers" unit tries to discredit Ellsberg — leads eventually to Watergate.</span></div>
-        <div class="tl-item"><span class="tl-year">1972</span><span class="tl-text"><em>Nixon to China + SALT I</em> — Nixon (anti-communist) opens relations with China; signals Sino-Soviet split can be exploited. SALT I: first strategic arms limitation treaty. Détente — the high point of Cold War diplomacy.</span></div>
-        <div class="tl-item"><span class="tl-year">1974</span><span class="tl-text"><em>Nixon resigns (Watergate)</em> — The break-in was about domestic political surveillance, but it shattered public trust in government. Combined with Vietnam, creates a crisis of American political legitimacy that shapes everything that follows.</span></div>
+    <!-- NEWCOMER -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Newcomer et al</div>
+          <div class="card-year">1999 · Cortisol & Memory · Hormones</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Hormones</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether elevated cortisol (stress hormone) impairs verbal memory</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Double-blind true experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">51 participants — 3 groups: high cortisol, low cortisol, placebo</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants took cortisol tablets for 4 days then completed verbal memory tests</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">High cortisol group performed significantly worse on memory tasks</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Stress kills memory." High cortisol = forgetting more.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Double-blind design eliminates experimenter and participant bias</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial cortisol administration ≠ natural stress; short duration (4 days)</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Ford, Carter, Reagan — Crisis &amp; Triumph (1974–1991)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">Apr 1975</span><span class="tl-text"><em>Fall of Saigon</em> — North Vietnam takes Saigon; last Americans evacuate by helicopter from embassy roof. US first military defeat. Profound national trauma. "Vietnam syndrome" shapes US reluctance to deploy troops for a decade.</span></div>
-        <div class="tl-item"><span class="tl-year">1975</span><span class="tl-text"><em>Helsinki Accords</em> — 35 nations recognise post-WWII borders; USSR gets legitimacy it wanted. But human rights provisions (Basket III) gave Eastern European dissidents an international framework. Unintended consequence for the USSR.</span></div>
-        <div class="tl-item"><span class="tl-year">1977–81</span><span class="tl-text"><em>Carter — Human Rights Policy</em> — Cuts military aid to rights-abusing allies (Chile, Argentina). Panama Canal Treaties 1977 — returns canal to Panama. Camp David Accords 1978 (Egypt-Israel peace). But: undermined by Iran hostage crisis (1979) and Afghanistan invasion.</span></div>
-        <div class="tl-item"><span class="tl-year">1979</span><span class="tl-text"><em>Soviet invasion of Afghanistan</em> — Carter calls it "the greatest threat to peace since WWII." Carter Doctrine: US will defend Persian Gulf. Arms and trains mujaheddin. <small>Blowback: the mujaheddin becomes the Taliban and al-Qaeda in the 1990s.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1981–89</span><span class="tl-text"><em>Reagan Doctrine</em> — US actively supports anti-communist guerrillas worldwide: Contras (Nicaragua), mujaheddin (Afghanistan), UNITA (Angola), Khmer Rouge (Cambodia). Reverses détente; renewed arms race.</span></div>
-        <div class="tl-item"><span class="tl-year">1983</span><span class="tl-text"><em>Grenada invasion</em> — US removes Cuban-backed government. Small island, huge symbolism: US willing to use direct force again after Vietnam syndrome.</span></div>
-        <div class="tl-item"><span class="tl-year">1986</span><span class="tl-text"><em>Iran-Contra affair revealed</em> — Reagan administration secretly sold arms to Iran (arms embargo) and used proceeds to fund Nicaraguan Contras (Congress had banned it). Oliver North as the operative. Biggest Reagan scandal. Shows extreme commitment to Contra cause.</span></div>
-        <div class="tl-item"><span class="tl-year">1987</span><span class="tl-text"><em>INF Treaty (Reagan-Gorbachev)</em> — Eliminated all intermediate-range nuclear missiles. First arms reduction (not just limitation) treaty. Signals the Cold War is ending.</span></div>
-        <div class="tl-item"><span class="tl-year">Nov 9, 1989</span><span class="tl-text"><em>Berlin Wall falls</em> — Symbol of the Cold War's end. Eastern Europe's revolutions follow. Germany reunifies 1990. USSR dissolves Dec 25, 1991.</span></div>
+    <!-- WEDEKIND -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Wedekind et al</div>
+          <div class="card-year">1995 · Sweaty T-Shirt Study · Pheromones</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Pheromones</span>
+            <span class="tag tag-bio">Evolution</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether humans use smell (MHC genes) to select genetically compatible mates</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">44 women, 49 men — MHC genotypes tested</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Men wore t-shirts for 2 days; women smelled the shirts and rated attractiveness. MHC similarity compared.</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Women preferred smell of men with dissimilar MHC genes (greater immune diversity benefit)</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Smell the opposite immune system." MHC dissimilarity = healthier offspring.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Controlled procedure; clear evolutionary rationale</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial setting; oral contraceptives reversed preference (ethical and methodological concern)</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section-label">Key figures</div>
-  <div class="people">
-    <div class="person"><div class="person-name">George Kennan</div><div class="person-role">"Long Telegram" + "X Article" — intellectual architect of containment</div></div>
-    <div class="person"><div class="person-name">Henry Kissinger</div><div class="person-role">National Security Advisor + Secretary of State; détente; Chile; realpolitik</div></div>
-    <div class="person"><div class="person-name">Robert McNamara</div><div class="person-role">Defense Secretary; Vietnam architect; later admitted "we were wrong"</div></div>
-    <div class="person"><div class="person-name">Dean Acheson</div><div class="person-role">Truman's Secretary of State; architect of NATO, Korean policy</div></div>
-    <div class="person"><div class="person-name">John Foster Dulles</div><div class="person-role">Eisenhower's Sec of State; "massive retaliation"; "brinkmanship"</div></div>
-    <div class="person"><div class="person-name">Oliver North</div><div class="person-role">NSC operative; ran Iran-Contra arms network</div></div>
-  </div>
-
-  <div class="section-label">Essay angles</div>
-  <div class="essay-box">
-    <div class="essay-label">Was containment a success?</div>
-    <p>Argue yes: the USSR collapsed, Western Europe remained free, no nuclear war occurred. But qualify: <strong>Vietnam</strong> showed containment's human cost and strategic bankruptcy in civil-war contexts. <strong>Korea</strong> ended in stalemate. <strong>Iran and Guatemala</strong> show containment was used to protect US economic interests, not just democracy. Orthodox view: containment worked. Revisionist: it caused enormous suffering in the Global South.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">Why did the US fail in Vietnam?</div>
-    <p>Four-factor argument: <strong>Political</strong> (no clear endgame; search-and-destroy made enemies, not victories), <strong>Strategic</strong> (guerrilla war made conventional US superiority irrelevant), <strong>Domestic</strong> (public opinion turned after Tet; protests; credibility gap), <strong>Ideological</strong> (South Vietnam lacked legitimacy; Ho Chi Minh was a nationalist first, communist second — the US misread the conflict as Cold War rather than civil war/decolonisation).</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     CHILE & ARGENTINA
-══════════════════════════════════════════ -->
-<div class="page" id="sa" data-topic="sa">
-  <div class="topic-banner">
-    <div>
-      <h2>Chile &amp; Argentina</h2>
-    </div>
-    <span class="span-label span-sa">1970s – 1983</span>
-  </div>
-
-  <div class="context">
-    <strong>Context:</strong> Latin America in the Cold War became a battlefield between US-backed anti-communism and left-wing movements drawing on Marxism, Peronism, and liberation theology. Two countries exemplify this most starkly: Chile, where a democratically elected Marxist was overthrown by a US-backed military coup; and Argentina, where a military junta waged a secret war against its own people, disappearing 30,000.
-  </div>
-
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Chile — Allende (1970–1973)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1970</span><span class="tl-text"><em>Allende wins election</em> — 36.3% in a 3-way race; Unidad Popular coalition. <strong>First democratically elected Marxist president in the world.</strong> Nixon: "I don't see why we need to stand by and let a country go communist due to the irresponsibility of its own people." CIA immediately begins Operation Track I (block his confirmation), then Track II (back a coup).</span></div>
-        <div class="tl-item"><span class="tl-year">1971</span><span class="tl-text"><em>Nationalisation of copper</em> — Unanimous congressional vote to nationalize Chile's copper mines (Anaconda, Kennecott). "Chile's salary." Allende calls it "the second independence." US companies furious.</span></div>
-        <div class="tl-item"><span class="tl-year">1971</span><span class="tl-text"><em>Agrarian reform + social programs</em> — 2.8M hectares redistributed; free milk for children; healthcare expanded. GDP grew 8% in 1971 — Allende's first year is economically successful.</span></div>
-        <div class="tl-item"><span class="tl-year">1972</span><span class="tl-text"><em>Economic crisis begins</em> — Inflation rises: 22% (1971) → 163% (1972) → 508% (1973). US blocks Chile from international loans (World Bank, IMF). ITT Corporation lobbies US government to destabilize Allende. Nixon/Kissinger: "make the economy scream."</span></div>
-        <div class="tl-item"><span class="tl-year">Oct 1972</span><span class="tl-text"><em>"March of the Empty Pots"</em> — Bourgeois women protest food shortages by banging empty pots. Truckers' strike (CIA-funded) paralyses the economy. Allende appoints military officers to cabinet — mistakes it for loyalty.</span></div>
+    <!-- KENDLER -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Kendler et al</div>
+          <div class="card-year">2006 · Twin Study · Genetic Similarity</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Genetics</span>
+            <span class="tag tag-bio">Twin Studies</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To examine genetic vs. environmental factors in major depression using twins</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Longitudinal twin study (concordance rates)</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">~42,000 twin pairs from the Swedish Twin Registry</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Compared MZ (identical) and DZ (fraternal) twins for rates of depression. MZ share 100% DNA; DZ share ~50%.</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">MZ twins had higher concordance rates (~38%) than DZ twins (~26%) — suggesting genetic influence on depression</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Identical twins, more similar depression risk." Genetics plays a role but isn't destiny.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Huge sample size; well-controlled natural variation between MZ and DZ</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>MZ twins may share more similar environments too (confounding). 100% concordance never reached.</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Chile — The Coup &amp; Pinochet (Sept 11, 1973 – 1990)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">Sep 11, 1973</span><span class="tl-text"><em>Military coup</em> — Generals Pinochet (army), Leigh (air force), Admiral Merino (navy), General Mendoza (carabineros) seize power. Air force bombs La Moneda palace. <em>Allende dies inside</em> — officially suicide, disputed. CIA involvement: Operation FUBELT; Kissinger approved destabilization. <small>The date — Sept 11 — is significant in Chilean memory decades before 2001.</small></span></div>
-        <div class="tl-item"><span class="tl-year">1973</span><span class="tl-text"><em>Immediate repression</em> — National Stadium becomes detention camp; 40,000+ arrested in first weeks; 3,000–5,000 killed immediately. <em>Victor Jara</em> (folk singer) tortured and killed in stadium. Hands broken so he could not play guitar.</span></div>
-        <div class="tl-item"><span class="tl-year">1974</span><span class="tl-text"><em>DINA established</em> — Secret police under Manuel Contreras. Systematic torture, disappearances. <em>Villa Grimaldi</em>: main torture center in Santiago. "Caravan of Death": military officers execute ~70 prisoners across the country in the first weeks.</span></div>
-        <div class="tl-item"><span class="tl-year">1975</span><span class="tl-text"><em>Operation Condor</em> — Multinational network: Chile, Argentina, Brazil, Uruguay, Paraguay, Bolivia coordinate to hunt down dissidents internationally. CIA provides intelligence and logistical support. Targets even include exile communities in Europe.</span></div>
-        <div class="tl-item"><span class="tl-year">1975–82</span><span class="tl-text"><em>Chicago Boys — neoliberal shock therapy</em> — Economics graduates trained under Milton Friedman implement radical free market reform: privatizations, free trade, cut social spending. Inflation eventually controlled. Growth in late 1970s — the "Chilean miracle." But: inequality soars; 1982 economic crisis; poverty remains high for the poor.</span></div>
-        <div class="tl-item"><span class="tl-year">1980</span><span class="tl-text"><em>Pinochet constitution</em> — Institutionalises his rule; anti-communist clauses; binds future governments to neoliberal economic model. Partly still in force (modified). Required a 1988 plebiscite on his continued rule.</span></div>
-        <div class="tl-item"><span class="tl-year">1988</span><span class="tl-text"><em>"No" campaign wins plebiscite</em> — 55.99% vs 44.01%. Pinochet loses his own referendum. Returns Chile to democracy. <em>Patricio Aylwin</em> elected 1990. Transition is constrained — Pinochet stays as army chief until 1998.</span></div>
-        <div class="tl-item"><span class="tl-year">1991</span><span class="tl-text"><em>Rettig Report (CNVR)</em> — Documents 3,197 killed/disappeared. Human rights groups estimate higher. Pinochet never convicted — dies December 2006. <em>1998:</em> Arrested in London on Spanish warrant (Judge Baltasar Garzón). Returned to Chile on health grounds; sets precedent for international human rights law.</span></div>
+    <!-- CASPI -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Caspi et al</div>
+          <div class="card-year">2003 · 5-HTT Gene & Depression</div>
+          <div class="card-tags">
+            <span class="tag tag-bio">Genetics</span>
+            <span class="tag tag-multi">Gene-Environment</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether serotonin transporter gene (5-HTT) interacts with stress to cause depression</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Longitudinal prospective study</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">1,037 individuals followed from birth to age 26 (Dunedin cohort)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Genotyped for 5-HTT alleles (short/long); tracked stressful life events and depression outcomes</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Those with two short alleles who experienced stress were most likely to develop depression — gene-environment interaction</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Short gene + bad life = depression risk." Genes load the gun; environment pulls the trigger.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Longitudinal — shows development over time; large cohort tracked from birth</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Correlation only; other genes/factors not controlled; specific to one culture (New Zealand)</div>
+        </div>
       </div>
     </div>
+
+  </div><!-- end cards-grid -->
+</section>
+
+
+<!-- ══════════════════════════════════════════════ COGNITIVE -->
+<section id="cog">
+  <div class="section-header">
+    <div class="approach-badge badge-cog">🧠</div>
+    <div class="section-title-wrap">
+      <h2>Cognitive Approach</h2>
+      <p>Memory models, schema theory, cognitive bias, thinking styles, emotion & cognition</p>
+    </div>
   </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Argentina — Perón, Dirty War &amp; Transition (1946–1983)</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <div class="tl">
-        <div class="tl-item"><span class="tl-year">1946–55</span><span class="tl-text"><em>Juan Perón in power</em> — "Justicialismo": populist nationalism mixing workers' rights with anti-communism and anti-US rhetoric. <em>Eva Perón ("Evita")</em> — women's suffrage (1947), social welfare programs, cult of personality. Perón ousted by military coup 1955.</span></div>
-        <div class="tl-item"><span class="tl-year">1973</span><span class="tl-text"><em>Perón returns from 18 years exile</em> — Re-elected president. But Peronism has split: left-wing Montoneros guerrillas and right-wing Triple A death squads both claim his legacy. Perón dies July 1974. Wife <em>Isabel Perón</em> (VP) becomes president — incompetent; economy collapses; terror accelerates.</span></div>
-        <div class="tl-item"><span class="tl-year">Mar 24, 1976</span><span class="tl-text"><em>"El Proceso" coup</em> — Military seizes power. Junta: General Videla (army), Admiral Massera (navy), Brigadier Agosti (air force). US Secretary of State Kissinger tells Videla (Jan 1976, months before coup): "If there are things that have to be done, you should do them quickly."</span></div>
-        <div class="tl-item"><span class="tl-year">1976–83</span><span class="tl-text"><em>The Dirty War (Guerra Sucia)</em> — <strong>30,000 estimated disappeared</strong> (desaparecidos); official figure: 9,000; human rights consensus: ~30,000. "Subversion" defined broadly: guerrillas, trade unionists, teachers, journalists, students, priests, lawyers. Method: clandestine. No bodies, no charges, no accountability.</span></div>
-        <div class="tl-item"><span class="tl-year">1976–83</span><span class="tl-text"><em>ESMA</em> — Navy Mechanics School, Buenos Aires. Largest detention/torture center. Up to 5,000 prisoners passed through; most never returned. Survivors describe systematic torture, then <em>"death flights"</em> — drugged prisoners thrown alive into Río de la Plata or the Atlantic from military planes.</span></div>
-        <div class="tl-item"><span class="tl-year">1976–83</span><span class="tl-text"><em>Theft of babies</em> — Pregnant women had babies forcibly taken; mothers killed; babies given to military families. <em>Abuelas de Plaza de Mayo</em> (Grandmothers) have since located 100+ grandchildren through DNA testing. A uniquely horrifying dimension.</span></div>
-        <div class="tl-item"><span class="tl-year">1977</span><span class="tl-text"><em>Madres de Plaza de Mayo</em> — Mothers of the disappeared gather every Thursday in the plaza in front of the government palace, holding photos of their children. Regime calls them "Las Locas" (the crazy women). First organised public resistance. White headscarves as symbol. Become an international symbol of human rights courage.</span></div>
-        <div class="tl-item"><span class="tl-year">Apr 1982</span><span class="tl-text"><em>Falklands War (Malvinas)</em> — General Galtieri invades Falkland Islands to distract from economic crisis and boost nationalism. Miscalculated Thatcher's response and US support for Britain. Britain retakes islands by June 14; 649 Argentine soldiers dead, 255 British. <strong>Military humiliation collapses the junta.</strong></span></div>
-        <div class="tl-item"><span class="tl-year">1983</span><span class="tl-text"><em>Return to democracy</em> — <em>Raúl Alfonsín</em> (Radical Party) elected. <em>CONADEP Commission</em> → <strong>"Nunca Más" ("Never Again") report</strong> (1984): documented 8,960 disappeared. 1985: Trial of the Juntas — Videla sentenced to life; Massera to life.</span></div>
-        <div class="tl-item"><span class="tl-year">1987–90</span><span class="tl-text"><em>Punto Final + Due Obedience + Menem pardons</em> — Under military pressure, Alfonsín limits prosecutions. Menem (1990) pardons junta leaders. But: <em>2003</em> — Kirchner government revokes pardon laws; full prosecutions resume. Videla dies in prison 2013.</span></div>
+  <div class="sub-heading">🌟 Priority Studies</div>
+  <div class="cards-grid">
+
+    <!-- LOFTUS & PALMER -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Loftus & Palmer</div>
+          <div class="card-year">1974 · Car Crash Video · Schema / Reconstructive Memory</div>
+          <div class="card-tags">
+            <span class="tag tag-cog">Schema Theory</span>
+            <span class="tag tag-cog">Reconstructive Memory</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether the wording of questions affects recall of a car accident</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment (independent measures)</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">45 students (Experiment 1); 150 students (Experiment 2)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Watched a car accident video; asked "how fast were the cars going when they [hit / smashed / collided]?" One week later, asked if they saw broken glass (there was none).</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">"Smashed" group estimated highest speed AND more falsely recalled broken glass — schemas altered memory</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Smash the memory." One word changes both speed estimate and false memories — language reshapes reconstruction.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly controlled lab; clear causal link between wording and memory distortion</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Low ecological validity (video ≠ real accident); student sample limits generalizability</div>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="section-label">Key figures — Chile &amp; Argentina</div>
-  <div class="people">
-    <div class="person"><div class="person-name">Salvador Allende</div><div class="person-role">Chile's elected Marxist president; died Sep 11, 1973</div></div>
-    <div class="person"><div class="person-name">Augusto Pinochet</div><div class="person-role">Led coup; ruled Chile 1973–1990; Chicago Boys economics</div></div>
-    <div class="person"><div class="person-name">Orlando Letelier</div><div class="person-role">Allende's Foreign Minister; assassinated in Washington DC by DINA (1976)</div></div>
-    <div class="person"><div class="person-name">Jorge Rafael Videla</div><div class="person-role">Argentina's first junta leader; architect of Dirty War; life sentence</div></div>
-    <div class="person"><div class="person-name">Emilio Massera</div><div class="person-role">Navy chief; ESMA overseer; convicted; later pardoned, then re-tried</div></div>
-    <div class="person"><div class="person-name">Leopoldo Galtieri</div><div class="person-role">Ordered Falklands invasion; humiliated; junta falls</div></div>
-    <div class="person"><div class="person-name">Madres de Plaza de Mayo</div><div class="person-role">Women who protested weekly from 1977; symbol of resistance</div></div>
-    <div class="person"><div class="person-name">Raúl Alfonsín</div><div class="person-role">Argentina's democratic president 1983; Nunca Más, junta trials</div></div>
-  </div>
-
-  <div class="section-label">Essay angles</div>
-  <div class="essay-box">
-    <div class="essay-label">How responsible was the US for the Chilean coup?</div>
-    <p><strong>Directly involved</strong> — CIA funded El Mercurio newspaper, backed truckers' strikes, supplied intelligence to the military. Nixon personally authorized Operation FUBELT. Kissinger: "I don't see why we need to stand by..." But: <strong>avoid overstating US omnipotence</strong> — the Chilean military had its own motivations (fear of Marxism, institutional interests, class solidarity). The coup was Chilean-driven but US-enabled. Revisionist historians (Kornbluh) emphasise US culpability; orthodox (Rabe) note Chile's internal polarisation.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">How did the Dirty War end?</div>
-    <p>Three intersecting causes: <strong>Falklands disaster</strong> (destroyed military's legitimacy — they couldn't even win a war against a declining power), <strong>economic collapse</strong> (hyperinflation, debt crisis undermined the regime's technocratic credibility), and <strong>human rights pressure</strong> (Madres, international NGOs, Carter's human rights policy cut military aid). Argue: the Madres are symbolically powerful but the Falklands delivered the decisive blow — without military humiliation, the transition might not have happened when it did.</p>
-  </div>
-  <div class="essay-box">
-    <div class="essay-label">Compare Chile and Argentina's authoritarian regimes</div>
-    <p><strong>Similar:</strong> Both US-backed, anti-communist, used disappearances/torture, operated during the Cold War 1970s. Both ended through peaceful transition. <strong>Different:</strong> Chile had Pinochet (one man) vs. Argentina's rotating junta. Chile's repression targeted specific opposition; Argentina's Dirty War was broader, more chaotic. Chile implemented sustained neoliberal economics (Chicago Boys) with some success; Argentina's economics were disastrous. Chile transitioned through a plebiscite Pinochet called; Argentina's transition forced by Falklands humiliation.</p>
-  </div>
-</div>
-
-<!-- ══════════════════════════════════════════
-     HISTORIOGRAPHY
-══════════════════════════════════════════ -->
-<div class="page" id="histo">
-  <div class="topic-banner">
-    <div>
-      <h2>Historiographical Perspectives</h2>
+    <!-- BREWER & TREYENS -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Brewer & Treyens</div>
+          <div class="card-year">1981 · The Office Study · Schema Theory</div>
+          <div class="card-tags">
+            <span class="tag tag-cog">Schema Theory</span>
+            <span class="tag tag-cog">Reconstructive Memory</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether office schemas affect what people remember being in an office</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">86 university students</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Waited in a grad student's office (35 objects; some schema-consistent, some not). Unexpectedly asked to recall what was in the room.</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">More likely to recall schema-consistent items (desk, chair) and falsely recall books. Unusual items (skull, toy) also remembered — due to novelty.</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"You remember what belongs in an office." Schemas fill memory gaps with expected objects.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Demonstrates schema activation naturally; controlled environment</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial office context; student sample; demand characteristics possible</div>
+        </div>
+      </div>
     </div>
-    <span class="span-label span-histo">Use in every essay</span>
-  </div>
 
-  <div class="context">
-    <strong>How to use historiography in IB:</strong> Don't just name-drop. The formula is: <em>Name the school → Define its core argument → Apply it with specific evidence → Qualify or challenge it.</em> Aim for at least 2 perspectives per essay, and try to show they are in tension.
-  </div>
-
-  <div class="histo-card">
-    <div class="histo-name">Orthodox / Traditional</div>
-    <div class="histo-def">The dominant view at the time or shortly after events. For the Cold War, orthodoxy holds that <strong>the USSR was the aggressor</strong> and the US was defending freedom. For civil rights, orthodoxy focuses on great leaders (MLK) and key legislation. Tends to be top-down, written by those close to power or from the "winner's" perspective.</div>
-    <div class="histo-applies">
-      <span class="histo-tag ht-cw">Cold War: US as defender of freedom</span>
-      <span class="histo-tag ht-civil">Civil Rights: MLK + legislation as the story</span>
-      <span class="histo-tag ht-cuba">Cuba: Castro as communist threat</span>
+    <!-- GLANZER & CUNITZ -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Glanzer & Cunitz</div>
+          <div class="card-year">1966 · Serial Position Effect · Memory Model</div>
+          <div class="card-tags">
+            <span class="tag tag-cog">Memory Models</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To provide evidence for the Multi-Store Model (separate STM and LTM stores)</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">240 US Army enlisted men</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Shown a list of words; recalled immediately OR after a 10/30-second delay with a distracting task</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Primacy effect (first words — LTM) stayed. Recency effect (last words — STM) disappeared after delay. Confirms separate stores.</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Delay kills recency." First words stay (LTM); last words vanish when you make them wait (STM disrupted).</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Clean empirical support for the Multi-Store Model; highly replicable</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial word list ≠ real memory; all-male military sample reduces generalizability</div>
+        </div>
+      </div>
     </div>
-    <div class="histo-def" style="margin-top:0.5rem;"><strong>Example:</strong> Orthodox Cold War historians (e.g. Arthur Schlesinger Jr.) argued Soviet aggression made containment not just justified but morally necessary. The USSR was expansionist; the US responded defensively.</div>
-  </div>
 
-  <div class="histo-card">
-    <div class="histo-name">Revisionist</div>
-    <div class="histo-def">Challenges the dominant narrative — usually more critical of power, more sympathetic to those who lost. For the Cold War, revisionists argue <strong>US economic imperialism</strong> was as much to blame as Soviet aggression (William Appleman Williams, Gar Alperovitz). For civil rights, revisionists question whether legislation addressed structural racism.</div>
-    <div class="histo-applies">
-      <span class="histo-tag ht-cw">Cold War: US imperialism drove the conflict</span>
-      <span class="histo-tag ht-civil">Civil Rights: legislation was insufficient</span>
-      <span class="histo-tag ht-sa">Chile: US primarily responsible for coup</span>
-      <span class="histo-tag ht-cuba">Cuba: US embargo caused Cuba's problems</span>
+    <!-- TVERSKY & KAHNEMAN -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Tversky & Kahneman</div>
+          <div class="card-year">1974 · Heuristics & Cognitive Bias</div>
+          <div class="card-tags">
+            <span class="tag tag-cog">Cognitive Bias</span>
+            <span class="tag tag-cog">Intuitive Thinking</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To show that humans use mental shortcuts (heuristics) that lead to predictable errors</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Series of lab experiments / cognitive tasks</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Various samples (students and professionals) across multiple studies</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants given probability problems and estimation tasks (e.g., anchor-and-adjust: guess if wheel lands on 65, estimate African nations in UN)</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Anchor number systematically skewed estimates; identified availability, representativeness, and anchoring heuristics</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Your first number sticks." Anchoring bias = you can't ignore the first number you hear.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly replicable findings; huge influence on behavioral economics</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Mostly lab-based; real-world decisions are more complex; WEIRD sample</div>
+        </div>
+      </div>
     </div>
-    <div class="histo-def" style="margin-top:0.5rem;"><strong>Example:</strong> Revisionist historians like William Appleman Williams ("The Tragedy of American Diplomacy," 1959) argued the US pursued an "Open Door" empire — economic expansion disguised as freedom. Guatemala (1954) and Iran (1953) were about protecting US corporate interests, not fighting communism.</div>
-  </div>
 
-  <div class="histo-card">
-    <div class="histo-name">Post-Revisionist</div>
-    <div class="histo-def">Synthesises orthodox and revisionist views — acknowledges both superpowers had responsibility for the Cold War, misperceptions drove decisions on both sides, and the conflict cannot be reduced to either US or Soviet aggression alone. More nuanced; uses recently declassified archives from both sides.</div>
-    <div class="histo-applies">
-      <span class="histo-tag ht-cw">Cold War: shared responsibility</span>
-      <span class="histo-tag ht-sa">Chile: US-enabled but Chilean-driven</span>
-      <span class="histo-tag ht-cuba">Cuban Missile Crisis: both sides miscalculated</span>
+    <!-- BROWN & KULIK -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Brown & Kulik</div>
+          <div class="card-year">1977 · Flashbulb Memory · Emotion & Cognition</div>
+          <div class="card-tags">
+            <span class="tag tag-cog">Emotion & Memory</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore whether emotionally significant events produce vivid, long-lasting "flashbulb" memories</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Survey / self-report study</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">80 US adults (40 Black, 40 White)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants asked to recall their memories of shocking events (e.g., JFK assassination, MLK assassination)</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Vivid, detailed memories of shocking events — particularly for events personally relevant to participant group. Coined the term "flashbulb memory."</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Shock = snapshot." Emotional relevance determines flashbulb memory strength.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Introduced an influential concept; explored cultural differences in memory</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Self-report only — accuracy of memories not verified; retrospective</div>
+        </div>
+      </div>
     </div>
-    <div class="histo-def" style="margin-top:0.5rem;"><strong>Example:</strong> John Lewis Gaddis ("The Cold War: A New History," 2005) uses Soviet archives to show Stalin was genuinely expansionist — not just reactive. Both superpowers created a self-perpetuating spiral of insecurity. Post-revisionism is currently dominant in academic Cold War history.</div>
+
   </div>
+</section>
 
-  <div class="histo-card">
-    <div class="histo-name">Subaltern Perspective</div>
-    <div class="histo-def">Developed by Ranajit Guha and the Subaltern Studies collective (applied to Latin America by scholars like Walter Mignolo). Focuses on the experiences and <strong>agency of ordinary, marginalised people</strong> — peasants, women, workers, indigenous communities. Challenges both orthodox and revisionist histories for still focusing on elites (whether US/Soviet statesmen or revolutionary leaders). Asks: what did the revolution/movement mean for the people at the bottom?</div>
-    <div class="histo-applies">
-      <span class="histo-tag ht-civil">Civil Rights: grassroots organisers, women</span>
-      <span class="histo-tag ht-libth">Liberation Theology: CEB communities</span>
-      <span class="histo-tag ht-cuba">Cuba: rural peasants' own motivations</span>
-      <span class="histo-tag ht-sa">Argentina: Madres as subaltern resistance</span>
-    </div>
-    <div class="histo-def" style="margin-top:0.5rem;"><strong>Example:</strong> A subaltern reading of the Cuban Revolution asks: what did the Sierra Maestra peasants actually want? Were they committed Marxists, or did they support Castro for land reform, protection from Batista's army, and immediate material gains? Their motivations may not match Castro's ideological narrative.</div>
-  </div>
 
-  <div class="histo-card">
-    <div class="histo-name">Grassroots Perspective</div>
-    <div class="histo-def">Closely related to the subaltern perspective but more focused on <strong>political organizing from below</strong> — how movements are built by ordinary people rather than charismatic leaders. Questions the "great man" (or great leader) model of history. Argues that leadership gets the credit for victories that were built by anonymous organisers, community networks, and local activists.</div>
-    <div class="histo-applies">
-      <span class="histo-tag ht-civil">Civil Rights: Ella Baker, local NAACP chapters</span>
-      <span class="histo-tag ht-libth">Liberation Theology: CEBs, not bishops</span>
-      <span class="histo-tag ht-sa">Madres de Plaza de Mayo</span>
-    </div>
-    <div class="histo-def" style="margin-top:0.5rem;"><strong>Example:</strong> Grassroots historians of the Civil Rights Movement (Clayborne Carson, Charles Payne) argue that SNCC and local organisers in Mississippi — not MLK's speeches — were the movement's backbone. The Montgomery Boycott was organized by Jo Ann Robinson <em>before</em> Rosa Parks's arrest; MLK arrived after the movement was already in motion.</div>
-  </div>
-
-  <div class="section-label">Quick comparison: how perspectives differ on key topics</div>
-
-  <div class="card" style="margin-bottom:0.7rem;">
-    <div class="card-header" onclick="toggle(this)"><h3>Cold War — Orthodox vs Revisionist vs Post-revisionist</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <ul class="kf-list">
-        <li><strong>Orthodox:</strong> Soviet aggression was the primary cause; US defence of freedom was justified; containment was a moral necessity</li>
-        <li><strong>Revisionist:</strong> US economic imperialism drove the conflict; Open Door policy meant the US needed open markets globally; Stalin was responding to legitimate security fears after WWII</li>
-        <li><strong>Post-revisionist:</strong> Both sides bear responsibility; shared misperceptions and security dilemmas; Soviet archives confirm expansionism but also genuine fear of US; the Cold War was a tragedy, not a morality play</li>
-      </ul>
-    </div>
-  </div>
-
-  <div class="card" style="margin-bottom:0.7rem;">
-    <div class="card-header" onclick="toggle(this)"><h3>Civil Rights — Liberal/Orthodox vs Grassroots/Subaltern</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <ul class="kf-list">
-        <li><strong>Liberal/Orthodox:</strong> MLK, Supreme Court decisions, LBJ legislation — civil rights won through enlightened leadership and constitutional channels</li>
-        <li><strong>Grassroots:</strong> Ella Baker, SNCC, local organisers, Jo Ann Robinson — the movement was built from below; MLK arrived to movements already in progress</li>
-        <li><strong>Revisionist/Radical:</strong> The 1964–65 Acts were insufficient — they addressed legal equality but not economic justice; Black Power was the honest recognition of this failure</li>
-      </ul>
+<!-- ══════════════════════════════════════════════ SOCIOCULTURAL -->
+<section id="soc">
+  <div class="section-header">
+    <div class="approach-badge badge-soc">🌍</div>
+    <div class="section-title-wrap">
+      <h2>Sociocultural Approach</h2>
+      <p>Social Identity, stereotypes, cultural dimensions, enculturation, acculturation</p>
     </div>
   </div>
 
-  <div class="card">
-    <div class="card-header" onclick="toggle(this)"><h3>Liberation Theology — Traditional Catholic vs Progressive/Subaltern</h3><span class="card-toggle">▾</span></div>
-    <div class="card-body">
-      <ul class="kf-list">
-        <li><strong>Traditional/Vatican:</strong> Liberation theology contaminated Christianity with Marxist class analysis; politicised the Church; undermined spiritual mission; rightly opposed</li>
-        <li><strong>Progressive/Grassroots:</strong> Authentic response to Christ's command to serve the poor; CEBs empowered communities; liberation theology gave a voice and framework to people who had neither</li>
-        <li><strong>Subaltern:</strong> What did the CEB participants themselves believe and want? Were they using the Church as a vehicle for their own pre-existing resistance? The theology may have facilitated, not created, grassroots activism</li>
-      </ul>
+  <div class="sub-heading">🌟 Priority Studies</div>
+  <div class="cards-grid">
+
+    <!-- TAJFEL 1971 -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Tajfel et al</div>
+          <div class="card-year">1971 · Minimal Groups · Social Identity Theory</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Social Identity Theory</span>
+            <span class="tag tag-soc">Stereotypes</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test if simply being assigned to a group is enough to trigger in-group favoritism</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">64 schoolboys from Bristol, UK (aged 14–15)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Boys randomly assigned to groups based on a meaningless preference (Klee vs. Kandinsky paintings). Then allocated points to anonymous in-group and out-group members.</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Boys consistently gave more points to their own group — even at the cost of overall profit. Discrimination emerged from minimal group membership alone.</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Even a fake group creates real bias." Mere categorization = in-group favoritism.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly controlled; isolates the variable of group membership from prior relationships</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Only male participants; schoolboys only; point allocation may not reflect real-world discrimination</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HILLIARD & LIBEN -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Hilliard & Liben</div>
+          <div class="card-year">2010 · Gender Stereotypes in Classroom · Enculturation</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Stereotypes</span>
+            <span class="tag tag-soc">Enculturation</span>
+            <span class="tag tag-soc">SIT</span>
+          </div>
+        </div>
+        <div class="star-badge">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether a teacher emphasizing gender categories increases gender stereotyping in children</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Field experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">~60 children in kindergarten classrooms (USA)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">One class: teacher used gender labels ("Good morning boys and girls") and gender-segregated activities. Control: no gender emphasis. Assessed after 2 weeks.</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Gender-emphasized group showed more gender stereotyping, stronger in-group preferences, and remembered more about their own gender group</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Teachers teach stereotypes too." Labeling genders makes children more biased.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Field experiment — high ecological validity; real children in real school setting</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Small sample; cannot control all variables in a classroom; ethical concerns about influencing children</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEELE & ARONSON -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Steele & Aronson</div>
+          <div class="card-year">1995 · Stereotype Threat · Effects of Stereotypes</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Effects of Stereotypes</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether activating a racial stereotype harms academic performance</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">114 Black and White American university students</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants completed verbal GRE questions. Half told it was a "test of verbal ability" (stereotype threat condition); others told it was a "problem-solving task."</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Black students performed significantly worse when told it was an ability test. No difference in the non-diagnostic condition.</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"The threat of being seen as dumb makes you score lower." Stereotype awareness disrupts performance.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Controlled experimental conditions; directly tests stereotype threat mechanism</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>US-specific cultural context; lab performance ≠ real exam; may cause distress in participants</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BERRY 1967 -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Berry</div>
+          <div class="card-year">1967 · Conformity Across Cultures · Cultural Dimensions</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Cultural Dimensions</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether conformity rates differ between individualist and collectivist cultures</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Cross-cultural experiment (based on Asch paradigm)</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Temne (Sierra Leone — collectivist) and Inuit (Canada — individualist)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants completed an Asch-style line judgment task in their own cultural setting</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Temne showed much higher conformity than Inuit — consistent with collectivist vs. individualist cultural values</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Farmers follow, hunters think alone." Agricultural collectivists conform more than nomadic individualists.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Cross-cultural design adds ecological validity; tests cultural dimension theory in action</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Confounding variables (resource availability, history); may reflect response bias not just conformity</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- DRURY 2009 -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Drury et al</div>
+          <div class="card-year">2009 · Crowd Behavior · Social Identity Theory</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Social Identity Theory</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore whether shared social identity explains cooperation in crowd disasters</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Qualitative interviews (retrospective accounts)</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Survivors of various crowd disasters (e.g., Bradford fire, Hillsborough)</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">In-depth interviews asking survivors how they felt/behaved in crisis; coded for themes of shared identity</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Survivors reported helping strangers they felt were "in the same boat" — shared identity increased prosocial behavior under threat</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Same crisis = same team." Disasters create a temporary in-group that motivates helping.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Real-world ecological validity; captures genuine behavior in extreme conditions</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Retrospective recall bias; qualitative — hard to generalize; researcher interpretation subjective</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MIRANDA & MATHENY -->
+    <div class="study-card">
+      <div class="card-header">
+        <div class="card-title-block">
+          <div class="card-study-name">Miranda & Matheny</div>
+          <div class="card-year">2000 · Acculturation & Stress · Acculturation</div>
+          <div class="card-tags">
+            <span class="tag tag-soc">Acculturation</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To examine predictors of acculturative stress among Latino immigrants in the US</span></div>
+        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Correlational survey study</span></div>
+        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Latino immigrants in the southeastern United States</span></div>
+        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Measured acculturation level, stress, coping strategies, and English proficiency via questionnaires</span></div>
+        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Language barriers and weak social networks were key predictors of acculturative stress; coping skills helped reduce it</span></div>
+        <div class="card-remember"><strong>Memory Hook</strong>"Language = lifeline." Without language and community, immigrants suffer more.</div>
+        <div class="card-sw">
+          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Large sample of a real-world immigrant population; practically applicable</div>
+          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Self-report — social desirability bias; correlational — no causation</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════════ DEFINITIONS -->
+<section id="defs">
+  <div class="section-header">
+    <div class="approach-badge badge-def">📖</div>
+    <div class="section-title-wrap">
+      <h2>Key Definitions</h2>
+      <p>Define these in your introduction — always link to the question prompt</p>
     </div>
   </div>
-</div>
+
+  <div class="def-section-title">🧬 Biological</div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">Neuroplasticity</div><div class="def-text">The brain's ability to change its structure and function in response to experience, learning, injury, or environmental stimulation throughout a person's life.</div></div>
+    <div class="def-card"><div class="def-term">Localization of Function</div><div class="def-text">The idea that specific areas of the brain are responsible for specific behaviors or cognitive processes (e.g., Broca's area → speech production).</div></div>
+    <div class="def-card"><div class="def-term">Neurotransmitter</div><div class="def-text">A chemical messenger that transmits signals across a synapse from one neuron to another. Examples: acetylcholine (memory), serotonin (mood), dopamine (reward).</div></div>
+    <div class="def-card"><div class="def-term">Hormone</div><div class="def-text">A chemical substance produced by an endocrine gland and transported in the blood to a target organ to regulate physiological processes and behavior (e.g., cortisol — the stress hormone).</div></div>
+    <div class="def-card"><div class="def-term">Pheromone</div><div class="def-text">A chemical signal released by one organism that affects the behavior or physiology of others of the same species, often influencing reproductive and social behavior.</div></div>
+    <div class="def-card"><div class="def-term">Gene-Environment Interaction</div><div class="def-text">When the effect of a gene on behavior depends on the environment, and vice versa. Neither nature nor nurture alone determines the outcome — both interact.</div></div>
+    <div class="def-card"><div class="def-term">Neural Pruning</div><div class="def-text">The process by which unused or weak synaptic connections are eliminated during brain development, strengthening active neural networks and increasing efficiency.</div></div>
+    <div class="def-card"><div class="def-term">Agonist</div><div class="def-text">A substance that binds to a receptor and mimics or enhances the effect of a neurotransmitter (e.g., nicotine acts as an acetylcholine agonist).</div></div>
+    <div class="def-card"><div class="def-term">Antagonist</div><div class="def-text">A substance that blocks or inhibits the action of a neurotransmitter by binding to its receptor without activating it (e.g., scopolamine blocks acetylcholine).</div></div>
+    <div class="def-card"><div class="def-term">MRI / fMRI</div><div class="def-text">MRI (Magnetic Resonance Imaging) shows brain structure. fMRI (functional MRI) shows real-time brain activity by measuring blood oxygen levels. Both are non-invasive brain imaging techniques.</div></div>
+  </div>
+
+  <div class="def-section-title">🧠 Cognitive</div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">Schema</div><div class="def-text">A mental framework or structure that organizes knowledge and guides the perception and interpretation of new information. Schemas can cause memory distortions when new information is assimilated to fit existing knowledge.</div></div>
+    <div class="def-card"><div class="def-term">Reconstructive Memory</div><div class="def-text">The idea that memory is not a perfect recording but is rebuilt (reconstructed) each time we recall it, influenced by existing knowledge, expectations, and post-event information.</div></div>
+    <div class="def-card"><div class="def-term">Flashbulb Memory</div><div class="def-text">A vivid, detailed, and long-lasting memory of a personally significant or emotionally arousing event, proposed by Brown & Kulik (1977). Named for its "photograph-like" quality.</div></div>
+    <div class="def-card"><div class="def-term">Cognitive Bias</div><div class="def-text">A systematic pattern of deviation from rationality in judgment. Biases emerge when people use heuristics (mental shortcuts) that lead to predictable errors.</div></div>
+    <div class="def-card"><div class="def-term">Heuristic</div><div class="def-text">A mental shortcut used to make quick decisions or judgments. While often efficient, heuristics can produce systematic errors (e.g., anchoring, availability, representativeness).</div></div>
+    <div class="def-card"><div class="def-term">Multi-Store Model (MSM)</div><div class="def-text">Atkinson & Shiffrin's model proposing three separate memory stores: Sensory Memory → Short-Term Memory (STM) → Long-Term Memory (LTM), with information transferred through attention and rehearsal.</div></div>
+    <div class="def-card"><div class="def-term">Rational (Controlled) Thinking</div><div class="def-text">Slow, deliberate, analytical reasoning that requires effort and conscious thought. Corresponds to "System 2" in Kahneman's Dual Process Theory.</div></div>
+    <div class="def-card"><div class="def-term">Intuitive (Automatic) Thinking</div><div class="def-text">Fast, unconscious, effortless processing that relies on heuristics and prior experience. Corresponds to "System 1" in Kahneman's Dual Process Theory.</div></div>
+  </div>
+
+  <div class="def-section-title">🌍 Sociocultural</div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">Social Identity Theory (SIT)</div><div class="def-text">Tajfel & Turner's theory that people derive self-esteem from their membership in social groups (in-groups), leading to in-group favoritism and out-group discrimination to maintain a positive social identity.</div></div>
+    <div class="def-card"><div class="def-term">Social Cognitive Theory (SCT)</div><div class="def-text">Bandura's theory that behavior is learned through observation, imitation, and modeling of others, mediated by mental processes such as attention, motivation, and self-efficacy.</div></div>
+    <div class="def-card"><div class="def-term">Stereotype</div><div class="def-text">An oversimplified, generalized belief about the characteristics of a group of people. Can be formed through categorization, media, or cultural transmission, and can affect behavior through stereotype threat.</div></div>
+    <div class="def-card"><div class="def-term">Stereotype Threat</div><div class="def-text">The risk of confirming a negative stereotype about one's group, which creates anxiety that impairs performance on tasks associated with that stereotype (Steele & Aronson, 1995).</div></div>
+    <div class="def-card"><div class="def-term">Enculturation</div><div class="def-text">The process by which an individual learns the values, norms, behaviors, and practices of their culture of origin, typically during childhood, through socialization agents like family, school, and media.</div></div>
+    <div class="def-card"><div class="def-term">Acculturation</div><div class="def-text">The process of cultural and psychological change that results from contact between individuals from different cultures. Strategies include integration, assimilation, separation, and marginalization (Berry's model).</div></div>
+    <div class="def-card"><div class="def-term">Cultural Dimension</div><div class="def-text">Broad value orientations that distinguish cultures from one another. Hofstede's dimensions include individualism-collectivism, power distance, uncertainty avoidance, and masculinity-femininity.</div></div>
+    <div class="def-card"><div class="def-term">In-group / Out-group</div><div class="def-text">In-group: the social group you belong to and identify with. Out-group: groups you do not belong to. SIT predicts in-group favoritism (we favor our own group) and out-group derogation.</div></div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  IB SL Psychology · Paper 1 · Biological · Cognitive · Sociocultural · Good luck on your exam ✦
+</footer>
 
 <script>
-function show(id, btn) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  btn.classList.add('active');
-  window.scrollTo({top: 0, behavior: 'smooth'});
-}
+  const sections = ['essay','multi','bio','cog','soc','defs'];
+  const activeClasses = {
+    essay: 'active-gold',
+    multi: 'active-gold',
+    bio: 'active-bio',
+    cog: 'active-cog',
+    soc: 'active-soc',
+    defs: 'active-def'
+  };
 
-function toggle(header) {
-  const card = header.closest('.card');
-  card.classList.toggle('collapsed');
-}
+  function show(id) {
+    sections.forEach(s => {
+      document.getElementById(s).classList.remove('visible');
+    });
+    document.getElementById(id).classList.add('visible');
+
+    document.querySelectorAll('.nav-btn').forEach((btn, i) => {
+      btn.classList.remove('active-bio','active-cog','active-soc','active-gold','active-def');
+      if (sections[i] === id) btn.classList.add(activeClasses[id]);
+    });
+
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  // Animate cards on section change
+  document.querySelectorAll('.study-card').forEach((card, i) => {
+    card.style.animationDelay = `${i * 0.06}s`;
+  });
 </script>
+
+<style>
+  .study-card {
+    animation: cardIn 0.35s ease both;
+  }
+  @keyframes cardIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+</style>
+
 </body>
 </html>
