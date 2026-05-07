@@ -3,1162 +3,718 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>IB SL Psychology — Paper 1 Study Guide</title>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Source+Serif+4:wght@300;400;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>IB SL Psychology — Paper 2 Study Guide</title>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,500;0,700;1,300;1,500&family=DM+Sans:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #1a1410;
-    --paper: #f5f0e8;
-    --cream: #faf7f2;
-    --gold: #c9953a;
-    --gold-light: #e8b85a;
-    --navy: #1d2d44;
-    --bio: #2d6a4f;
-    --bio-light: #d8f3dc;
-    --bio-mid: #52b788;
-    --cog: #1a3a5c;
-    --cog-light: #dce8f5;
-    --cog-mid: #4a90c4;
-    --soc: #6b2d5e;
-    --soc-light: #f0d9ec;
-    --soc-mid: #b5579b;
-    --multi: #7a3b00;
-    --multi-light: #fff0d8;
-    --muted: #6b6358;
-    --border: #d4c9b5;
-    --shadow: 0 4px 24px rgba(26,20,16,0.10);
+    --bg:      #0f1117;
+    --surface: #181c25;
+    --card:    #1e2330;
+    --border:  #2a3040;
+    --text:    #e8e2d8;
+    --muted:   #7a8098;
+    --subtle:  #2e3445;
+
+    /* Option colors */
+    --abn:      #c0392b;
+    --abn-dim:  rgba(192,57,43,0.12);
+    --abn-mid:  #e85c4a;
+    --dev:      #c47a2b;
+    --dev-dim:  rgba(196,122,43,0.12);
+    --dev-mid:  #e8a050;
+    --hlt:      #2d8a5a;
+    --hlt-dim:  rgba(45,138,90,0.12);
+    --hlt-mid:  #4db87a;
+    --rel:      #7048c8;
+    --rel-dim:  rgba(112,72,200,0.12);
+    --rel-mid:  #9a74e8;
+    --gold:     #c9953a;
+    --gold-dim: rgba(201,149,58,0.15);
   }
 
-  * { margin: 0; padding: 0; box-sizing: border-box; }
+  * { margin:0; padding:0; box-sizing:border-box; }
 
   body {
-    font-family: 'Source Serif 4', Georgia, serif;
-    background: var(--paper);
-    color: var(--ink);
+    font-family: 'DM Sans', system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
     line-height: 1.7;
+    min-height: 100vh;
   }
 
-  /* ── HEADER ── */
+  /* ─── HEADER ─── */
   header {
-    background: var(--navy);
-    color: var(--paper);
-    padding: 3.5rem 2rem 2.5rem;
+    background: linear-gradient(135deg, #0a0d14 0%, #141824 60%, #1a1330 100%);
+    padding: 4rem 2rem 3rem;
     text-align: center;
+    border-bottom: 1px solid var(--border);
     position: relative;
     overflow: hidden;
   }
-  header::before {
+  header::after {
     content: '';
     position: absolute;
     inset: 0;
-    background: repeating-linear-gradient(
-      45deg,
-      transparent,
-      transparent 30px,
-      rgba(255,255,255,0.015) 30px,
-      rgba(255,255,255,0.015) 31px
-    );
+    background: radial-gradient(ellipse 60% 50% at 50% 120%, rgba(112,72,200,0.18) 0%, transparent 70%);
+    pointer-events: none;
   }
-  .header-label {
+  .header-eyebrow {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.25em;
+    font-size: 0.68rem;
+    letter-spacing: 0.28em;
     text-transform: uppercase;
     color: var(--gold);
     margin-bottom: 1rem;
   }
   header h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3.6rem);
     font-weight: 700;
-    line-height: 1.15;
-    margin-bottom: 0.6rem;
+    line-height: 1.1;
+    margin-bottom: 0.7rem;
+    position: relative;
+    z-index: 1;
   }
-  header h1 span { color: var(--gold-light); font-style: italic; }
+  header h1 em { font-style: italic; color: var(--gold); }
   header p {
-    font-size: 1rem;
-    color: rgba(245,240,232,0.7);
-    max-width: 540px;
-    margin: 0 auto 1.8rem;
+    color: var(--muted);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto 2rem;
+    position: relative;
+    z-index: 1;
   }
-  .pill-row { display: flex; gap: 0.6rem; justify-content: center; flex-wrap: wrap; }
+  .pill-row { display:flex; gap:0.6rem; justify-content:center; flex-wrap:wrap; position:relative; z-index:1; }
   .pill {
-    padding: 0.3rem 0.9rem;
+    padding: 0.3rem 0.95rem;
     border-radius: 999px;
-    font-family: 'JetBrains Mono', monospace;
     font-size: 0.72rem;
-    letter-spacing: 0.08em;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.07em;
     border: 1px solid;
   }
-  .pill-bio  { color: var(--bio-mid);  border-color: var(--bio-mid);  background: rgba(45,106,79,0.15); }
-  .pill-cog  { color: var(--cog-mid);  border-color: var(--cog-mid);  background: rgba(26,58,92,0.25); }
-  .pill-soc  { color: var(--soc-mid);  border-color: var(--soc-mid);  background: rgba(107,45,94,0.2); }
-  .pill-multi{ color: var(--gold-light);border-color:var(--gold-light);background:rgba(201,149,58,0.2);}
+  .p-abn { color:var(--abn-mid); border-color:var(--abn-mid); background:var(--abn-dim); }
+  .p-dev { color:var(--dev-mid); border-color:var(--dev-mid); background:var(--dev-dim); }
+  .p-hlt { color:var(--hlt-mid); border-color:var(--hlt-mid); background:var(--hlt-dim); }
+  .p-rel { color:var(--rel-mid); border-color:var(--rel-mid); background:var(--rel-dim); }
+  .p-gold{ color:var(--gold);    border-color:var(--gold);    background:var(--gold-dim);}
 
-  /* ── NAV ── */
+  /* ─── NAV ─── */
   nav {
-    background: var(--cream);
-    border-bottom: 2px solid var(--border);
-    position: sticky;
-    top: 0;
-    z-index: 100;
-    box-shadow: 0 2px 12px rgba(26,20,16,0.07);
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: sticky; top: 0; z-index: 100;
   }
   .nav-inner {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
+    max-width: 1180px; margin: 0 auto;
+    display: flex; overflow-x: auto; scrollbar-width: none;
   }
-  .nav-inner::-webkit-scrollbar { display: none; }
+  .nav-inner::-webkit-scrollbar { display:none; }
   .nav-btn {
-    padding: 1rem 1.4rem;
+    padding: 1rem 1.3rem;
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.75rem;
+    font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    background: none;
-    border: none;
-    cursor: pointer;
+    background: none; border: none; cursor: pointer;
     color: var(--muted);
-    border-bottom: 3px solid transparent;
-    margin-bottom: -2px;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
     white-space: nowrap;
     transition: color 0.2s, border-color 0.2s;
   }
-  .nav-btn:hover { color: var(--ink); }
-  .nav-btn.active-bio  { color: var(--bio);  border-color: var(--bio); }
-  .nav-btn.active-cog  { color: var(--cog);  border-color: var(--cog); }
-  .nav-btn.active-soc  { color: var(--soc);  border-color: var(--soc); }
-  .nav-btn.active-gold { color: var(--gold); border-color: var(--gold); }
-  .nav-btn.active-def  { color: var(--navy); border-color: var(--navy); }
+  .nav-btn:hover { color: var(--text); }
+  .nav-btn.a-essay { color:var(--gold);    border-color:var(--gold); }
+  .nav-btn.a-abn   { color:var(--abn-mid); border-color:var(--abn); }
+  .nav-btn.a-dev   { color:var(--dev-mid); border-color:var(--dev); }
+  .nav-btn.a-hlt   { color:var(--hlt-mid); border-color:var(--hlt); }
+  .nav-btn.a-rel   { color:var(--rel-mid); border-color:var(--rel); }
+  .nav-btn.a-def   { color:#a0b4cc;        border-color:#4a6a88; }
 
-  /* ── LAYOUT ── */
-  main { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 5rem; }
-
-  section { display: none; }
+  /* ─── MAIN ─── */
+  main { max-width: 1180px; margin: 0 auto; padding: 2.5rem 1.5rem 6rem; }
+  section { display: none; animation: fadeUp 0.3s ease; }
   section.visible { display: block; }
+  @keyframes fadeUp { from { opacity:0; transform:translateY(14px); } to { opacity:1; transform:translateY(0); } }
 
-  /* ── SECTION HEADER ── */
-  .section-header {
-    margin-bottom: 2.5rem;
-    padding-bottom: 1rem;
+  /* ─── SECTION HEADER ─── */
+  .sec-head {
+    display: flex; align-items: flex-end; gap: 1.2rem;
+    padding-bottom: 1.2rem;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: flex-end;
-    gap: 1.2rem;
+    margin-bottom: 2rem;
     flex-wrap: wrap;
   }
-  .approach-badge {
-    width: 54px; height: 54px;
-    border-radius: 12px;
+  .sec-icon {
+    width: 52px; height: 52px; border-radius: 12px;
     display: flex; align-items: center; justify-content: center;
-    font-size: 1.5rem;
-    flex-shrink: 0;
+    font-size: 1.4rem; flex-shrink: 0;
   }
-  .badge-bio  { background: var(--bio-light);  }
-  .badge-cog  { background: var(--cog-light);  }
-  .badge-soc  { background: var(--soc-light);  }
-  .badge-gold { background: var(--multi-light); }
-  .badge-def  { background: #e8e2d8; }
-  .section-title-wrap h2 {
-    font-family: 'Playfair Display', serif;
-    font-size: 2rem;
-    font-weight: 700;
+  .icon-abn  { background: var(--abn-dim); border:1px solid rgba(192,57,43,0.3); }
+  .icon-dev  { background: var(--dev-dim); border:1px solid rgba(196,122,43,0.3); }
+  .icon-hlt  { background: var(--hlt-dim); border:1px solid rgba(45,138,90,0.3); }
+  .icon-rel  { background: var(--rel-dim); border:1px solid rgba(112,72,200,0.3); }
+  .icon-essay{ background: var(--gold-dim);border:1px solid rgba(201,149,58,0.3); }
+  .icon-def  { background: #1a2233;        border:1px solid #2a3a50; }
+  .sec-title h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.9rem; font-weight: 700; line-height: 1.2;
   }
-  .section-title-wrap p {
-    color: var(--muted);
-    font-size: 0.92rem;
-    margin-top: 0.15rem;
-  }
+  .sec-title p { color: var(--muted); font-size: 0.88rem; margin-top: 0.2rem; }
 
-  /* ── ESSAY BOX ── */
-  .essay-box {
-    background: var(--navy);
-    color: var(--paper);
+  /* ─── SUBTOPIC BACKGROUND BOX ─── */
+  .bg-box {
     border-radius: 14px;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
+    padding: 1.4rem 1.6rem;
+    margin-bottom: 1.8rem;
+    border: 1px solid;
   }
-  .essay-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--gold-light);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.5rem;
-  }
-  .essay-parts { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 1rem; }
-  .essay-part {
-    background: rgba(255,255,255,0.06);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 10px;
-    padding: 1rem 1.1rem;
-  }
-  .essay-part-label {
+  .bg-box-title {
     font-family: 'JetBrains Mono', monospace;
     font-size: 0.68rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.18em;
     text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.8rem;
+    display: flex; align-items: center; gap: 0.5rem;
   }
-  .essay-part p { font-size: 0.88rem; color: rgba(245,240,232,0.85); line-height: 1.55; }
+  .bg-box p { font-size: 0.87rem; color: var(--text); line-height: 1.65; margin-bottom: 0.5rem; }
+  .bg-box p:last-child { margin-bottom: 0; }
+  .bg-box strong { font-weight: 500; }
+  .bb-abn { background:rgba(192,57,43,0.07); border-color:rgba(192,57,43,0.25); }
+  .bb-abn .bg-box-title { color:var(--abn-mid); }
+  .bb-dev { background:rgba(196,122,43,0.07); border-color:rgba(196,122,43,0.25); }
+  .bb-dev .bg-box-title { color:var(--dev-mid); }
+  .bb-hlt { background:rgba(45,138,90,0.07);  border-color:rgba(45,138,90,0.25); }
+  .bb-hlt .bg-box-title { color:var(--hlt-mid); }
+  .bb-rel { background:rgba(112,72,200,0.07); border-color:rgba(112,72,200,0.25); }
+  .bb-rel .bg-box-title { color:var(--rel-mid); }
+  .bb-gold{ background:var(--gold-dim); border-color:rgba(201,149,58,0.3); }
+  .bb-gold .bg-box-title { color:var(--gold); }
 
-  /* ── STUDY CARDS ── */
+  /* ─── CARDS GRID ─── */
   .cards-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 1.4rem;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.3rem;
     margin-bottom: 2.5rem;
   }
   .study-card {
-    background: var(--cream);
-    border: 1.5px solid var(--border);
+    background: var(--card);
+    border: 1px solid var(--border);
     border-radius: 14px;
     overflow: hidden;
-    box-shadow: var(--shadow);
-    transition: transform 0.2s, box-shadow 0.2s;
+    transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
   }
   .study-card:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(26,20,16,0.14);
+    box-shadow: 0 10px 36px rgba(0,0,0,0.35);
   }
-  .card-header {
+  .card-stripe { height: 3px; }
+  .stripe-abn { background: linear-gradient(90deg, var(--abn), var(--abn-mid)); }
+  .stripe-dev { background: linear-gradient(90deg, var(--dev), var(--dev-mid)); }
+  .stripe-hlt { background: linear-gradient(90deg, var(--hlt), var(--hlt-mid)); }
+  .stripe-rel { background: linear-gradient(90deg, var(--rel), var(--rel-mid)); }
+
+  .card-head {
     padding: 1rem 1.2rem 0.8rem;
     border-bottom: 1px solid var(--border);
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    gap: 0.8rem;
+    display: flex; align-items: flex-start; justify-content: space-between; gap: 0.8rem;
   }
-  .card-title-block { flex: 1; }
-  .card-study-name {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    line-height: 1.25;
+  .card-name {
+    font-family: 'Fraunces', serif;
+    font-size: 1.05rem; font-weight: 500;
+    line-height: 1.25; color: var(--text);
   }
   .card-year {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    color: var(--muted);
-    letter-spacing: 0.05em;
+    font-size: 0.68rem; color: var(--muted);
+    letter-spacing: 0.05em; margin-top: 0.2rem;
   }
-  .card-tags { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.5rem; }
+  .card-tags { display:flex; flex-wrap:wrap; gap:0.3rem; margin-top:0.5rem; }
   .tag {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.63rem;
-    letter-spacing: 0.07em;
-    padding: 0.18rem 0.6rem;
-    border-radius: 4px;
+    font-size: 0.6rem; letter-spacing: 0.07em;
+    padding: 0.18rem 0.55rem; border-radius: 4px;
     text-transform: uppercase;
   }
-  .tag-bio  { background: var(--bio-light);  color: var(--bio); }
-  .tag-cog  { background: var(--cog-light);  color: var(--cog); }
-  .tag-soc  { background: var(--soc-light);  color: var(--soc); }
-  .tag-multi{ background: var(--multi-light); color: var(--multi); }
-  .star-badge {
-    background: var(--gold);
-    color: white;
-    border-radius: 8px;
-    width: 28px; height: 28px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 0.9rem;
-    flex-shrink: 0;
+  .t-abn  { background:var(--abn-dim);  color:var(--abn-mid); }
+  .t-dev  { background:var(--dev-dim);  color:var(--dev-mid); }
+  .t-hlt  { background:var(--hlt-dim);  color:var(--hlt-mid); }
+  .t-rel  { background:var(--rel-dim);  color:var(--rel-mid); }
+  .t-gold { background:var(--gold-dim); color:var(--gold); }
+  .t-p1   { background:rgba(160,180,200,0.12); color:#a0b4cc; }
+
+  .star { /* reused from P1 */
+    background: var(--gold); color: #0f1117;
+    border-radius: 8px; width:26px; height:26px;
+    display:flex; align-items:center; justify-content:center;
+    font-size: 0.85rem; flex-shrink:0;
     box-shadow: 0 2px 8px rgba(201,149,58,0.4);
   }
+
   .card-body { padding: 1rem 1.2rem; }
-  .card-row {
-    display: grid;
-    grid-template-columns: 90px 1fr;
-    gap: 0.3rem 0.6rem;
-    font-size: 0.86rem;
-    margin-bottom: 0.5rem;
-  }
-  .card-row-label {
+  .row { display:grid; grid-template-columns:80px 1fr; gap:0.25rem 0.6rem; margin-bottom:0.35rem; }
+  .rl {
     font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--muted);
-    padding-top: 0.15rem;
+    font-size: 0.63rem; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--muted); padding-top:0.15rem;
   }
-  .card-row-val { color: var(--ink); }
-  .card-remember {
-    margin-top: 0.8rem;
-    padding: 0.7rem 0.9rem;
-    background: #fffbf3;
+  .rv { font-size: 0.85rem; color: var(--text); line-height:1.5; }
+
+  .hook {
+    margin-top: 0.9rem; padding: 0.65rem 0.9rem;
+    background: rgba(201,149,58,0.08);
     border-left: 3px solid var(--gold);
     border-radius: 0 6px 6px 0;
-    font-size: 0.83rem;
-    font-style: italic;
-    color: var(--ink);
+    font-size: 0.81rem; font-style: italic; color: var(--text);
   }
-  .card-remember strong { font-style: normal; font-size: 0.72rem; font-family: 'JetBrains Mono', monospace; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.2rem; }
-  .card-sw { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.8rem; }
-  .sw-box { padding: 0.5rem 0.7rem; border-radius: 6px; font-size: 0.8rem; }
-  .sw-box strong { display: block; font-size: 0.65rem; font-family: 'JetBrains Mono', monospace; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 0.25rem; }
-  .sw-strength { background: #edf7f0; color: #2d6a4f; }
-  .sw-strength strong { color: #2d6a4f; }
-  .sw-weakness { background: #fef1f0; color: #8b2e20; }
-  .sw-weakness strong { color: #8b2e20; }
+  .hook strong { font-style:normal; font-size:0.62rem; font-family:'JetBrains Mono',monospace; letter-spacing:0.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:0.2rem; }
 
-  /* ── SUBSECTION TITLE ── */
-  .sub-heading {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.3rem;
-    font-weight: 600;
-    margin: 2rem 0 1.2rem;
+  .sw { display:grid; grid-template-columns:1fr 1fr; gap:0.5rem; margin-top:0.8rem; }
+  .sw-box { padding:0.5rem 0.7rem; border-radius:6px; font-size:0.78rem; }
+  .sw-box strong { display:block; font-size:0.6rem; font-family:'JetBrains Mono',monospace; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:0.25rem; }
+  .s { background:rgba(45,138,90,0.12); color:#5de09a; }
+  .s strong { color:#4db87a; }
+  .w { background:rgba(192,57,43,0.1); color:#e88070; }
+  .w strong { color:#e85c4a; }
+
+  .p1-badge {
+    display:inline-flex; align-items:center; gap:0.3rem;
+    font-family:'JetBrains Mono',monospace; font-size:0.62rem;
+    letter-spacing:0.08em; color:#a0b4cc;
+    background:rgba(160,180,200,0.1); border:1px solid rgba(160,180,200,0.2);
+    padding:0.2rem 0.6rem; border-radius:4px; margin-top:0.5rem;
+  }
+
+  /* ─── SUB HEADING ─── */
+  .sub-h {
+    font-family: 'Fraunces', serif;
+    font-size: 1.2rem; font-weight: 500;
+    margin: 2.2rem 0 1rem;
     padding-bottom: 0.4rem;
     border-bottom: 1px dashed var(--border);
+    color: var(--text);
   }
 
-  /* ── MULTI-USE HIGHLIGHT BOX ── */
-  .multi-box {
-    background: var(--multi-light);
-    border: 1.5px solid #e8c07a;
-    border-radius: 14px;
-    padding: 1.5rem 1.8rem;
-    margin-bottom: 2.5rem;
+  /* ─── ESSAY SECTION ─── */
+  .essay-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:1rem; margin-bottom:1.5rem; }
+  .e-part {
+    background: var(--subtle); border:1px solid var(--border);
+    border-radius:10px; padding:1rem 1.1rem;
   }
-  .multi-box h3 {
-    font-family: 'Playfair Display', serif;
-    font-size: 1.1rem;
-    color: var(--multi);
-    margin-bottom: 1rem;
-    display: flex; align-items: center; gap: 0.5rem;
+  .e-label {
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+    letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--gold); margin-bottom:0.45rem;
   }
-  .multi-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
-  .multi-table th {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--multi);
-    text-align: left;
-    padding: 0.5rem 0.8rem;
-    background: rgba(122,59,0,0.06);
-    border-bottom: 1px solid #e8c07a;
-  }
-  .multi-table td {
-    padding: 0.6rem 0.8rem;
-    border-bottom: 1px solid rgba(232,192,122,0.4);
-    vertical-align: top;
-  }
-  .multi-table tr:last-child td { border-bottom: none; }
-  .multi-table tr:hover td { background: rgba(232,192,122,0.15); }
+  .e-part p { font-size:0.86rem; color:rgba(232,226,216,0.85); line-height:1.55; }
 
-  /* ── DEFINITIONS ── */
-  .def-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 1rem;
+  .tip-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(270px,1fr)); gap:0.7rem; margin-bottom:2rem; }
+  .tip {
+    background:var(--card); border:1px solid var(--border);
+    border-radius:8px; padding:0.7rem 1rem;
+    font-size:0.83rem; display:flex; gap:0.6rem; align-items:flex-start;
   }
-  .def-card {
-    background: var(--cream);
-    border: 1.5px solid var(--border);
-    border-radius: 10px;
-    padding: 1rem 1.2rem;
-  }
-  .def-term {
-    font-family: 'Playfair Display', serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--navy);
-    margin-bottom: 0.35rem;
-  }
-  .def-text { font-size: 0.85rem; color: var(--ink); line-height: 1.55; }
-  .def-section-title {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.72rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--muted);
+  .tip-icon { flex-shrink:0; margin-top:0.05rem; }
+  .tip-study { display:block; font-family:'JetBrains Mono',monospace; font-size:0.65rem; color:var(--muted); margin-top:0.2rem; }
+
+  /* ─── DEFINITIONS ─── */
+  .def-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:1rem; margin-bottom:2rem; }
+  .def-card { background:var(--card); border:1px solid var(--border); border-radius:10px; padding:1rem 1.2rem; }
+  .def-term { font-family:'Fraunces',serif; font-size:1rem; font-weight:500; color:var(--text); margin-bottom:0.3rem; }
+  .def-text { font-size:0.83rem; color:rgba(232,226,216,0.8); line-height:1.55; }
+  .def-cat {
+    font-family:'JetBrains Mono',monospace; font-size:0.65rem;
+    letter-spacing:0.18em; text-transform:uppercase; color:var(--muted);
     margin: 2rem 0 0.8rem;
-    padding-left: 0.2rem;
   }
 
-  /* ── QUESTION HINTS ── */
-  .qhint-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 0.7rem;
-    margin-bottom: 2rem;
+  /* ─── THEORY CARD (no study needed) ─── */
+  .theory-card {
+    background: var(--subtle); border:1px solid var(--border);
+    border-radius:12px; padding:1.2rem 1.4rem; margin-bottom:1.4rem;
   }
-  .qhint {
-    background: var(--cream);
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 0.7rem 1rem;
-    font-size: 0.84rem;
-    display: flex;
-    gap: 0.6rem;
-    align-items: flex-start;
+  .theory-title {
+    font-family:'Fraunces',serif; font-size:1.05rem; font-weight:500;
+    margin-bottom:0.6rem; color:var(--text);
   }
-  .qhint-icon { font-size: 0.9rem; margin-top: 0.1rem; flex-shrink: 0; }
-  .qhint-text { line-height: 1.45; }
-  .qhint-study {
-    display: block;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 0.68rem;
-    color: var(--muted);
-    margin-top: 0.2rem;
+  .theory-body { font-size:0.86rem; color:rgba(232,226,216,0.85); line-height:1.65; }
+  .theory-body ul { margin:0.6rem 0 0 1rem; }
+  .theory-body li { margin-bottom:0.3rem; }
+
+  @media (max-width:600px) {
+    .cards-grid { grid-template-columns:1fr; }
+    .def-grid { grid-template-columns:1fr; }
+    .essay-grid { grid-template-columns:1fr; }
+    .tip-grid { grid-template-columns:1fr; }
   }
 
-  /* ── FOOTER ── */
   footer {
-    text-align: center;
-    padding: 2rem;
-    color: var(--muted);
-    font-size: 0.8rem;
-    font-family: 'JetBrains Mono', monospace;
-    letter-spacing: 0.05em;
-    border-top: 1px solid var(--border);
-  }
-
-  @media (max-width: 600px) {
-    header { padding: 2.5rem 1rem 2rem; }
-    .cards-grid { grid-template-columns: 1fr; }
-    .def-grid { grid-template-columns: 1fr; }
+    text-align:center; padding:2rem 1rem;
+    color:var(--muted); font-family:'JetBrains Mono',monospace;
+    font-size:0.72rem; letter-spacing:0.06em;
+    border-top:1px solid var(--border);
   }
 </style>
 </head>
 <body>
 
 <header>
-  <div class="header-label">IB SL Psychology · Paper 1</div>
-  <h1>The <span>Complete</span> Study Guide</h1>
-  <p>Biological · Cognitive · Sociocultural approaches — with key studies, definitions, and essay structure.</p>
+  <div class="header-eyebrow">IB SL Psychology · Paper 2 · Optional Themes</div>
+  <h1>Paper 2 <em>Study Guide</em></h1>
+  <p>Abnormal Psychology · Developmental · Health · Human Relationships — with background knowledge, key studies, and essay strategies.</p>
   <div class="pill-row">
-    <span class="pill pill-bio">🧬 Biological</span>
-    <span class="pill pill-cog">🧠 Cognitive</span>
-    <span class="pill pill-soc">🌍 Sociocultural</span>
-    <span class="pill pill-multi">⭐ Multi-Use</span>
+    <span class="pill p-abn">🔴 Abnormal</span>
+    <span class="pill p-dev">🟡 Developmental</span>
+    <span class="pill p-hlt">🟢 Health</span>
+    <span class="pill p-rel">🟣 Relationships</span>
+    <span class="pill p-gold">⭐ Paper 1 Carry-Over</span>
   </div>
 </header>
 
 <nav>
   <div class="nav-inner">
-    <button class="nav-btn active-gold" onclick="show('essay')">📋 Essay Structure</button>
-    <button class="nav-btn" onclick="show('multi')">⭐ Multi-Use Studies</button>
-    <button class="nav-btn" onclick="show('bio')">🧬 Biological</button>
-    <button class="nav-btn" onclick="show('cog')">🧠 Cognitive</button>
-    <button class="nav-btn" onclick="show('soc')">🌍 Sociocultural</button>
+    <button class="nav-btn a-essay" onclick="show('essay')">📋 Essay Guide</button>
+    <button class="nav-btn" onclick="show('abn')">🔴 Abnormal</button>
+    <button class="nav-btn" onclick="show('dev')">🟡 Developmental</button>
+    <button class="nav-btn" onclick="show('hlt')">🟢 Health</button>
+    <button class="nav-btn" onclick="show('rel')">🟣 Relationships</button>
     <button class="nav-btn" onclick="show('defs')">📖 Definitions</button>
   </div>
 </nav>
 
 <main>
 
-<!-- ══════════════════════════════════════════════ ESSAY STRUCTURE -->
+<!-- ══════════ ESSAY GUIDE ══════════ -->
 <section id="essay" class="visible">
-  <div class="section-header">
-    <div class="approach-badge badge-gold">📋</div>
-    <div class="section-title-wrap">
-      <h2>Essay Structure</h2>
-      <p>The blueprint for every Paper 1 answer</p>
+  <div class="sec-head">
+    <div class="sec-icon icon-essay">📋</div>
+    <div class="sec-title">
+      <h2>Essay Structure — Paper 2</h2>
+      <p>Two essays from your chosen option. Each worth 22 marks.</p>
     </div>
   </div>
 
-  <div class="essay-box">
-    <h3>📐 Standard Essay Template</h3>
-    <div class="essay-parts">
-      <div class="essay-part">
-        <div class="essay-part-label">Introduction</div>
-        <p><strong>Define</strong> the key term(s) in the question. <strong>Link</strong> your definition to the prompt. Mention the study/studies you will use.</p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">Body 1 (always)</div>
-        <p>State the study's <strong>Aim → Type → Procedure → Participants</strong> (ATPP). Connect it to the question.</p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">Body 2 ("one or more")</div>
-        <p>Second study using the same ATPP structure. Used only when the question says <em>"one or more"</em> or <em>"discuss."</em></p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">Conclusion</div>
-        <p><strong>Results</strong> of study/studies → <strong>Strength</strong> → <strong>Weakness</strong> → <strong>Validity / Generalizability</strong> → link back to prompt.</p>
-      </div>
+  <div class="bg-box bb-gold">
+    <div class="bg-box-title">📌 Paper 2 Overview</div>
+    <p>Paper 2 is your <strong>option topic</strong>. You study <strong>one option</strong> (Abnormal, Developmental, Health, or Relationships) and answer <strong>two essay questions</strong> from that option. Each question is worth <strong>22 marks</strong>. The essay structure is the same ATPP format from Paper 1, but with deeper evaluation expected.</p>
+  </div>
+
+  <div class="essay-grid">
+    <div class="e-part">
+      <div class="e-label">Introduction</div>
+      <p><strong>Define</strong> the key term(s) directly from the question. <strong>State your argument</strong> clearly. Name the study/studies you will use and how they are relevant.</p>
+    </div>
+    <div class="e-part">
+      <div class="e-label">Body 1 (always)</div>
+      <p>ATPP: <strong>Aim → Type → Procedure → Participants.</strong> Connect findings directly to the question prompt. Don't summarize — analyze.</p>
+    </div>
+    <div class="e-part">
+      <div class="e-label">Body 2 (22-mark Qs)</div>
+      <p>Second study using ATPP. Paper 2 Qs almost always require <strong>two studies</strong>. Compare and contrast findings between the two studies where possible.</p>
+    </div>
+    <div class="e-part">
+      <div class="e-label">Conclusion</div>
+      <p><strong>Results → Strength → Weakness → Validity/Generalizability → Ethical consideration → Link back to prompt.</strong> Offer a balanced verdict on what the evidence shows.</p>
     </div>
   </div>
 
-  <div class="essay-box" style="background:#1a2e1a;">
-    <h3>💡 ATPP Study Breakdown</h3>
-    <div class="essay-parts">
-      <div class="essay-part">
-        <div class="essay-part-label">A — Aim</div>
-        <p>"The aim of the study was to investigate whether…" — state the purpose.</p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">T — Type</div>
-        <p>Lab experiment / Field study / Case study / Quasi-experiment / Survey / Correlation…</p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">P — Procedure</div>
-        <p>What the researchers actually did. Keep it concise — 2-3 sentences max.</p>
-      </div>
-      <div class="essay-part">
-        <div class="essay-part-label">P — Participants</div>
-        <p>Who / How many / Any notable characteristics (age, gender, occupation, etc.)</p>
-      </div>
-    </div>
-  </div>
-
-  <div style="margin-top:2rem;">
-    <div class="sub-heading">📌 Exam Tips</div>
-    <div class="qhint-list">
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>"Explain" = 1 study minimum</strong> — but always name your study in the intro to signal you know it.<span class="qhint-study">8–10 marks</span></div></div>
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>"Discuss" or "one or more"</strong> — use two studies; evaluate both in the conclusion.<span class="qhint-study">22 marks</span></div></div>
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Always link back</strong> to the exact wording of the question at least twice — in body and conclusion.</div></div>
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Ethics in conclusion</strong> — mention if the study was deceptive, if debriefing occurred, or if animals were used.</div></div>
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Multi-use studies</strong> — learn Maguire 2000, Loftus & Palmer 1974, and Tajfel 1971 cold — they appear everywhere.</div></div>
-      <div class="qhint"><span class="qhint-icon">⚡</span><div class="qhint-text"><strong>Generalizability</strong> — consider sample size, WEIRD bias (Western, Educated, Industrial, Rich, Democratic).</div></div>
-    </div>
+  <div class="sub-h">💡 Paper 2 Exam Tips</div>
+  <div class="tip-grid">
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>22-mark questions almost always need two studies.</strong> Never go in with only one study prepared per topic.<span class="tip-study">Plan: 1 intro + 2 ATPP bodies + 1 conclusion</span></div></div>
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>Paper 1 studies carry over.</strong> Caspi (2003), Kendler (2006), Newcomer (1999), Wedekind (1995), Drury (2009), and Hilliard & Liben (2010) all answer Paper 2 questions.<span class="tip-study">Look for ⭐ P1 badge on study cards</span></div></div>
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>Define the disorder or concept first.</strong> For Abnormal questions especially — always define the condition (e.g., depression) before explaining its etiology.</div></div>
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>Evaluation keywords matter.</strong> Use: "However…", "This is supported by…", "A limitation is…", "This suggests that…" — examiners reward analytical language.</div></div>
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>Ethics in conclusion.</strong> Every study has an ethical dimension — mention deception, debriefing, harm to participants, or animal welfare.<span class="tip-study">1–2 sentences is enough</span></div></div>
+    <div class="tip"><span class="tip-icon">⚡</span><div><strong>Generalizability check.</strong> Ask: WEIRD sample? (Western, Educated, Industrial, Rich, Democratic). Small N? Lab vs. real world? Answer this in every conclusion.</div></div>
   </div>
 </section>
 
 
-<!-- ══════════════════════════════════════════════ MULTI-USE STUDIES -->
-<section id="multi">
-  <div class="section-header">
-    <div class="approach-badge badge-gold">⭐</div>
-    <div class="section-title-wrap">
-      <h2>Multi-Use Studies</h2>
-      <p>Learn these first — they answer the most questions across all three approaches</p>
+<!-- ══════════ ABNORMAL ══════════ -->
+<section id="abn">
+  <div class="sec-head">
+    <div class="sec-icon icon-abn">🔴</div>
+    <div class="sec-title">
+      <h2>Abnormal Psychology</h2>
+      <p>Diagnosis validity & reliability · Etiology (Bio/Cog/Soc) · Treatment</p>
     </div>
   </div>
 
-  <div class="multi-box">
-    <h3>⭐ Cross-Category Study Map</h3>
-    <table class="multi-table">
-      <thead>
-        <tr>
-          <th>Study</th>
-          <th>Approaches</th>
-          <th>Topics Covered</th>
-          <th>Why Prioritize?</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><strong>Maguire et al (2000)</strong></td>
-          <td><span class="tag tag-bio">Bio</span></td>
-          <td>Neuroplasticity, Localization, Brain Techniques (MRI)</td>
-          <td>One study answers 3+ Bio questions. Classic, examiner-loved.</td>
-        </tr>
-        <tr>
-          <td><strong>Sharot et al (2007)</strong></td>
-          <td><span class="tag tag-bio">Bio</span> <span class="tag tag-cog">Cog</span></td>
-          <td>Brain imaging technique (fMRI) + Emotion &amp; Memory</td>
-          <td>Bridges Biological AND Cognitive sections.</td>
-        </tr>
-        <tr>
-          <td><strong>Loftus &amp; Palmer (1974)</strong></td>
-          <td><span class="tag tag-cog">Cog</span></td>
-          <td>Schema theory, Reconstructive memory, Research methods</td>
-          <td>Most versatile Cognitive study. Lab experiment = easy to evaluate.</td>
-        </tr>
-        <tr>
-          <td><strong>Brewer &amp; Treyens (1981)</strong></td>
-          <td><span class="tag tag-cog">Cog</span></td>
-          <td>Schema theory, Reconstructive memory</td>
-          <td>Pairs perfectly with Loftus for "one or more" schema questions.</td>
-        </tr>
-        <tr>
-          <td><strong>Tversky &amp; Kahneman (1974)</strong></td>
-          <td><span class="tag tag-cog">Cog</span></td>
-          <td>Cognitive bias, Intuitive thinking, Models of thinking</td>
-          <td>Covers rational + intuitive thinking in one paper.</td>
-        </tr>
-        <tr>
-          <td><strong>Tajfel et al (1971)</strong></td>
-          <td><span class="tag tag-soc">Soc</span></td>
-          <td>Social Identity Theory, Stereotypes, Enculturation</td>
-          <td>Foundation of SIT — essential for sociocultural section.</td>
-        </tr>
-        <tr>
-          <td><strong>Caspi et al (2003)</strong></td>
-          <td><span class="tag tag-bio">Bio</span></td>
-          <td>Genetics &amp; behaviour, Gene-environment interaction</td>
-          <td>Key genetics study — also links to Abnormal (etiology).</td>
-        </tr>
-        <tr>
-          <td><strong>Kendler et al (2006)</strong></td>
-          <td><span class="tag tag-bio">Bio</span></td>
-          <td>Genetic similarity, Twin studies, Genetics</td>
-          <td>Explains how twin/kinship studies work — covers multiple Bio Qs.</td>
-        </tr>
-        <tr>
-          <td><strong>Newcomer et al (1999)</strong></td>
-          <td><span class="tag tag-bio">Bio</span></td>
-          <td>Hormones (cortisol) &amp; behaviour, Memory</td>
-          <td>Hormone question + links to cognitive processes.</td>
-        </tr>
-        <tr>
-          <td><strong>Hilliard &amp; Liben (2010)</strong></td>
-          <td><span class="tag tag-soc">Soc</span></td>
-          <td>Social Identity Theory, Stereotype formation, Enculturation</td>
-          <td>Covers 3 sociocultural topics with one study.</td>
-        </tr>
-      </tbody>
-    </table>
+  <!-- BACKGROUND: Factors Influencing Diagnosis -->
+  <div class="bg-box bb-abn">
+    <div class="bg-box-title">🧩 Background: Factors Influencing Diagnosis</div>
+    <p><strong>Validity</strong> of a diagnosis means it actually measures what it claims to measure — that the label reflects a genuine, distinct condition. <strong>Reliability</strong> means different clinicians, given the same patient, will reach the same diagnosis.</p>
+    <p>Diagnosis is influenced by <strong>cultural bias</strong> (cultural norms determine what is "normal"), <strong>clinical bias</strong> (the clinician's own background and expectations), and the <strong>subjective nature of psychiatric criteria</strong> (DSM relies on self-reported symptoms). Rosenhan (1973) challenged both validity and reliability of the system itself. Li-Repac (1980) demonstrated how the clinician's ethnicity biases judgment.</p>
   </div>
 
-  <div style="margin-bottom:2rem">
-    <div class="sub-heading">🔁 Pair These Together for "One or More" Questions</div>
-    <div class="qhint-list">
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Schema + Reconstructive Memory</strong><span class="qhint-study">Loftus &amp; Palmer (1974) + Brewer &amp; Treyens (1981)</span></div></div>
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Neuroplasticity + Brain Techniques</strong><span class="qhint-study">Maguire (2000) + Draganski (2004)</span></div></div>
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Social Identity Theory</strong><span class="qhint-study">Tajfel (1971) + Hilliard &amp; Liben (2010)</span></div></div>
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Genetics &amp; Behaviour</strong><span class="qhint-study">Caspi (2003) + Kendler (2006)</span></div></div>
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Emotion + Cognitive Process</strong><span class="qhint-study">Sharot (2007) + Brown &amp; Kulik (1977)</span></div></div>
-      <div class="qhint"><span class="qhint-icon">🔗</span><div class="qhint-text"><strong>Stereotype Formation + Effects</strong><span class="qhint-study">Hilliard &amp; Liben (2010) + Steele &amp; Aronson (1995)</span></div></div>
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════════ BIOLOGICAL -->
-<section id="bio">
-  <div class="section-header">
-    <div class="approach-badge badge-bio">🧬</div>
-    <div class="section-title-wrap">
-      <h2>Biological Approach</h2>
-      <p>Brain, genes, hormones, neurotransmitters, pheromones, evolution, neuroplasticity</p>
-    </div>
+  <!-- BACKGROUND: Etiology -->
+  <div class="bg-box bb-abn">
+    <div class="bg-box-title">🧬 Background: Etiology of Disorders (Depression as the model disorder)</div>
+    <p><strong>Biological:</strong> Depression has a genetic component (twin studies show ~38% concordance in MZ twins — Kendler 2006). The serotonin transporter gene (5-HTTLPR) interacts with environmental stress to trigger depression (Caspi 2003). <strong>Cognitive:</strong> Beck's Cognitive Triad (1967) proposes negative schemas about self, world, and future cause depression. Cognitive biases (negative attentional bias) maintain the disorder. <strong>Sociocultural:</strong> Brown & Harris found that social factors — particularly the lack of an intimate relationship and stressful life events — are major vulnerability factors for depression in women.</p>
   </div>
 
-  <div class="sub-heading">🌟 Priority Studies</div>
+  <!-- BACKGROUND: Treatment -->
+  <div class="bg-box bb-abn">
+    <div class="bg-box-title">💊 Background: Treatment</div>
+    <p><strong>Biological treatment:</strong> Antidepressants (SSRIs, tricyclics) target serotonin reuptake. Fournier et al's meta-analysis found these are significantly more effective than placebo only for <em>severe</em> depression — raising questions about over-prescription. <strong>Psychological treatment:</strong> Cognitive Behavioral Therapy (CBT) targets negative automatic thoughts and dysfunctional core beliefs. Jacobson et al found that the <em>behavioral activation</em> component of CBT alone may be as effective as the full cognitive package. <strong>Cultural treatment:</strong> Griner & Smith's meta-analysis showed culturally adapted psychotherapy is substantially more effective for minority clients than standard therapy.</p>
+  </div>
+
+  <div class="sub-h">🔴 Diagnosis — Key Studies</div>
   <div class="cards-grid">
 
-    <!-- MAGUIRE -->
+    <!-- ROSENHAN 1973 -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Maguire et al</div>
-          <div class="card-year">2000 · London Taxi Drivers · MRI Study</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Rosenhan</div>
+          <div class="card-year">1973 · "On Being Sane in Insane Places"</div>
           <div class="card-tags">
-            <span class="tag tag-bio">Neuroplasticity</span>
-            <span class="tag tag-bio">Localization</span>
-            <span class="tag tag-bio">Technique</span>
+            <span class="tag t-abn">Validity</span>
+            <span class="tag t-abn">Reliability</span>
+            <span class="tag t-abn">Diagnosis</span>
           </div>
         </div>
-        <div class="star-badge" title="Multi-use priority study">⭐</div>
+        <div class="star">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To see if navigational experience changes hippocampal structure</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Quasi-experiment / MRI brain imaging</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">16 male London taxi drivers (2+ yrs exp.) vs. 50 controls</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">MRI scans compared hippocampal volume of taxi drivers vs. non-taxi drivers</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Taxi drivers had significantly larger posterior hippocampus; size correlated with years of experience</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"More miles = bigger memory area." Taxi drivers grow their GPS brain region.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Objective MRI data; real-world sample with genuine expertise</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>All-male sample; causation unclear (did taxi work cause it, or did larger hippocampi attract taxi drivers?)</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether psychiatric hospitals could distinguish sane from insane individuals</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Field experiment (covert participant observation)</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">8 pseudopatients (including Rosenhan himself) presented at 12 different US psychiatric hospitals</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Pseudopatients reported hearing voices saying "empty," "hollow," and "thud" — words chosen because they had no clinical history in psychiatric literature. Once admitted, they behaved completely normally and took notes openly.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">All 8 were admitted; 7 diagnosed with schizophrenia, 1 with manic-depressive psychosis. Staff never detected them (though real patients often did). Average stay was 19 days (range: 7–52 days). All were discharged with a diagnosis "in remission." In a follow-up, a hospital told pseudopatients would be sent identified 41 of 193 real patients as impostors — none were actually sent.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Sane in insane places." Once labeled schizophrenic, normal behavior is re-read as symptoms. Labels stick.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>High ecological validity — real hospitals, real consequences for "patients"</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Deception raises serious ethical concerns; cannot replicate today; hospitals have since improved</div>
         </div>
       </div>
     </div>
 
-    <!-- DRAGANSKI -->
+    <!-- LI-REPAC 1980 -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Draganski et al</div>
-          <div class="card-year">2004 · Juggling Study · MRI</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Li-Repac</div>
+          <div class="card-year">1980 · Cultural Bias in Clinical Diagnosis</div>
           <div class="card-tags">
-            <span class="tag tag-bio">Neuroplasticity</span>
-            <span class="tag tag-bio">Technique</span>
+            <span class="tag t-abn">Clinical Bias</span>
+            <span class="tag t-abn">Cultural Bias</span>
+            <span class="tag t-abn">Diagnosis</span>
           </div>
         </div>
+        <div class="star">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To investigate whether learning a new skill changes grey matter in the brain</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">True experiment with repeated measures; MRI used</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">24 adults — 12 trained to juggle, 12 controls (no juggling)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Brain scanned before training, after 3 months (when juggling mastered), and after another 3 months of no juggling</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Grey matter increased in mid-temporal area when juggling was learned; decreased again when they stopped</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Use it or lose it." Brain physically grows with new skills, then shrinks without practice.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>True experiment — controls for individual differences; uses objective MRI measures</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Small sample (24); lab setting may not reflect real-world learning</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate whether a clinician's cultural background influences their diagnostic judgments</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Laboratory experiment using clinical case materials</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">White American and Chinese-American therapists rating Chinese and White patients</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Therapists reviewed case files and interviews of both Chinese and White patients and rated patients on various clinical dimensions (depression, anxiety, social adjustment, overall pathology)</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">White therapists rated Chinese patients as significantly more depressed, inhibited, and less socially skilled than Chinese-American therapists rated the same patients. Shows clinician's cultural background affects diagnosis.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Who's doing the diagnosing matters as much as who's being diagnosed." Cultural lens = diagnostic bias.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Controlled design isolating cultural background of clinician as the variable</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Small, specific sample; artificial rating of case files ≠ real clinical encounters</div>
         </div>
       </div>
     </div>
 
-    <!-- SHAROT -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Sharot et al</div>
-          <div class="card-year">2007 · 9/11 Flashbulb Memory · fMRI</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Technique (fMRI)</span>
-            <span class="tag tag-cog">Emotion & Memory</span>
-          </div>
-        </div>
-        <div class="star-badge">⭐</div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore the neural basis of flashbulb memories vs. ordinary memories</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Quasi-experiment using fMRI brain scanning</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">24 adults who were in NYC on 9/11; vs. those who were far away</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants recalled 9/11 and other summer events while in fMRI scanner; brain activation compared</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">9/11 memories showed greater amygdala activation in those close to the event — amygdala links to emotional memory</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Amygdala = emotional alarm bell." High emotion → stronger, more vivid memory encoding.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>fMRI provides direct evidence of brain activity; links biology to cognitive process</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Quasi-experiment — no random assignment; small sample; NYC context may limit generalizability</div>
-        </div>
-      </div>
-    </div>
+  </div><!-- end diagnosis cards -->
 
-    <!-- ROGERS & KESNER -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Rogers & Kesner</div>
-          <div class="card-year">2003 · Acetylcholine in Rats · Animal Study</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Neurotransmitters</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To investigate the role of acetylcholine on spatial memory in rats</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">True lab experiment (animal research)</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Rats injected with either scopolamine (ACh blocker) or saline (control)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Rats navigated a maze; errors and timing were recorded</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Rats with blocked ACh made significantly more errors — showing ACh is vital for spatial memory</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Block ACh → bad at mazes." Acetylcholine = the memory chemical.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>High control over variables; causal relationship established</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Animal research — ethical concerns; cannot fully generalize to humans</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NEWCOMER -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Newcomer et al</div>
-          <div class="card-year">1999 · Cortisol & Memory · Hormones</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Hormones</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether elevated cortisol (stress hormone) impairs verbal memory</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Double-blind true experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">51 participants — 3 groups: high cortisol, low cortisol, placebo</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants took cortisol tablets for 4 days then completed verbal memory tests</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">High cortisol group performed significantly worse on memory tasks</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Stress kills memory." High cortisol = forgetting more.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Double-blind design eliminates experimenter and participant bias</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial cortisol administration ≠ natural stress; short duration (4 days)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- WEDEKIND -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Wedekind et al</div>
-          <div class="card-year">1995 · Sweaty T-Shirt Study · Pheromones</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Pheromones</span>
-            <span class="tag tag-bio">Evolution</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether humans use smell (MHC genes) to select genetically compatible mates</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">44 women, 49 men — MHC genotypes tested</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Men wore t-shirts for 2 days; women smelled the shirts and rated attractiveness. MHC similarity compared.</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Women preferred smell of men with dissimilar MHC genes (greater immune diversity benefit)</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Smell the opposite immune system." MHC dissimilarity = healthier offspring.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Controlled procedure; clear evolutionary rationale</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial setting; oral contraceptives reversed preference (ethical and methodological concern)</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- KENDLER -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Kendler et al</div>
-          <div class="card-year">2006 · Twin Study · Genetic Similarity</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Genetics</span>
-            <span class="tag tag-bio">Twin Studies</span>
-          </div>
-        </div>
-        <div class="star-badge">⭐</div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To examine genetic vs. environmental factors in major depression using twins</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Longitudinal twin study (concordance rates)</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">~42,000 twin pairs from the Swedish Twin Registry</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Compared MZ (identical) and DZ (fraternal) twins for rates of depression. MZ share 100% DNA; DZ share ~50%.</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">MZ twins had higher concordance rates (~38%) than DZ twins (~26%) — suggesting genetic influence on depression</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Identical twins, more similar depression risk." Genetics plays a role but isn't destiny.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Huge sample size; well-controlled natural variation between MZ and DZ</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>MZ twins may share more similar environments too (confounding). 100% concordance never reached.</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- CASPI -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Caspi et al</div>
-          <div class="card-year">2003 · 5-HTT Gene & Depression</div>
-          <div class="card-tags">
-            <span class="tag tag-bio">Genetics</span>
-            <span class="tag tag-multi">Gene-Environment</span>
-          </div>
-        </div>
-        <div class="star-badge">⭐</div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether serotonin transporter gene (5-HTT) interacts with stress to cause depression</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Longitudinal prospective study</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">1,037 individuals followed from birth to age 26 (Dunedin cohort)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Genotyped for 5-HTT alleles (short/long); tracked stressful life events and depression outcomes</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Those with two short alleles who experienced stress were most likely to develop depression — gene-environment interaction</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Short gene + bad life = depression risk." Genes load the gun; environment pulls the trigger.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Longitudinal — shows development over time; large cohort tracked from birth</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Correlation only; other genes/factors not controlled; specific to one culture (New Zealand)</div>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- end cards-grid -->
-</section>
-
-
-<!-- ══════════════════════════════════════════════ COGNITIVE -->
-<section id="cog">
-  <div class="section-header">
-    <div class="approach-badge badge-cog">🧠</div>
-    <div class="section-title-wrap">
-      <h2>Cognitive Approach</h2>
-      <p>Memory models, schema theory, cognitive bias, thinking styles, emotion & cognition</p>
-    </div>
-  </div>
-
-  <div class="sub-heading">🌟 Priority Studies</div>
+  <div class="sub-h">🧬 Biological Etiology — Key Studies</div>
   <div class="cards-grid">
 
-    <!-- LOFTUS & PALMER -->
+    <!-- KENDLER 2006 — CARRY OVER -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Loftus & Palmer</div>
-          <div class="card-year">1974 · Car Crash Video · Schema / Reconstructive Memory</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Kendler et al</div>
+          <div class="card-year">2006 · Swedish Twin Registry · Depression & Genetics</div>
           <div class="card-tags">
-            <span class="tag tag-cog">Schema Theory</span>
-            <span class="tag tag-cog">Reconstructive Memory</span>
+            <span class="tag t-abn">Biological Etiology</span>
+            <span class="tag t-abn">Genetics</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
           </div>
         </div>
-        <div class="star-badge">⭐</div>
+        <div class="star">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether the wording of questions affects recall of a car accident</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment (independent measures)</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">45 students (Experiment 1); 150 students (Experiment 2)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Watched a car accident video; asked "how fast were the cars going when they [hit / smashed / collided]?" One week later, asked if they saw broken glass (there was none).</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">"Smashed" group estimated highest speed AND more falsely recalled broken glass — schemas altered memory</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Smash the memory." One word changes both speed estimate and false memories — language reshapes reconstruction.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly controlled lab; clear causal link between wording and memory distortion</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Low ecological validity (video ≠ real accident); student sample limits generalizability</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To assess the genetic contribution to major depression using twin concordance data</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Longitudinal twin study using concordance rates</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">~42,000 twin pairs from the Swedish Twin Registry</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Compared concordance rates for major depression in monozygotic (MZ — 100% shared DNA) and dizygotic (DZ — ~50% shared DNA) twins over time</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">MZ twins showed ~38% concordance for depression; DZ twins showed ~26%. Higher concordance in MZ twins indicates a genetic component. Concordance never reaches 100%, confirming that environment also plays a significant role.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Biological Approach — Genetics)</div>
+        <div class="hook"><strong>Memory Hook</strong>"Identical twins, more identical risk." Genetics matters but doesn't determine destiny.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Enormous sample (~42k pairs); elegantly controls shared environment by comparing MZ vs DZ</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>MZ twins may share more similar environments too; concordance never 100% — genetics alone insufficient</div>
         </div>
       </div>
     </div>
 
-    <!-- BREWER & TREYENS -->
+    <!-- CASPI 2003 — CARRY OVER -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Brewer & Treyens</div>
-          <div class="card-year">1981 · The Office Study · Schema Theory</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Caspi et al</div>
+          <div class="card-year">2003 · 5-HTTLPR Gene & Life Stress · Dunedin Cohort</div>
           <div class="card-tags">
-            <span class="tag tag-cog">Schema Theory</span>
-            <span class="tag tag-cog">Reconstructive Memory</span>
+            <span class="tag t-abn">Biological Etiology</span>
+            <span class="tag t-abn">Gene-Environment</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
           </div>
         </div>
-        <div class="star-badge">⭐</div>
+        <div class="star">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether office schemas affect what people remember being in an office</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">86 university students</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Waited in a grad student's office (35 objects; some schema-consistent, some not). Unexpectedly asked to recall what was in the room.</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">More likely to recall schema-consistent items (desk, chair) and falsely recall books. Unusual items (skull, toy) also remembered — due to novelty.</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"You remember what belongs in an office." Schemas fill memory gaps with expected objects.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Demonstrates schema activation naturally; controlled environment</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial office context; student sample; demand characteristics possible</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- GLANZER & CUNITZ -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Glanzer & Cunitz</div>
-          <div class="card-year">1966 · Serial Position Effect · Memory Model</div>
-          <div class="card-tags">
-            <span class="tag tag-cog">Memory Models</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To provide evidence for the Multi-Store Model (separate STM and LTM stores)</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">240 US Army enlisted men</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Shown a list of words; recalled immediately OR after a 10/30-second delay with a distracting task</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Primacy effect (first words — LTM) stayed. Recency effect (last words — STM) disappeared after delay. Confirms separate stores.</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Delay kills recency." First words stay (LTM); last words vanish when you make them wait (STM disrupted).</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Clean empirical support for the Multi-Store Model; highly replicable</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Artificial word list ≠ real memory; all-male military sample reduces generalizability</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- TVERSKY & KAHNEMAN -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Tversky & Kahneman</div>
-          <div class="card-year">1974 · Heuristics & Cognitive Bias</div>
-          <div class="card-tags">
-            <span class="tag tag-cog">Cognitive Bias</span>
-            <span class="tag tag-cog">Intuitive Thinking</span>
-          </div>
-        </div>
-        <div class="star-badge">⭐</div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To show that humans use mental shortcuts (heuristics) that lead to predictable errors</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Series of lab experiments / cognitive tasks</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Various samples (students and professionals) across multiple studies</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants given probability problems and estimation tasks (e.g., anchor-and-adjust: guess if wheel lands on 65, estimate African nations in UN)</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Anchor number systematically skewed estimates; identified availability, representativeness, and anchoring heuristics</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Your first number sticks." Anchoring bias = you can't ignore the first number you hear.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly replicable findings; huge influence on behavioral economics</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Mostly lab-based; real-world decisions are more complex; WEIRD sample</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BROWN & KULIK -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Brown & Kulik</div>
-          <div class="card-year">1977 · Flashbulb Memory · Emotion & Cognition</div>
-          <div class="card-tags">
-            <span class="tag tag-cog">Emotion & Memory</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore whether emotionally significant events produce vivid, long-lasting "flashbulb" memories</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Survey / self-report study</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">80 US adults (40 Black, 40 White)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants asked to recall their memories of shocking events (e.g., JFK assassination, MLK assassination)</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Vivid, detailed memories of shocking events — particularly for events personally relevant to participant group. Coined the term "flashbulb memory."</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Shock = snapshot." Emotional relevance determines flashbulb memory strength.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Introduced an influential concept; explored cultural differences in memory</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Self-report only — accuracy of memories not verified; retrospective</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether the 5-HTTLPR serotonin transporter gene moderates the effect of stressful life events on depression</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Longitudinal prospective study (birth to age 26)</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">1,037 individuals from the Dunedin Multidisciplinary Health and Development Study in New Zealand</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Participants genotyped for 5-HTTLPR allele variants (short "s" / long "l"). Stressful life events recorded between ages 21–26. Depression assessed at age 26 using diagnostic interviews.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Individuals with one or two short (s) alleles who experienced stressful life events had significantly higher rates of depression and suicidality than those with long (l) alleles who experienced the same stress. The gene alone, without stress, did not predict depression.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Biological Approach — Genetics)</div>
+        <div class="hook"><strong>Memory Hook</strong>"Genes load the gun; stress pulls the trigger." The s/s genotype is a vulnerability, not a sentence.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Longitudinal from birth eliminates recall bias; large cohort; tracked real-world stress events</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>New Zealand cohort (WEIRD); some replication attempts have produced mixed results; correlational</div>
         </div>
       </div>
     </div>
 
   </div>
-</section>
 
+  <div class="sub-h">🧠 Cognitive Etiology — Key Study</div>
 
-<!-- ══════════════════════════════════════════════ SOCIOCULTURAL -->
-<section id="soc">
-  <div class="section-header">
-    <div class="approach-badge badge-soc">🌍</div>
-    <div class="section-title-wrap">
-      <h2>Sociocultural Approach</h2>
-      <p>Social Identity, stereotypes, cultural dimensions, enculturation, acculturation</p>
+  <!-- BECK + CASERAS THEORY BOX -->
+  <div class="theory-card">
+    <div class="theory-title">Beck's Cognitive Model of Depression (1967) — Essential Theory</div>
+    <div class="theory-body">
+      <p>Beck proposed that depression is caused by systematic errors in thinking, organized around three themes — the <strong>Cognitive Triad</strong>:</p>
+      <ul>
+        <li><strong>Negative view of self</strong> ("I am worthless and inadequate")</li>
+        <li><strong>Negative view of the world</strong> ("Everything is hopeless and demanding")</li>
+        <li><strong>Negative view of the future</strong> ("Nothing will ever improve")</li>
+      </ul>
+      <p style="margin-top:0.6rem">These produce cognitive distortions (e.g., catastrophizing, overgeneralization) that reinforce depressive schemas. Beck's model is the theoretical foundation for <strong>Cognitive Behavioral Therapy (CBT)</strong>.</p>
     </div>
   </div>
 
-  <div class="sub-heading">🌟 Priority Studies</div>
+  <div class="cards-grid">
+    <!-- CASERAS 2007 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Caseras et al</div>
+          <div class="card-year">2007 · Attentional Bias & Dysphoria</div>
+          <div class="card-tags">
+            <span class="tag t-abn">Cognitive Etiology</span>
+            <span class="tag t-abn">Beck's Model</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test Beck's prediction that dysphoric individuals show an attentional bias toward negative stimuli</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Lab experiment using eye-tracking methodology</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Participants categorized as dysphoric (subclinical depression, high dysfunctional attitudes score) vs. non-dysphoric controls</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Participants viewed pairs of emotionally valenced images (positive, negative, neutral) on a screen while eye movements were tracked. Patterns of attention allocation were recorded and compared between groups.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Dysphoric participants showed significantly greater attentional bias toward negative stimuli compared to non-dysphoric participants. This pattern supports Beck's cognitive model — depressed individuals selectively attend to negative information, which maintains and deepens their negative thinking patterns.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Sad brains seek sad things." Negative attention bias = a cognitive feedback loop that keeps depression going.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Eye-tracking is an objective, implicit measure that avoids self-report bias</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Dysphoria ≠ clinical depression; lab attention tasks may not reflect real-world thinking patterns</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">🌍 Sociocultural Etiology & Treatment — Key Studies</div>
   <div class="cards-grid">
 
-    <!-- TAJFEL 1971 -->
+    <!-- BROWN & HARRIS -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Tajfel et al</div>
-          <div class="card-year">1971 · Minimal Groups · Social Identity Theory</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Brown & Harris</div>
+          <div class="card-year">1978 · Social Origins of Depression · London Women</div>
           <div class="card-tags">
-            <span class="tag tag-soc">Social Identity Theory</span>
-            <span class="tag tag-soc">Stereotypes</span>
+            <span class="tag t-abn">Sociocultural Etiology</span>
+            <span class="tag t-abn">Depression</span>
           </div>
         </div>
-        <div class="star-badge">⭐</div>
+        <div class="star">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test if simply being assigned to a group is enough to trigger in-group favoritism</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">64 schoolboys from Bristol, UK (aged 14–15)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Boys randomly assigned to groups based on a meaningless preference (Klee vs. Kandinsky paintings). Then allocated points to anonymous in-group and out-group members.</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Boys consistently gave more points to their own group — even at the cost of overall profit. Discrimination emerged from minimal group membership alone.</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Even a fake group creates real bias." Mere categorization = in-group favoritism.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Highly controlled; isolates the variable of group membership from prior relationships</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Only male participants; schoolboys only; point allocation may not reflect real-world discrimination</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate the social and environmental factors that contribute to clinical depression in women</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Survey / structured clinical interview; correlational design</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">458 working-class women living in Camberwell, South London</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Women were assessed for depression via interview. Researchers identified "provoking agents" (severe life events) and "vulnerability factors." Vulnerability factors included: (1) loss of mother before age 11, (2) three or more children under 14 at home, (3) absence of a close, confiding relationship (especially a partner), (4) lack of employment outside the home.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Women who experienced a severe life event AND had one or more vulnerability factors were significantly more likely to develop depression. Lack of a close confiding relationship was the strongest vulnerability factor. Social isolation and lack of support are powerful etiological factors.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"No confidant + a hard life = depression." Social support is a protective buffer against depression.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Identifies specific, measurable social risk factors; large community sample (not just clinical patients)</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>All-female, working-class, British sample — poor generalizability; retrospective; correlation not causation</div>
         </div>
       </div>
     </div>
 
-    <!-- HILLIARD & LIBEN -->
+    <!-- GRINER & SMITH 2006 -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Hilliard & Liben</div>
-          <div class="card-year">2010 · Gender Stereotypes in Classroom · Enculturation</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Griner & Smith</div>
+          <div class="card-year">2006 · Culturally Adapted Therapy · Meta-Analysis</div>
           <div class="card-tags">
-            <span class="tag tag-soc">Stereotypes</span>
-            <span class="tag tag-soc">Enculturation</span>
-            <span class="tag tag-soc">SIT</span>
+            <span class="tag t-abn">Cultural Treatment</span>
+            <span class="tag t-abn">Psychotherapy</span>
           </div>
         </div>
-        <div class="star-badge">⭐</div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether a teacher emphasizing gender categories increases gender stereotyping in children</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Field experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">~60 children in kindergarten classrooms (USA)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">One class: teacher used gender labels ("Good morning boys and girls") and gender-segregated activities. Control: no gender emphasis. Assessed after 2 weeks.</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Gender-emphasized group showed more gender stereotyping, stronger in-group preferences, and remembered more about their own gender group</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Teachers teach stereotypes too." Labeling genders makes children more biased.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Field experiment — high ecological validity; real children in real school setting</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Small sample; cannot control all variables in a classroom; ethical concerns about influencing children</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To determine whether culturally adapted psychotherapy is more effective than standard therapy for minority clients</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Meta-analysis of 76 published studies</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Studies included predominantly ethnic minority clients in the United States</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Reviewed 76 studies comparing culturally adapted interventions (e.g., therapy delivered in the client's native language, incorporating cultural values/practices) against standard unadapted treatments. Calculated overall effect size.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Culturally adapted interventions had a moderate and positive effect size (d ≈ 0.45) over standard treatments. Interventions delivered in the client's first language were particularly effective. Group-based culturally adapted interventions outperformed individual-based ones.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Therapy in your language, in your culture, works better." One-size-fits-all treatment doesn't fit all.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Meta-analysis aggregates many studies — high statistical power; directly addresses a gap in treatment effectiveness</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Publication bias (positive results over-represented); varies widely by disorder type and culture studied</div>
         </div>
       </div>
     </div>
 
-    <!-- STEELE & ARONSON -->
+    <!-- FOURNIER ET AL -->
     <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Steele & Aronson</div>
-          <div class="card-year">1995 · Stereotype Threat · Effects of Stereotypes</div>
+      <div class="card-stripe stripe-abn"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Fournier et al</div>
+          <div class="card-year">2010 · Antidepressant Efficacy by Severity</div>
           <div class="card-tags">
-            <span class="tag tag-soc">Effects of Stereotypes</span>
+            <span class="tag t-abn">Biological Treatment</span>
+            <span class="tag t-abn">Antidepressants</span>
           </div>
         </div>
       </div>
       <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether activating a racial stereotype harms academic performance</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Lab experiment</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">114 Black and White American university students</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants completed verbal GRE questions. Half told it was a "test of verbal ability" (stereotype threat condition); others told it was a "problem-solving task."</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Black students performed significantly worse when told it was an ability test. No difference in the non-diagnostic condition.</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"The threat of being seen as dumb makes you score lower." Stereotype awareness disrupts performance.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Controlled experimental conditions; directly tests stereotype threat mechanism</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>US-specific cultural context; lab performance ≠ real exam; may cause distress in participants</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- BERRY 1967 -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Berry</div>
-          <div class="card-year">1967 · Conformity Across Cultures · Cultural Dimensions</div>
-          <div class="card-tags">
-            <span class="tag tag-soc">Cultural Dimensions</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To test whether conformity rates differ between individualist and collectivist cultures</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Cross-cultural experiment (based on Asch paradigm)</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Temne (Sierra Leone — collectivist) and Inuit (Canada — individualist)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Participants completed an Asch-style line judgment task in their own cultural setting</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Temne showed much higher conformity than Inuit — consistent with collectivist vs. individualist cultural values</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Farmers follow, hunters think alone." Agricultural collectivists conform more than nomadic individualists.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Cross-cultural design adds ecological validity; tests cultural dimension theory in action</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Confounding variables (resource availability, history); may reflect response bias not just conformity</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DRURY 2009 -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Drury et al</div>
-          <div class="card-year">2009 · Crowd Behavior · Social Identity Theory</div>
-          <div class="card-tags">
-            <span class="tag tag-soc">Social Identity Theory</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To explore whether shared social identity explains cooperation in crowd disasters</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Qualitative interviews (retrospective accounts)</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Survivors of various crowd disasters (e.g., Bradford fire, Hillsborough)</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">In-depth interviews asking survivors how they felt/behaved in crisis; coded for themes of shared identity</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Survivors reported helping strangers they felt were "in the same boat" — shared identity increased prosocial behavior under threat</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Same crisis = same team." Disasters create a temporary in-group that motivates helping.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Real-world ecological validity; captures genuine behavior in extreme conditions</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Retrospective recall bias; qualitative — hard to generalize; researcher interpretation subjective</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- MIRANDA & MATHENY -->
-    <div class="study-card">
-      <div class="card-header">
-        <div class="card-title-block">
-          <div class="card-study-name">Miranda & Matheny</div>
-          <div class="card-year">2000 · Acculturation & Stress · Acculturation</div>
-          <div class="card-tags">
-            <span class="tag tag-soc">Acculturation</span>
-          </div>
-        </div>
-      </div>
-      <div class="card-body">
-        <div class="card-row"><span class="card-row-label">Aim</span><span class="card-row-val">To examine predictors of acculturative stress among Latino immigrants in the US</span></div>
-        <div class="card-row"><span class="card-row-label">Type</span><span class="card-row-val">Correlational survey study</span></div>
-        <div class="card-row"><span class="card-row-label">Participants</span><span class="card-row-val">Latino immigrants in the southeastern United States</span></div>
-        <div class="card-row"><span class="card-row-label">Procedure</span><span class="card-row-val">Measured acculturation level, stress, coping strategies, and English proficiency via questionnaires</span></div>
-        <div class="card-row"><span class="card-row-label">Results</span><span class="card-row-val">Language barriers and weak social networks were key predictors of acculturative stress; coping skills helped reduce it</span></div>
-        <div class="card-remember"><strong>Memory Hook</strong>"Language = lifeline." Without language and community, immigrants suffer more.</div>
-        <div class="card-sw">
-          <div class="sw-box sw-strength"><strong>✅ Strength</strong>Large sample of a real-world immigrant population; practically applicable</div>
-          <div class="sw-box sw-weakness"><strong>❌ Weakness</strong>Self-report — social desirability bias; correlational — no causation</div>
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether antidepressant efficacy varies based on initial severity of depression</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Meta-analysis using individual patient data from randomized controlled trials</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Data from 6 RCTs comparing antidepressants (imipramine or paroxetine) to placebo</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Analyzed individual patient data from RCTs across different severity levels of depression (mild, moderate, severe, very severe — as measured by Hamilton Depression Rating Scale). Compared drug vs. placebo outcomes at each severity level.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Antidepressants provided minimal clinical benefit over placebo for mild to moderate depression (the drug–placebo difference was small and clinically insignificant). For severe and very severe depression, antidepressants showed a substantial, clinically meaningful advantage over placebo.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Pills help the severely depressed, barely help the mildly depressed." Severity of illness determines drug effectiveness.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Uses individual patient data from RCTs — highest-quality evidence; examines severity as a variable</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Only two specific antidepressants studied; publication bias in original RCTs; short-term outcomes only</div>
         </div>
       </div>
     </div>
@@ -1167,101 +723,607 @@
 </section>
 
 
-<!-- ══════════════════════════════════════════════ DEFINITIONS -->
+<!-- ══════════ DEVELOPMENTAL ══════════ -->
+<section id="dev">
+  <div class="sec-head">
+    <div class="sec-icon icon-dev">🟡</div>
+    <div class="sec-title">
+      <h2>Developmental Psychology</h2>
+      <p>Attachment · Gender development · Cognitive development · Socialization</p>
+    </div>
+  </div>
+
+  <div class="bg-box bb-dev">
+    <div class="bg-box-title">🧩 Background: Attachment Theory</div>
+    <p><strong>John Bowlby</strong> proposed that attachment is an innate, evolved mechanism ensuring infant survival. He argued for a <strong>critical period</strong> (roughly birth to 2–3 years) during which an infant must form an attachment to a caregiver (usually the mother — "monotropy"). Failure to form this bond leads to <strong>maternal deprivation</strong>, with long-term consequences for emotional, cognitive, and social development.</p>
+    <p><strong>Mary Ainsworth</strong> extended Bowlby's theory by identifying distinct <strong>attachment types</strong> — Secure (B), Insecure Avoidant (A), and Insecure Resistant/Ambivalent (C) — using the standardized Strange Situation procedure. The quality of attachment depends on caregiver <strong>sensitivity</strong> to infant signals.</p>
+  </div>
+
+  <div class="bg-box bb-dev">
+    <div class="bg-box-title">⚥ Background: Gender Development</div>
+    <p><strong>Social Learning Theory</strong> (Bandura) explains gender development through <strong>observation</strong> of same-sex models, <strong>reinforcement</strong> of gender-appropriate behavior, and <strong>punishment</strong> or discouragement of gender-inappropriate behavior. Children learn gender roles by watching and imitating parents, peers, and media.</p>
+    <p><strong>Gender Schema Theory</strong> (Bem, 1981) adds a cognitive component: children actively construct <strong>schemas</strong> (mental frameworks) about what is "for boys" and "for girls," and then use these schemas to filter and organize new information. Once a gender schema is established, children seek out and remember schema-consistent information.</p>
+    <p>Research by <strong>Fagot (1978)</strong> shows parental reinforcement shapes early gender-typed behavior. <strong>Hilliard & Liben (2010)</strong> demonstrate that even brief classroom emphasis on gender categories accelerates stereotype development in young children.</p>
+  </div>
+
+  <div class="sub-h">🟡 Attachment — Key Studies</div>
+  <div class="cards-grid">
+
+    <!-- AINSWORTH -->
+    <div class="study-card">
+      <div class="card-stripe stripe-dev"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Ainsworth et al</div>
+          <div class="card-year">1970/1978 · Strange Situation · Attachment Types</div>
+          <div class="card-tags">
+            <span class="tag t-dev">Attachment</span>
+            <span class="tag t-dev">Social Development</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate individual differences in infant attachment and classify distinct attachment patterns</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Controlled observation in a laboratory setting</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">26 middle-class American mother–infant pairs; infants aged 12–18 months</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Eight standardized 3-minute episodes in a laboratory playroom: (1) mother and infant alone, (2) stranger enters and interacts, (3) mother leaves infant with stranger, (4) mother returns (first reunion), (5) infant left alone, (6) stranger returns, (7) mother returns (second reunion). Infant behavior during separation and reunion was coded by trained observers.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Three attachment types identified: <strong>Type B — Secure (66%):</strong> distressed at separation, warmly greeted mother at reunion, used her as a safe base. <strong>Type A — Insecure Avoidant (22%):</strong> little distress at separation, avoided/ignored mother at reunion. <strong>Type C — Insecure Resistant/Ambivalent (12%):</strong> very distressed at separation, angry or clingy/resistant at reunion. Sensitive caregiving predicted secure attachment.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"A = Avoids, B = Best (Secure), C = Clingy." The reunion behavior reveals the attachment — not the separation.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Standardized, replicable procedure; produced a widely-used and replicated classification system</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Laboratory is artificial and stressful; original sample was exclusively American, middle-class; Ainsworth had pre-existing relationships with mothers (observer bias)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BOWLBY 1944 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-dev"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Bowlby</div>
+          <div class="card-year">1944 · 44 Juvenile Thieves · Maternal Deprivation</div>
+          <div class="card-tags">
+            <span class="tag t-dev">Attachment</span>
+            <span class="tag t-dev">Maternal Deprivation</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether early maternal deprivation causes delinquency and emotional maladjustment in children</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Case study / retrospective clinical interview</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">44 juvenile thieves and 44 non-delinquent controls matched for age and IQ, all referred to a child guidance clinic in London</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Bowlby personally interviewed the children and their mothers about early life history, particularly any prolonged separations from the primary caregiver. Children were assessed for "affectionless psychopathy" — an inability to show care or concern for others.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">14 of the 44 thieves were classified as affectionless psychopaths. Of these 14, 12 had experienced prolonged early separation from their mothers — compared to only 2 in the non-delinquent control group. Bowlby concluded that early maternal deprivation damages the capacity for affection and leads to antisocial behavior.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"No mother bond = no empathy." 12 out of 14 affectionless thieves had lost their mother figure early.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>One of the first empirical studies linking early experience to later behavior; directly influenced social policy on child care</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Bowlby conducted the interviews himself — serious experimenter bias; retrospective accounts are unreliable; ignores other causes of delinquency (poverty, abuse); correlation ≠ causation</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">⚥ Gender Development — Key Studies</div>
+  <div class="cards-grid">
+
+    <!-- FAGOT 1978 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-dev"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Fagot</div>
+          <div class="card-year">1978 · Parental Reinforcement of Gender · Naturalistic Observation</div>
+          <div class="card-tags">
+            <span class="tag t-dev">Gender Development</span>
+            <span class="tag t-dev">Enculturation</span>
+            <span class="tag t-dev">Social Learning</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate whether parents differentially reinforce gender-typed behavior in toddlers</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Naturalistic observation in the family home</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">24 toddlers (aged 20–24 months) and their parents, observed in their own homes</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Researchers visited each family's home and observed parent–child interactions. They recorded how parents responded to 46 different categories of child behavior, coding reactions as positive (praise, encouragement), negative (criticism, discouragement), or neutral. Child behavior was also coded for gender-appropriateness based on cultural norms.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Parents consistently rewarded gender-appropriate behavior (boys praised for playing with blocks and trucks; girls praised for doll play and requesting help) and discouraged gender-inappropriate behavior. Children who received the most differential reinforcement showed the most strongly gender-typed behavior at follow-up. Both mothers and fathers shaped gender behavior, though patterns differed slightly.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Parents build gender roles one praise at a time." Reinforcement at 20 months shapes gendered behavior by 12 months later.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Naturalistic setting — high ecological validity; observational method avoids demand characteristics in toddlers</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Small sample (24 families); observer presence may alter parent behavior (reactivity); specific to one cultural context</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HILLIARD & LIBEN — CARRY OVER -->
+    <div class="study-card">
+      <div class="card-stripe stripe-dev"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Hilliard & Liben</div>
+          <div class="card-year">2010 · Gender Labeling in Kindergarten</div>
+          <div class="card-tags">
+            <span class="tag t-dev">Gender Schemas</span>
+            <span class="tag t-dev">Stereotyping</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether a teacher's emphasis on gender categories accelerates gender stereotyping and in-group bias in young children</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Field experiment with two conditions</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">~60 kindergarten-aged children (USA) across two classrooms</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">In the experimental classroom, the teacher consistently used gender labels ("Good morning, boys and girls"), organized activities by gender, and marked gender distinctions throughout the school day for 2 weeks. The control classroom received no gender emphasis. Children were assessed before and after on gender stereotyping and in-group preference.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">After 2 weeks, children in the gender-emphasis condition showed significantly stronger gender stereotyping, stronger preference for same-gender peers, and poorer recall of cross-gender peers. The control group showed no significant change. A brief reduction in gender emphasis reversed the effect.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Sociocultural — Enculturation, Stereotypes, SIT)</div>
+        <div class="hook"><strong>Memory Hook</strong>"Label the group, create the bias." Two weeks of gender-labeling is enough to sharpen stereotyping in 5-year-olds.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Field experiment — high ecological validity; reversibility of effect is an important finding</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Small sample; ethical concern about deliberately inducing stereotypes in young children; limited to US school context</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ HEALTH ══════════ -->
+<section id="hlt">
+  <div class="sec-head">
+    <div class="sec-icon icon-hlt">🟢</div>
+    <div class="sec-title">
+      <h2>Health Psychology</h2>
+      <p>Health beliefs · Risk & protective factors · Biopsychosocial model · Health promotion</p>
+    </div>
+  </div>
+
+  <div class="bg-box bb-hlt">
+    <div class="bg-box-title">🧩 Background: The Health Belief Model (HBM)</div>
+    <p>Developed by <strong>Rosenstock (1966/1977)</strong>, the HBM predicts whether a person will engage in health-protecting behavior based on their cognitive appraisal of a health threat. The model has six components:</p>
+    <p><strong>1. Perceived Susceptibility</strong> — "How likely am I to get this disease?" · <strong>2. Perceived Severity</strong> — "How serious would it be?" · <strong>3. Perceived Benefits</strong> — "Will the action actually help?" · <strong>4. Perceived Barriers</strong> — "What makes it hard to do?" · <strong>5. Cues to Action</strong> — Internal (a symptom) or external (a health campaign) trigger · <strong>6. Self-Efficacy</strong> (added later) — "Do I believe I can do it?"</p>
+    <p>The HBM is widely used in health campaigns (e.g., vaccination uptake, smoking cessation, sun protection). Research by Deshpande et al (2009) found that <strong>perceived barriers</strong> are often the strongest predictor of whether people fail to protect their health.</p>
+  </div>
+
+  <div class="bg-box bb-hlt">
+    <div class="bg-box-title">⚖️ Background: Biopsychosocial Model (BPS)</div>
+    <p>The <strong>Biopsychosocial Model</strong> (Engel, 1977) replaced the purely biomedical model by arguing that health and illness are determined by the interaction of <strong>biological</strong> (genetics, physiology), <strong>psychological</strong> (cognitions, emotions, behavior), and <strong>social</strong> (culture, relationships, socioeconomic status) factors. No single factor is sufficient to explain health outcomes. This model underpins modern health psychology — for example, obesity is not just about calories (biological) but also about stress eating (psychological) and access to healthy food (social).</p>
+  </div>
+
+  <div class="bg-box bb-hlt">
+    <div class="bg-box-title">📊 Background: Prevalence & Risk Factors — Obesity</div>
+    <p>Obesity is defined as a BMI ≥ 30. Since 1980, global obesity rates have more than <strong>doubled</strong> (Hruby & Hu, 2015). Risk factors are biopsychosocial: <strong>biological</strong> (genetics, metabolism), <strong>behavioral</strong> (physical inactivity, poor diet), and <strong>social/environmental</strong> (sedentary screen time, food environment, socioeconomic deprivation). <strong>Padez et al (2005)</strong> found in Portuguese children that watching TV ≥ 2 hours per day was a significant independent risk factor for obesity, even when diet was controlled. Physical activity functions as a <strong>protective factor</strong>.</p>
+  </div>
+
+  <div class="sub-h">🟢 Health Beliefs — Key Studies</div>
+  <div class="cards-grid">
+
+    <!-- DESHPANDE 2009 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-hlt"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Deshpande, Basil & Basil</div>
+          <div class="card-year">2009 · HBM & Sun Safety Behaviours</div>
+          <div class="card-tags">
+            <span class="tag t-hlt">Health Belief Model</span>
+            <span class="tag t-hlt">Health Behaviour</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test which components of the Health Belief Model best predict sun-protective behavior in university students</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Correlational survey study</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">199 university students in Canada</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Participants completed a questionnaire measuring all HBM constructs (perceived susceptibility to skin cancer, perceived severity, perceived benefits of sun protection, perceived barriers, cues to action, self-efficacy) and their actual sun-protective behaviors (sunscreen use, protective clothing, shade-seeking).</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Perceived barriers (e.g., forgetting to apply sunscreen, finding it inconvenient, disliking the feel) were the strongest predictor of not using sun protection. Perceived susceptibility and cues to action also significantly predicted behavior. Self-efficacy positively predicted sun protection. The study supports HBM but suggests targeting barriers is the priority in health promotion campaigns.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"It's not about knowing the risk — it's about removing the barriers." What stops health behavior matters more than what motivates it.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Systematically tests all major HBM components; directly applicable to designing health promotion messages</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Self-report of behavior (social desirability bias); university students are a WEIRD, young, healthy sample; sun behavior is low-stakes compared to, e.g., HIV prevention</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- NEWCOMER — CARRY OVER -->
+    <div class="study-card">
+      <div class="card-stripe stripe-hlt"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Newcomer et al</div>
+          <div class="card-year">1999 · Cortisol, Stress & Cognitive Health</div>
+          <div class="card-tags">
+            <span class="tag t-hlt">Stress & Health</span>
+            <span class="tag t-hlt">Biological Risk Factor</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether elevated cortisol (the primary stress hormone) impairs verbal declarative memory in healthy humans</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Double-blind, placebo-controlled true experiment</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">51 healthy participants assigned to three groups: high-dose cortisol, low-dose cortisol, and placebo</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Participants took cortisol or placebo tablets for 4 days. On day 4, they completed verbal memory tasks (paragraph recall). Blood cortisol levels were verified to confirm dosage compliance.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">The high-dose cortisol group performed significantly worse on verbal memory tests than both the low-dose and placebo groups. Low-dose cortisol showed no significant impairment. Demonstrates that chronically elevated stress hormones (as seen in chronic stress) cause measurable cognitive health damage.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Biological Approach — Hormones)</div>
+        <div class="hook"><strong>Memory Hook</strong>"Chronic stress shrinks your memory." Cortisol = the stress hormone that physically impairs brain function over time.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Double-blind design eliminates both experimenter and participant bias; cortisol levels verified</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Only 4 days — does not reflect long-term chronic stress; artificial administration ≠ natural stress response; small N</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">📊 Risk Factors & Prevalence — Key Studies</div>
+  <div class="cards-grid">
+
+    <!-- PADEZ 2005 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-hlt"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Padez et al</div>
+          <div class="card-year">2005 · TV Time & Childhood Obesity · Portugal</div>
+          <div class="card-tags">
+            <span class="tag t-hlt">Risk Factors</span>
+            <span class="tag t-hlt">Obesity</span>
+            <span class="tag t-hlt">Protective Factors</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate the relationship between television viewing, physical activity, and obesity in Portuguese children</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Cross-sectional survey study</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">4,511 Portuguese children aged 7–9 years from a nationally representative sample</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Parents completed questionnaires about their child's TV watching habits (hours per day), physical activity levels, and diet. Children's height and weight were measured directly to calculate BMI. Overweight defined as BMI ≥ 25th percentile for age, obese as ≥ 30th.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">20.3% of children were overweight; 11.3% were obese — much higher than previous Portuguese estimates. Watching TV ≥ 2 hours per day was a statistically significant and independent risk factor for obesity after controlling for diet. Physical activity was identified as a significant protective factor — children who were more physically active had lower obesity rates.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"More screen time = more weight gain." TV displaces physical activity and may increase snacking — a double risk.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Large, nationally representative sample; objective physical measurements (BMI) rather than self-report weight</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Cross-sectional — cannot determine causation (obese children may watch more TV, not vice versa); TV habits reported by parents (possible bias)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- HRUBY & HU 2015 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-hlt"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Hruby & Hu</div>
+          <div class="card-year">2015 · Global Obesity Epidemiology · Systematic Review</div>
+          <div class="card-tags">
+            <span class="tag t-hlt">Prevalence</span>
+            <span class="tag t-hlt">Obesity</span>
+            <span class="tag t-hlt">Global Health</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To review the global epidemiology of obesity — its prevalence, trends, and multi-factorial causes</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Systematic review and narrative synthesis</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Studies from multiple countries across different world regions; adult and child populations</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Reviewed published literature on obesity prevalence rates worldwide, temporal trends since 1980, and the relative contributions of biological (genetics, metabolism), behavioral (diet, physical activity), and environmental/social (urbanization, food marketing, socioeconomic status) factors.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Global obesity prevalence has more than doubled since 1980. In 2014, over 600 million adults and 41 million children under 5 were obese or overweight. No country has successfully reversed its obesity epidemic at the population level. The causes are biopsychosocial: genetic susceptibility interacts with an "obesogenic environment" (cheap, calorie-dense food; sedentary lifestyles; stress; socioeconomic deprivation).</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Doubled in 35 years, no country has reversed it." Obesity is a global epidemic with no single cause and no easy fix.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Synthesizes global data — comprehensive picture; highlights the multi-causal nature of obesity</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Relies on self-reported BMI in many constituent studies; data quality varies by country; review cannot establish causation</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">📣 Health Promotion — Key Study</div>
+  <div class="cards-grid">
+
+    <!-- LANGFORD 2015 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-hlt"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Langford et al</div>
+          <div class="card-year">2015 · Whole-School Health Promotion · Cochrane Review</div>
+          <div class="card-tags">
+            <span class="tag t-hlt">Health Promotion</span>
+            <span class="tag t-hlt">School-Based Intervention</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To evaluate the effectiveness of "whole-school" approaches to health promotion across a range of health outcomes</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Cochrane systematic review and meta-analysis of 67 studies</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Studies involving school-aged children across multiple countries and health domains</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Reviewed 67 randomized and quasi-experimental studies evaluating whole-school health promotion programs — interventions that engage the entire school community (curriculum, environment, policy, family, community) rather than just individual-level health education. Outcomes assessed included smoking, alcohol use, physical activity, diet, and mental health.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Whole-school approaches were effective in reducing smoking, reducing alcohol use, improving physical activity, and improving dietary habits (particularly fruit and vegetable consumption). Effects on mental health were positive but more variable. Programs that involved the wider school environment (not just classroom instruction) had the strongest effects. Community and family involvement amplified outcomes.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Change the school, change the child." Health promotion works best when it changes the environment, not just the individual's knowledge.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Cochrane review = gold standard of evidence; 67 studies across multiple health domains and countries</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Heterogeneity of programs — hard to identify which specific components drive the effect; publication bias in included studies</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ RELATIONSHIPS ══════════ -->
+<section id="rel">
+  <div class="sec-head">
+    <div class="sec-icon icon-rel">🟣</div>
+    <div class="sec-title">
+      <h2>Psychology of Human Relationships</h2>
+      <p>Formation of relationships · Maintenance · Prosocial behavior & altruism</p>
+    </div>
+  </div>
+
+  <div class="bg-box bb-rel">
+    <div class="bg-box-title">💘 Background: Formation of Relationships</div>
+    <p>Three key factors predict initial attraction and relationship formation:</p>
+    <p><strong>1. Proximity (Propinquity Effect):</strong> Physical closeness increases the likelihood of forming a relationship. Festinger et al (1950) showed that residents of a housing complex were most likely to form friendships with those who lived physically nearest. Proximity increases exposure, and exposure increases liking (<em>mere exposure effect</em>).</p>
+    <p><strong>2. Physical Attractiveness:</strong> Walster et al's (1966) "computer dance" found that physical attractiveness of a partner was the single strongest predictor of whether university students wanted a second date — outweighing personality, intelligence, and social skills. First impressions are heavily influenced by appearance.</p>
+    <p><strong>3. Similarity:</strong> We are more attracted to those who share our values, attitudes, and interests. However, in early stages, physical attractiveness often dominates over similarity.</p>
+  </div>
+
+  <div class="bg-box bb-rel">
+    <div class="bg-box-title">🔗 Background: Maintenance & Breakdown of Relationships</div>
+    <p><strong>Rusbult's Investment Model (1983)</strong> predicts commitment to a relationship using three variables: <strong>satisfaction</strong> (how rewarding is the relationship?), <strong>quality of alternatives</strong> (how appealing is leaving?), and <strong>investment size</strong> (how much have you put in — time, shared friends, memories, effort?). High investment + high satisfaction + low alternatives = high commitment and relationship stability. People stay in relationships not only because they are happy, but because they have invested too much to leave.</p>
+    <p><strong>Equity Theory</strong> proposes that both partners compare what they put in (inputs) to what they get out (outputs). Relationships feel fair when input/output ratios are balanced. Under-benefited partners are most likely to be dissatisfied and leave.</p>
+  </div>
+
+  <div class="bg-box bb-rel">
+    <div class="bg-box-title">🤝 Background: Prosocial Behaviour & Altruism</div>
+    <p><strong>Prosocial behavior</strong> refers to voluntary actions intended to benefit others (helping, sharing, cooperating, donating). <strong>Altruism</strong> is prosocial behavior motivated by genuine concern for others — not by self-interest.</p>
+    <p>Key explanations include: <strong>Social Identity Theory</strong> (we help in-group members more readily than out-group members — Drury 2009), <strong>Evolutionary explanations</strong> (kin selection — we help relatives to promote shared genes; reciprocal altruism — we help others expecting future help in return), and <strong>Empathy-Altruism Hypothesis</strong> (Batson) — genuine empathy produces genuine altruism, not just self-interested helping.</p>
+  </div>
+
+  <div class="sub-h">🟣 Formation of Relationships — Key Studies</div>
+  <div class="cards-grid">
+
+    <!-- WEDEKIND — CARRY OVER -->
+    <div class="study-card">
+      <div class="card-stripe stripe-rel"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Wedekind et al</div>
+          <div class="card-year">1995 · Sweaty T-Shirt Study · Mate Selection</div>
+          <div class="card-tags">
+            <span class="tag t-rel">Attraction</span>
+            <span class="tag t-rel">Evolutionary</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether humans use olfactory cues (smell) related to MHC genes to select genetically compatible mates</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Lab experiment</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">49 men and 44 women; all genotyped for MHC (major histocompatibility complex) gene variants</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Men wore plain white cotton t-shirts for two consecutive nights, avoiding scented products, spicy foods, and alcohol. Women then smelled the t-shirts from boxes and rated the odor for pleasantness and sexiness without knowing whose shirt it was. MHC similarity between raters and shirt-owners was then compared against ratings.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Women significantly preferred the scent of men whose MHC genes were most dissimilar from their own. MHC dissimilarity in a couple produces offspring with broader immune system coverage (greater pathogen resistance). Crucially, women on oral contraceptives showed a reversed preference — toward MHC-similar men — suggesting hormones affect mate selection cues.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Biological Approach — Pheromones & Evolution)</div>
+        <div class="hook"><strong>Memory Hook</strong>"You're attracted to the immune system you don't have." MHC dissimilarity = healthier future children.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Controlled design; evolutionary rationale is clear and testable; unexpected oral contraceptive finding adds depth</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Artificial lab setting; scent of a t-shirt ≠ real-world attraction; cultural and environmental confounds in mate choice ignored</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WALSTER 1966 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-rel"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Walster et al</div>
+          <div class="card-year">1966 · Computer Dance Study · Physical Attractiveness</div>
+          <div class="card-tags">
+            <span class="tag t-rel">Attraction</span>
+            <span class="tag t-rel">Relationship Formation</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate which personal characteristics most strongly predict romantic attraction during an initial encounter</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Field experiment with a natural social context (a university dance)</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">752 first-year university students at the University of Minnesota, USA</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Students were told they had been matched by a computer for a dance based on compatibility. In reality, they were randomly paired. Before the dance, experimenters secretly and independently rated each participant's physical attractiveness. At the dance's intermission and 6 months later, participants completed questionnaires about how much they liked their partner and whether they wanted to see them again. Physical attractiveness, IQ, personality (measured by psychometric tests), and social skills were all assessed and correlated with liking ratings.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Physical attractiveness of the partner was by far the strongest predictor of liking and desire for a second date — outweighing personality scores, intelligence, and social skills. The originally-hypothesized "matching effect" (people prefer partners of similar attractiveness to themselves) was not supported at this early stage. Both men and women showed the attractiveness effect equally.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"Looks win the first round." In initial attraction, nothing predicts liking as strongly as physical attractiveness.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Large sample (752); naturalistic dance setting increases ecological validity; independent rating of attractiveness avoids self-report bias</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Short-term (intermission only initially); only measures initial attraction, not long-term relationship quality; student sample; US-specific cultural beauty standards</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FESTINGER 1950 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-rel"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Festinger, Schachter & Back</div>
+          <div class="card-year">1950 · Westgate Housing Study · Proximity</div>
+          <div class="card-tags">
+            <span class="tag t-rel">Proximity</span>
+            <span class="tag t-rel">Relationship Formation</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To investigate whether physical proximity (closeness) predicts friendship formation in a naturally occurring community</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Naturalistic correlational study</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">270 married student couples newly arrived at the Westgate housing project at MIT, Boston</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">After residents had settled in, each was asked to name their three closest friends within the housing project. Researchers then mapped how physical distance between apartments related to friendship choices. They also recorded "functional distance" — proximity to high-traffic areas like mailboxes and stairwells — which influenced cross-floor friendships.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Proximity was the strongest predictor of friendship: residents were most likely to be friends with next-door neighbors (41%) and least likely to be friends with those at the far end of their floor (only 10%). Those whose apartments were near stairwells and mailboxes (high functional distance) had friends on multiple floors. Familiarity through repeated contact (mere exposure) generated liking.</span></div>
+        <div class="hook"><strong>Memory Hook</strong>"You befriend who you bump into." Proximity → familiarity → liking. The mere exposure effect in real life.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Naturalistic setting; friendship formation studied as it actually happened (not in a lab); reveals functional vs. physical distance</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Homogenous sample (MIT married students, 1950s); cannot separate proximity from shared interests (people near stairwells may simply be more sociable); historical limitations</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">🔗 Relationship Maintenance — Key Study</div>
+  <div class="cards-grid">
+
+    <!-- RUSBULT 1983 -->
+    <div class="study-card">
+      <div class="card-stripe stripe-rel"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Rusbult</div>
+          <div class="card-year">1983 · Investment Model · Relationship Commitment</div>
+          <div class="card-tags">
+            <span class="tag t-rel">Maintenance</span>
+            <span class="tag t-rel">Commitment</span>
+            <span class="tag t-rel">Investment Model</span>
+          </div>
+        </div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To test whether relationship commitment can be predicted by satisfaction, investment size, and quality of alternatives</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Longitudinal self-report study with repeated measures</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">34 university students in dating relationships, assessed multiple times over 7 months</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Participants completed questionnaires at regular intervals measuring: satisfaction with the relationship, quality of available alternatives (how appealing would leaving be?), investment size (how much time, emotion, shared memories had been accumulated?), and overall commitment level. Whether couples stayed together or broke up was recorded at the end.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">All three variables significantly predicted commitment: high satisfaction, high investment, and low-quality alternatives each independently predicted higher commitment. Investment size was a particularly important predictor — participants stayed even when satisfaction was moderate, if they had invested heavily. Commitment in turn predicted whether the couple remained together. The formula: <strong>Commitment ≈ Satisfaction − Quality of Alternatives + Investment.</strong></span></div>
+        <div class="hook"><strong>Memory Hook</strong>"People stay because leaving costs too much." You don't just need to be happy — you need nowhere better to go, and too much to lose.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Longitudinal design captures change over time; all three model components independently validated</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Very small sample (34 students); self-report of commitment and satisfaction subject to social desirability; only young dating relationships studied</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="sub-h">🤝 Prosocial Behaviour — Key Study</div>
+  <div class="cards-grid">
+
+    <!-- DRURY — CARRY OVER -->
+    <div class="study-card">
+      <div class="card-stripe stripe-rel"></div>
+      <div class="card-head">
+        <div>
+          <div class="card-name">Drury et al</div>
+          <div class="card-year">2009 · Crowd Disasters & Prosocial Behaviour</div>
+          <div class="card-tags">
+            <span class="tag t-rel">Prosocial Behaviour</span>
+            <span class="tag t-rel">Social Identity</span>
+            <span class="tag t-p1">Paper 1 Carry-Over</span>
+          </div>
+        </div>
+        <div class="star">⭐</div>
+      </div>
+      <div class="card-body">
+        <div class="row"><span class="rl">Aim</span><span class="rv">To explore whether shared social identity explains prosocial cooperation among strangers in crowd disasters</span></div>
+        <div class="row"><span class="rl">Type</span><span class="rv">Qualitative study — thematic analysis of in-depth interviews</span></div>
+        <div class="row"><span class="rl">Pts</span><span class="rv">Survivors of 11 different crowd disaster events (including the Bradford City fire, Hillsborough disaster, and the 2005 London bombings)</span></div>
+        <div class="row"><span class="rl">Procedure</span><span class="rv">Survivors were interviewed in depth about their experiences during the disaster — specifically about how they felt about the people around them and how they behaved (helped, ignored, competed for exits, etc.). Transcripts were analyzed for themes relating to shared social identity and its influence on prosocial behavior.</span></div>
+        <div class="row"><span class="rl">Results</span><span class="rv">Survivors consistently reported that during the crisis, they felt a strong sense of unity and shared fate with those around them — even strangers. This sense of shared identity prompted spontaneous helping (carrying injured strangers, giving up places in queues, sharing resources) that they described as automatic, not calculated. Social identity — being "in the same boat" — unlocked altruistic behavior among people who had never met.</span></div>
+        <div class="p1-badge">📚 Originally studied in Paper 1 (Sociocultural — Social Identity Theory)</div>
+        <div class="hook"><strong>Memory Hook</strong>"A shared crisis creates a temporary community." When threat is equal, strangers become in-group members — and we help our in-group.</div>
+        <div class="sw">
+          <div class="sw-box s"><strong>✅ Strength</strong>Extremely high ecological validity — real disasters, real consequences; documents behavior that would be unethical to simulate</div>
+          <div class="sw-box w"><strong>❌ Weakness</strong>Retrospective recall — memory of emotionally intense events may be distorted; researcher interpretation of themes is subjective; small and varied sample</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════ DEFINITIONS ══════════ -->
 <section id="defs">
-  <div class="section-header">
-    <div class="approach-badge badge-def">📖</div>
-    <div class="section-title-wrap">
+  <div class="sec-head">
+    <div class="sec-icon icon-def">📖</div>
+    <div class="sec-title">
       <h2>Key Definitions</h2>
-      <p>Define these in your introduction — always link to the question prompt</p>
+      <p>Define these in your introduction — always link the definition directly to the question prompt</p>
     </div>
   </div>
 
-  <div class="def-section-title">🧬 Biological</div>
+  <div class="def-cat">🔴 Abnormal Psychology</div>
   <div class="def-grid">
-    <div class="def-card"><div class="def-term">Neuroplasticity</div><div class="def-text">The brain's ability to change its structure and function in response to experience, learning, injury, or environmental stimulation throughout a person's life.</div></div>
-    <div class="def-card"><div class="def-term">Localization of Function</div><div class="def-text">The idea that specific areas of the brain are responsible for specific behaviors or cognitive processes (e.g., Broca's area → speech production).</div></div>
-    <div class="def-card"><div class="def-term">Neurotransmitter</div><div class="def-text">A chemical messenger that transmits signals across a synapse from one neuron to another. Examples: acetylcholine (memory), serotonin (mood), dopamine (reward).</div></div>
-    <div class="def-card"><div class="def-term">Hormone</div><div class="def-text">A chemical substance produced by an endocrine gland and transported in the blood to a target organ to regulate physiological processes and behavior (e.g., cortisol — the stress hormone).</div></div>
-    <div class="def-card"><div class="def-term">Pheromone</div><div class="def-text">A chemical signal released by one organism that affects the behavior or physiology of others of the same species, often influencing reproductive and social behavior.</div></div>
-    <div class="def-card"><div class="def-term">Gene-Environment Interaction</div><div class="def-text">When the effect of a gene on behavior depends on the environment, and vice versa. Neither nature nor nurture alone determines the outcome — both interact.</div></div>
-    <div class="def-card"><div class="def-term">Neural Pruning</div><div class="def-text">The process by which unused or weak synaptic connections are eliminated during brain development, strengthening active neural networks and increasing efficiency.</div></div>
-    <div class="def-card"><div class="def-term">Agonist</div><div class="def-text">A substance that binds to a receptor and mimics or enhances the effect of a neurotransmitter (e.g., nicotine acts as an acetylcholine agonist).</div></div>
-    <div class="def-card"><div class="def-term">Antagonist</div><div class="def-text">A substance that blocks or inhibits the action of a neurotransmitter by binding to its receptor without activating it (e.g., scopolamine blocks acetylcholine).</div></div>
-    <div class="def-card"><div class="def-term">MRI / fMRI</div><div class="def-text">MRI (Magnetic Resonance Imaging) shows brain structure. fMRI (functional MRI) shows real-time brain activity by measuring blood oxygen levels. Both are non-invasive brain imaging techniques.</div></div>
+    <div class="def-card"><div class="def-term">Validity (of diagnosis)</div><div class="def-text">The extent to which a diagnosis accurately identifies a genuine, distinct mental disorder — i.e., whether it measures what it claims to measure. A valid diagnosis predicts prognosis and treatment response.</div></div>
+    <div class="def-card"><div class="def-term">Reliability (of diagnosis)</div><div class="def-text">The extent to which different clinicians, given the same patient, reach the same diagnosis. High inter-rater reliability means diagnostic categories are applied consistently. Low reliability undermines validity.</div></div>
+    <div class="def-card"><div class="def-term">Clinical (Diagnostic) Bias</div><div class="def-text">The tendency for a clinician's personal characteristics (culture, ethnicity, gender, prior expectations) to systematically skew their diagnostic judgments, leading to over- or under-diagnosis of certain groups.</div></div>
+    <div class="def-card"><div class="def-term">Cognitive Triad (Beck)</div><div class="def-text">Beck's model of depression proposes that depressed individuals hold systematic negative views about themselves ("I am worthless"), the world ("everything is hopeless"), and the future ("nothing will improve") — collectively maintaining the disorder.</div></div>
+    <div class="def-card"><div class="def-term">Etiology</div><div class="def-text">The study of the causes or origins of a disorder. In IB Psychology, etiology of a disorder is explained from biological, cognitive, and sociocultural perspectives.</div></div>
+    <div class="def-card"><div class="def-term">Concordance Rate</div><div class="def-text">In twin studies, the percentage of twin pairs in which both twins share the same trait or disorder. MZ (identical) concordance > DZ (fraternal) concordance indicates a genetic component.</div></div>
+    <div class="def-card"><div class="def-term">Gene-Environment Interaction</div><div class="def-text">When the effect of a genetic variant on behavior depends on the environment to which the individual is exposed. Neither genes nor environment alone determine the outcome — they interact (Caspi et al, 2003).</div></div>
+    <div class="def-card"><div class="def-term">Culturally Adapted Therapy</div><div class="def-text">Psychotherapy that has been modified to be consistent with the cultural values, beliefs, language, and practices of the client's ethnic or cultural group, to improve engagement and effectiveness.</div></div>
   </div>
 
-  <div class="def-section-title">🧠 Cognitive</div>
+  <div class="def-cat">🟡 Developmental Psychology</div>
   <div class="def-grid">
-    <div class="def-card"><div class="def-term">Schema</div><div class="def-text">A mental framework or structure that organizes knowledge and guides the perception and interpretation of new information. Schemas can cause memory distortions when new information is assimilated to fit existing knowledge.</div></div>
-    <div class="def-card"><div class="def-term">Reconstructive Memory</div><div class="def-text">The idea that memory is not a perfect recording but is rebuilt (reconstructed) each time we recall it, influenced by existing knowledge, expectations, and post-event information.</div></div>
-    <div class="def-card"><div class="def-term">Flashbulb Memory</div><div class="def-text">A vivid, detailed, and long-lasting memory of a personally significant or emotionally arousing event, proposed by Brown & Kulik (1977). Named for its "photograph-like" quality.</div></div>
-    <div class="def-card"><div class="def-term">Cognitive Bias</div><div class="def-text">A systematic pattern of deviation from rationality in judgment. Biases emerge when people use heuristics (mental shortcuts) that lead to predictable errors.</div></div>
-    <div class="def-card"><div class="def-term">Heuristic</div><div class="def-text">A mental shortcut used to make quick decisions or judgments. While often efficient, heuristics can produce systematic errors (e.g., anchoring, availability, representativeness).</div></div>
-    <div class="def-card"><div class="def-term">Multi-Store Model (MSM)</div><div class="def-text">Atkinson & Shiffrin's model proposing three separate memory stores: Sensory Memory → Short-Term Memory (STM) → Long-Term Memory (LTM), with information transferred through attention and rehearsal.</div></div>
-    <div class="def-card"><div class="def-term">Rational (Controlled) Thinking</div><div class="def-text">Slow, deliberate, analytical reasoning that requires effort and conscious thought. Corresponds to "System 2" in Kahneman's Dual Process Theory.</div></div>
-    <div class="def-card"><div class="def-term">Intuitive (Automatic) Thinking</div><div class="def-text">Fast, unconscious, effortless processing that relies on heuristics and prior experience. Corresponds to "System 1" in Kahneman's Dual Process Theory.</div></div>
+    <div class="def-card"><div class="def-term">Attachment</div><div class="def-text">A deep, enduring emotional bond between an infant and a caregiver, characterized by the infant using the caregiver as a secure base for exploration and a safe haven in distress. Bowlby proposed this is innate and evolutionarily adaptive.</div></div>
+    <div class="def-card"><div class="def-term">Maternal Deprivation Hypothesis</div><div class="def-text">Bowlby's theory that prolonged separation from the primary caregiver during the critical period (roughly birth to 3 years) causes permanent and irreversible damage to intellectual, social, and emotional development.</div></div>
+    <div class="def-card"><div class="def-term">Critical Period</div><div class="def-text">A biologically determined window of time during which an organism is especially sensitive to certain environmental experiences. For Bowlby, the critical period for attachment formation is approximately birth to 2–3 years.</div></div>
+    <div class="def-card"><div class="def-term">Monotropy</div><div class="def-text">Bowlby's concept that infants are biologically predisposed to form one primary, special attachment bond (usually with the mother) that is qualitatively different from other attachments and forms the template for all future relationships.</div></div>
+    <div class="def-card"><div class="def-term">Gender Schema</div><div class="def-text">A cognitive framework that organizes knowledge about gender — what behaviors, traits, roles, and objects are "for boys" versus "for girls." Once activated, schemas guide attention and memory toward schema-consistent information.</div></div>
+    <div class="def-card"><div class="def-term">Enculturation</div><div class="def-text">The process by which a child learns the norms, values, behaviors, and expectations of their cultural group, primarily through socialization agents such as parents, peers, school, and media.</div></div>
+    <div class="def-card"><div class="def-term">Secure Attachment (Type B)</div><div class="def-text">The most common attachment pattern (~65–70%): the child uses the caregiver as a secure base, is distressed by separation, and is comforted by reunion. Associated with sensitive, responsive caregiving.</div></div>
+    <div class="def-card"><div class="def-term">Insecure Avoidant (Type A)</div><div class="def-text">An attachment pattern (~20–22%) where the infant shows little distress at separation and actively avoids or ignores the caregiver at reunion. Associated with consistently unresponsive caregiving.</div></div>
   </div>
 
-  <div class="def-section-title">🌍 Sociocultural</div>
+  <div class="def-cat">🟢 Health Psychology</div>
   <div class="def-grid">
-    <div class="def-card"><div class="def-term">Social Identity Theory (SIT)</div><div class="def-text">Tajfel & Turner's theory that people derive self-esteem from their membership in social groups (in-groups), leading to in-group favoritism and out-group discrimination to maintain a positive social identity.</div></div>
-    <div class="def-card"><div class="def-term">Social Cognitive Theory (SCT)</div><div class="def-text">Bandura's theory that behavior is learned through observation, imitation, and modeling of others, mediated by mental processes such as attention, motivation, and self-efficacy.</div></div>
-    <div class="def-card"><div class="def-term">Stereotype</div><div class="def-text">An oversimplified, generalized belief about the characteristics of a group of people. Can be formed through categorization, media, or cultural transmission, and can affect behavior through stereotype threat.</div></div>
-    <div class="def-card"><div class="def-term">Stereotype Threat</div><div class="def-text">The risk of confirming a negative stereotype about one's group, which creates anxiety that impairs performance on tasks associated with that stereotype (Steele & Aronson, 1995).</div></div>
-    <div class="def-card"><div class="def-term">Enculturation</div><div class="def-text">The process by which an individual learns the values, norms, behaviors, and practices of their culture of origin, typically during childhood, through socialization agents like family, school, and media.</div></div>
-    <div class="def-card"><div class="def-term">Acculturation</div><div class="def-text">The process of cultural and psychological change that results from contact between individuals from different cultures. Strategies include integration, assimilation, separation, and marginalization (Berry's model).</div></div>
-    <div class="def-card"><div class="def-term">Cultural Dimension</div><div class="def-text">Broad value orientations that distinguish cultures from one another. Hofstede's dimensions include individualism-collectivism, power distance, uncertainty avoidance, and masculinity-femininity.</div></div>
-    <div class="def-card"><div class="def-term">In-group / Out-group</div><div class="def-text">In-group: the social group you belong to and identify with. Out-group: groups you do not belong to. SIT predicts in-group favoritism (we favor our own group) and out-group derogation.</div></div>
+    <div class="def-card"><div class="def-term">Health Belief Model (HBM)</div><div class="def-text">A cognitive model (Rosenstock, 1966) predicting health-related behavior. Key components: perceived susceptibility, perceived severity, perceived benefits, perceived barriers, cues to action, and self-efficacy.</div></div>
+    <div class="def-card"><div class="def-term">Perceived Barriers</div><div class="def-text">In the HBM, the individual's perception of the obstacles that make a health behavior difficult or costly — e.g., time, money, inconvenience, discomfort. Research consistently finds this is the strongest negative predictor of health behavior.</div></div>
+    <div class="def-card"><div class="def-term">Biopsychosocial (BPS) Model</div><div class="def-text">Engel's (1977) model proposing that health and illness result from the interaction of biological (genetics, physiology), psychological (emotions, cognitions, behavior), and social (culture, relationships, SES) factors — rejecting purely biomedical explanations.</div></div>
+    <div class="def-card"><div class="def-term">Risk Factor</div><div class="def-text">A variable that increases the probability of developing a health problem. Risk factors can be biological (genetic susceptibility), behavioral (sedentary lifestyle), or social/environmental (poverty, food deserts).</div></div>
+    <div class="def-card"><div class="def-term">Protective Factor</div><div class="def-text">A variable that reduces the probability of developing a health problem or buffers against the impact of risk factors. Examples: physical activity (against obesity), social support (against depression), education (against risky health behaviors).</div></div>
+    <div class="def-card"><div class="def-term">Prevalence</div><div class="def-text">The proportion of a population with a particular condition at a specific point in time (point prevalence) or over a defined period (period prevalence). Different from incidence, which measures new cases only.</div></div>
+    <div class="def-card"><div class="def-term">Health Promotion</div><div class="def-text">The process of enabling people to increase control over and improve their health. Operates at individual (education, skills), community (social norms, support networks), and structural/policy levels (legislation, environmental design).</div></div>
+    <div class="def-card"><div class="def-term">Cortisol</div><div class="def-text">The primary glucocorticoid stress hormone, produced by the adrenal cortex in response to HPA-axis activation. Chronic elevation of cortisol impairs immune function, memory, and mood (Newcomer et al, 1999).</div></div>
+  </div>
+
+  <div class="def-cat">🟣 Psychology of Human Relationships</div>
+  <div class="def-grid">
+    <div class="def-card"><div class="def-term">Prosocial Behaviour</div><div class="def-text">Voluntary behavior intended to benefit another person or group, including helping, sharing, donating, comforting, and cooperating. May or may not be motivated by altruistic intent.</div></div>
+    <div class="def-card"><div class="def-term">Altruism</div><div class="def-text">A form of prosocial behavior motivated by genuine concern for others' wellbeing, with no expectation of personal reward. Contrasted with self-interested helping (e.g., reciprocal altruism, which involves expectation of future return).</div></div>
+    <div class="def-card"><div class="def-term">Proximity (Propinquity) Effect</div><div class="def-text">The tendency to form relationships with those who are physically nearby. Proximity increases repeated exposure, and repeated exposure increases liking (mere exposure effect — Zajonc, 1968). Festinger et al (1950) provided classic evidence.</div></div>
+    <div class="def-card"><div class="def-term">Investment Model</div><div class="def-text">Rusbult's (1983) model proposing that relationship commitment is determined by satisfaction, quality of alternatives, and investment size. Commitment = Satisfaction − Quality of Alternatives + Investment. Predicts relationship persistence.</div></div>
+    <div class="def-card"><div class="def-term">Equity Theory</div><div class="def-text">Walster et al's theory that satisfying relationships are those where both partners perceive an equal ratio of inputs (what they contribute) to outputs (what they receive). Inequity leads to dissatisfaction — especially for the under-benefited partner.</div></div>
+    <div class="def-card"><div class="def-term">MHC (Major Histocompatibility Complex)</div><div class="def-text">A set of genes encoding proteins involved in immune system recognition. MHC dissimilarity between partners produces offspring with broader immune system coverage. Wedekind (1995) showed women prefer the scent of MHC-dissimilar men.</div></div>
+    <div class="def-card"><div class="def-term">Mere Exposure Effect</div><div class="def-text">The phenomenon whereby repeated exposure to a stimulus (person, object, sound) increases positive feelings toward it. Proposed by Zajonc (1968) — familiarity breeds liking, not contempt. Explains why proximity predicts friendship (Festinger, 1950).</div></div>
+    <div class="def-card"><div class="def-term">Reciprocal Altruism</div><div class="def-text">Trivers' (1971) evolutionary concept: individuals help non-relatives when there is a reasonable expectation of future reciprocation. Adaptive because it creates mutual benefit over time, even without genetic relatedness.</div></div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  IB SL Psychology · Paper 1 · Biological · Cognitive · Sociocultural · Good luck on your exam ✦
+  IB SL Psychology · Paper 2 · Abnormal · Developmental · Health · Relationships · ⭐ = Paper 1 carry-over study
 </footer>
 
 <script>
-  const sections = ['essay','multi','bio','cog','soc','defs'];
-  const activeClasses = {
-    essay: 'active-gold',
-    multi: 'active-gold',
-    bio: 'active-bio',
-    cog: 'active-cog',
-    soc: 'active-soc',
-    defs: 'active-def'
-  };
+  const tabs   = ['essay','abn','dev','hlt','rel','defs'];
+  const aclass = ['a-essay','a-abn','a-dev','a-hlt','a-rel','a-def'];
 
   function show(id) {
-    sections.forEach(s => {
-      document.getElementById(s).classList.remove('visible');
-    });
+    tabs.forEach(t => document.getElementById(t).classList.remove('visible'));
     document.getElementById(id).classList.add('visible');
-
-    document.querySelectorAll('.nav-btn').forEach((btn, i) => {
-      btn.classList.remove('active-bio','active-cog','active-soc','active-gold','active-def');
-      if (sections[i] === id) btn.classList.add(activeClasses[id]);
+    document.querySelectorAll('.nav-btn').forEach((b, i) => {
+      b.classList.remove(...aclass);
+      if (tabs[i] === id) b.classList.add(aclass[i]);
     });
-
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
-
-  // Animate cards on section change
-  document.querySelectorAll('.study-card').forEach((card, i) => {
-    card.style.animationDelay = `${i * 0.06}s`;
-  });
 </script>
-
-<style>
-  .study-card {
-    animation: cardIn 0.35s ease both;
-  }
-  @keyframes cardIn {
-    from { opacity: 0; transform: translateY(16px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-</style>
-
 </body>
 </html>
